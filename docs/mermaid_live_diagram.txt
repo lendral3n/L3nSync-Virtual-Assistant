@@ -1,0 +1,88 @@
+graph TD
+    %% Entitas Utama (User)
+    User((User))
+
+    %% Layer Aplikasi Android (Tampilan Utama & Otak Perangkat)
+    subgraph Android_Application [Android App Layer - Kotlin/Java]
+        AppUI[Main App UI: Settings, API Keys, Character Select]
+        PermCheck[Permission Check: Overlay, Mic, Internet]
+        OverlayService[Foreground Service: Floating Window / Overlay]
+        STT[Speech-to-Text: Android/Google Voice Recognition]
+        API_OpenClaw[API Logic: Request to OpenClaw AI]
+        API_ElevenLabs[API Logic: Request to ElevenLabs TTS]
+        BridgeAndroid[UaaL Bridge: UnityPlayer.UnitySendMessage]
+    end
+
+    %% Layer Layanan AI Pihak Ketiga (Cloud)
+    subgraph Cloud_Services [Cloud / External API Services]
+        OpenClaw((OpenClaw LLM\nText + Emotion))
+        ElevenLabs((ElevenLabs TTS\nVoice Audio))
+    end
+
+    %% Layer Unity (Mesin Penggerak Avatar 3D)
+    subgraph Unity_Engine [Unity Engine Layer - UaaL / C# Scripts]
+        UnityInit[Init Unity & Render VRM: Kohaku]
+        BridgeUnity[Bridge Listener: Receive Android Messages]
+        AudioSrc[AudioSource Component]
+        
+        subgraph C_Sharp_Systems [Character Control Systems]
+            IdleSys[IdleSystem: Micro Movements & Breathing]
+            GestureSys[GestureSystem: Body, Tail, Ear Actions]
+            LipSyncSys[LipSyncSystem: Convert Audio to Mouth Shapes]
+            EmotionSys[EmotionSystem: Update Face Blendshapes]
+        end
+        
+        Animator[Unity Animator Controller]
+        VRM[Kohaku VRM Avatar Model]
+    end
+
+    %% =======================
+    %% ALUR KONEKSI (FLOW)
+    %% =======================
+
+    %% 1. Inisialisasi Aplikasi
+    User -->|1. Buka App & Setting| AppUI
+    AppUI -->|2. Cek Izin Perangkat| PermCheck
+    PermCheck -->|3. Tekan Tombol Start| OverlayService
+    OverlayService -->|4. Muat Window Mengambang| UnityInit
+    UnityInit -->|5. Karakter Standby| IdleSys
+    IdleSys -->|Update Gerakan Diam| Animator
+    Animator -->|Render Pose| VRM
+
+    %% 2. Alur Interaksi Pengguna (Bicara)
+    User -->|6. Berbicara ke Microphone| STT
+    STT -->|7a. Mengirim Status: Sedang Mendengarkan| BridgeAndroid
+    BridgeAndroid -.->|Kirim: 'SetState:Listening'| BridgeUnity
+    BridgeUnity -->|Ubah State Karakter| GestureSys
+    GestureSys -->|Trigger Animasi Mendengarkan| Animator
+    
+    %% 3. Alur Permintaan ke AI
+    STT -->|7b. Hasil Teks Pertanyaan User| API_OpenClaw
+    API_OpenClaw -->|8a. Kirim Prompt & Konteks| OpenClaw
+    API_OpenClaw -->|8b. Mengirim Status: Sedang Berpikir| BridgeAndroid
+    BridgeAndroid -.->|Kirim: 'SetState:Thinking'| BridgeUnity
+    BridgeUnity -->|Ubah State Karakter| GestureSys
+    GestureSys -->|Trigger Animasi Berpikir| Animator
+
+    %% 4. Response & Audio Generation
+    OpenClaw -->|9. Kembali Response: Teks + Emosi| API_OpenClaw
+    API_OpenClaw -->|10. Teruskan Teks ke TTS| API_ElevenLabs
+    API_ElevenLabs -->|11. Konversi Teks jadi Suara| ElevenLabs
+    ElevenLabs -->|12. Kembali File/Stream Audio| API_ElevenLabs
+
+    %% 5. Eksekusi Animasi Akhir & LipSync di Unity
+    API_ElevenLabs -->|13. Kirim Audio Bytes + Emosi| BridgeAndroid
+    BridgeAndroid == "Kirim Data Audio & Parameter" ==> BridgeUnity
+    
+    BridgeUnity -->|Set Parameter Emosi| EmotionSys
+    EmotionSys -->|Set Blendshape Joy/Angry/Sad| VRM
+    
+    BridgeUnity -->|Masukkan Data ke Audio Source| AudioSrc
+    BridgeUnity -->|Trigger Animasi Berbicara| GestureSys
+    
+    AudioSrc -->|Mutar Audio| LipSyncSys
+    LipSyncSys -->|Update Bentuk Mulut A-I-U-E-O| VRM
+    
+    %% 6. Selesai dan Kembali ke Idle
+    AudioSrc -.->|Audio Selesai| BridgeUnity
+    BridgeUnity -->|Reset Status| IdleSys

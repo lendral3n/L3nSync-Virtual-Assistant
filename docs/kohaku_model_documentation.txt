@@ -1,0 +1,340 @@
+DOKUMENTASI STRUKTUR MODEL VRM
+Karakter: Kohaku (狐薄)
+Sumber Analisis: Struktur folder hasil import Unity (ls -R)
+
+---
+
+1. INFORMASI UMUM MODEL
+
+Model karakter yang dianalisis adalah model 3D format VRM yang telah diimport ke dalam Unity. Berdasarkan struktur folder yang ditemukan di direktori Assets, model ini memiliki komponen lengkap yang terdiri dari:
+
+* Avatar definition
+* BlendShape system
+* Mesh objects
+* Materials
+* Textures
+* Scene file
+
+File utama model:
+
+Kohaku_dress_1.10_VRM.vrm
+Kohaku_dress_1.10_VRM.prefab
+
+File tersebut menunjukkan bahwa model sudah siap digunakan dalam Unity dan VRM runtime.
+
+---
+
+2. SISTEM AVATAR DAN HUMANOID RIG
+
+Folder yang ditemukan:
+
+Kohaku_dress_1.10_VRM.Avatar
+Kohaku_dress_1.10_VRM.AvatarDescription
+
+File:
+
+VrmAvatar.asset
+AvatarDescription.asset
+
+Keberadaan file ini menunjukkan bahwa model menggunakan sistem:
+
+Humanoid Avatar Rig
+
+Humanoid rig adalah struktur bone standar Unity yang memungkinkan karakter untuk:
+
+* menggunakan sistem animasi humanoid
+* kompatibel dengan animator Unity
+* kompatibel dengan VRM runtime
+* mendukung retarget animation
+* mendukung full body tracking
+
+Artinya model ini memiliki struktur tulang seperti:
+
+Hips
+Spine
+Chest
+Neck
+Head
+Shoulder
+Arm
+Forearm
+Hand
+Leg
+Foot
+
+Struktur ini merupakan standar rig humanoid yang digunakan oleh Unity dan VRM.
+
+---
+
+3. SISTEM BLENDSHAPE (FACIAL MORPH TARGET)
+
+Folder yang ditemukan:
+
+Kohaku_dress_1.10_VRM.BlendShapes
+
+Berisi file berikut:
+
+BlendShape.A
+BlendShape.I
+BlendShape.U
+BlendShape.E
+BlendShape.O
+
+BlendShape.Angry
+BlendShape.Joy
+BlendShape.Sorrow
+BlendShape.Fun
+BlendShape.Neutral
+
+BlendShape.Blink
+BlendShape.Blink_L
+BlendShape.Blink_R
+
+BlendShape.LookUp
+BlendShape.LookDown
+BlendShape.LookLeft
+BlendShape.LookRight
+
+Penjelasan fungsi:
+
+A I U E O
+
+Merupakan phoneme blendshape yang digunakan untuk sistem lip sync. Bentuk mulut akan berubah sesuai suara yang dihasilkan karakter.
+
+Blink, Blink_L, Blink_R
+
+Digunakan untuk sistem kedipan mata otomatis.
+
+LookUp, LookDown, LookLeft, LookRight
+
+Digunakan untuk kontrol arah pandangan mata.
+
+Angry, Joy, Sorrow, Fun, Neutral
+
+Digunakan untuk ekspresi emosi karakter.
+
+Dengan adanya blendshape ini, karakter mampu melakukan:
+
+* animasi wajah
+* lip sync suara
+* ekspresi emosi
+* kontrol arah mata
+* kedipan otomatis
+
+---
+
+4. STRUKTUR MESH MODEL
+
+Folder mesh ditemukan pada:
+
+Kohaku_dress_1.10_VRM.Meshes
+
+Berikut daftar mesh objek yang ditemukan:
+
+Body
+Kohaku_Bodybase
+
+Kohaku_Hair_front
+Kohaku_Hair_back
+
+Kohaku_Foxear
+
+Kohaku_Tail
+
+Kohaku_Kamikazari
+
+Kohaku_Leotard
+
+Kohaku_Tops1
+Kohaku_Tops2
+
+Kohaku_Skirt
+
+Kohaku_Sode
+
+Kohaku_Pants
+
+Kohaku_Shoes
+
+Kohaku_Socks
+
+Kohaku_Nail
+
+Penjelasan:
+
+Mesh tubuh utama:
+
+Body
+Kohaku_Bodybase
+
+Bagian rambut:
+
+Kohaku_Hair_front
+Kohaku_Hair_back
+
+Aksesoris kepala:
+
+Kohaku_Foxear
+Kohaku_Kamikazari
+
+Atribut karakter:
+
+Kohaku_Tail
+
+Pakaian karakter:
+
+Kohaku_Leotard
+Kohaku_Tops1
+Kohaku_Tops2
+Kohaku_Skirt
+Kohaku_Sode
+Kohaku_Pants
+
+Perlengkapan kaki:
+
+Kohaku_Shoes
+Kohaku_Socks
+
+Detail tambahan:
+
+Kohaku_Nail
+
+Struktur mesh yang terpisah ini menunjukkan bahwa model bersifat modular. Artinya setiap bagian dapat diaktifkan, dimodifikasi, atau diganti secara terpisah.
+
+---
+
+5. SISTEM MATERIAL
+
+Folder material:
+
+Kohaku_dress_1.10_VRM.Materials
+
+Material yang ditemukan:
+
+Kohakudress_skin
+Kohakudress_face
+Kohakudress_eye
+Kohakudress_hair
+Kohakudress_nail
+
+Kohakudress_dress1
+Kohakudress_dress2
+Kohakudress_dress3
+
+Material ini digunakan untuk menentukan tampilan visual model seperti warna, shading, dan outline.
+
+Shader yang digunakan pada model ini berdasarkan dokumentasi produk:
+
+lilToon
+MToon
+
+Shader tersebut umum digunakan untuk model anime.
+
+---
+
+6. SISTEM TEXTURE
+
+Folder texture:
+
+Kohaku_dress_1.10_VRM.Textures
+
+Texture yang ditemukan meliputi:
+
+Face texture
+Hair texture
+Skin texture
+Dress texture
+Nail texture
+
+Beberapa texture tambahan:
+
+Normal map
+Outline mask
+
+Normal map digunakan untuk menambah detail permukaan.
+
+Outline mask digunakan untuk efek garis luar karakter.
+
+---
+
+7. SISTEM PHYSICS
+
+Berdasarkan struktur mesh dan sistem VRM, model ini memiliki objek yang biasanya menggunakan physics bone atau spring bone:
+
+Rambut
+Ekor rubah
+Telinga rubah
+Bagian pakaian tertentu
+
+Physics ini menyebabkan objek dapat bergerak secara dinamis saat karakter bergerak atau saat simulasi dijalankan di Unity.
+
+Contoh gerakan yang mungkin terjadi:
+
+rambut bergoyang
+ekor bergerak
+telinga bergerak
+pakaian mengikuti gerakan tubuh
+
+---
+
+8. STRUKTUR SCENE
+
+Folder:
+
+Scenes
+
+File:
+
+SampleScene.unity
+
+Scene ini merupakan scene default yang digunakan untuk menampilkan model dalam Unity.
+
+---
+
+9. KESIMPULAN ANALISIS
+
+Berdasarkan struktur folder hasil import Unity, model Kohaku memiliki komponen lengkap yang mencakup:
+
+Humanoid avatar rig
+Blendshape facial system
+Modular mesh structure
+Material dan texture lengkap
+Physics bone system
+Prefab karakter siap pakai
+
+Model ini dapat digunakan untuk berbagai keperluan seperti:
+
+VTuber avatar
+karakter AI virtual
+NPC dalam aplikasi
+avatar VRM
+karakter animasi realtime
+virtual assistant berbasis karakter
+
+Model sudah memiliki semua komponen dasar yang dibutuhkan untuk digunakan dalam aplikasi berbasis Unity atau VRM runtime.
+
+
+
+/////////////////////////////////////////
+
+Attention Animation
+Lip Sync Animation
+Facial Micro Animation
+Gesture Animation
+Tail emotion system
+Ear emotion system
+Body Motion
+Idle Animation
+Thinking Animation
+Listening Animation
+Reaction Animation
+Emotion animation
+Greeting animation
+farewell animation
+Surprise Animation
+User Focus System
+Personality Animation
+Micro idle behaviour
+Reaction animation
+
+/////////////////////////////////////////

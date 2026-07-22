@@ -1,49 +1,130 @@
-# Python files
+# ============================================================================
+# Lia VA — .gitignore
+# Tracks: source code (C#, Kotlin, .gradle, .anim, .controller, scenes, configs)
+# Ignores: build caches, IDE, OS junk, generated artifacts
+# ============================================================================
+
+# ─── Unity (unity/) ─────────────────────────────────────────────────────────
+unity/[Ll]ibrary/
+unity/[Tt]emp/
+unity/[Oo]bj/
+unity/[Bb]uild/
+unity/[Bb]uilds/
+unity/[Ll]ogs/
+unity/[Uu]serSettings/
+unity/[Mm]emoryCaptures/
+unity/[Rr]ecordings/
+unity/Assets/AssetStoreTools*
+unity/Assets/Plugins/Editor/JetBrains*
+unity/*.csproj
+unity/*.unityproj
+unity/*.sln
+unity/*.suo
+unity/*.tmp
+unity/*.user
+unity/*.userprefs
+unity/*.pidb
+unity/*.booproj
+unity/*.svd
+unity/*.pdb
+unity/*.mdb
+unity/*.opendb
+unity/*.VC.db
+unity/sysinfo.txt
+unity/*.apk
+unity/*.aab
+unity/*.unitypackage
+unity/*.app
+unity/crashlytics-build.properties
+unity/.vsconfig
+
+# ─── Android (android/) ─────────────────────────────────────────────────────
+android/.gradle/
+android/build/
+android/launcher/build/
+android/unityLibrary/build/
+android/unityLibrary/.cxx/
+android/unityLibrary/Library/
+android/unityLibrary/Temp/
+android/unityLibrary/Obj/
+android/*/build/
+android/local.properties
+android/.idea/
+android/captures/
+android/*.iml
+android/.cxx/
+android/Lia*BurstDebugInformation_DoNotShip/
+
+# APK / bundle output (sometimes large, often shipped separately)
+**/launcher-debug.apk
+**/launcher-release.apk
+**/*.aab
+
+# ─── IDE / Editor ───────────────────────────────────────────────────────────
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.iml
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ─── Python (script tools) ──────────────────────────────────────────────────
 *.pyc
 __pycache__/
+.venv/
+venv/
 
-# Log files
-static/
-# Environment
+# ─── Environment / secrets ──────────────────────────────────────────────────
 .env
+.env.local
+*.local
 
-.venv
-venv
-
-[Libraries]
-Library/
-Logs/
-Temp/
-Obj/
-*.csproj
-*.unityproj
-*.sln
-*.user
-.vscode/
-UserSettings/
-
-
-# Logs
-logs
+# ─── Logs ───────────────────────────────────────────────────────────────────
 *.log
+logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# ─── Node (web tooling) ─────────────────────────────────────────────────────
+node_modules/
+dist/
+dist-ssr/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# ─── macOS / OS junk ────────────────────────────────────────────────────────
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ─── Misc ───────────────────────────────────────────────────────────────────
+static/
+*.bak
+*.orig
+android/secrets.properties
+
+# ─── Cleanup 2026-07-22: keluarkan binari besar, download mentah, konten terlarang ───
+# Folder aset MENTAH (VRM/FBX/mocap/download) — yang dipakai sudah dikopi ke unity/Assets
+assets/
+# Unity generated (regenerable)
+unity/Library/
+unity/Temp/
+unity/Obj/
+unity/Logs/
+unity/UserSettings/
+unity/build-mac/
+unity/build/
+unity/*.csproj
+unity/*.sln
+# Unity Android export (di-generate ulang tiap build)
+android/unityLibrary/
+android/unityexport_tmp/
+# Screenshots verifikasi
+unity/Assets/Screenshots/

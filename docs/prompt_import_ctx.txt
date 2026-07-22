@@ -1,0 +1,55 @@
+Export a complete structured summary of everything you have learned about me ONLY from this current conversation session.
+
+IMPORTANT:
+- Do NOT include stored memory from outside this chat.
+- Only include context that appeared inside this conversation thread.
+- Preserve my wording verbatim whenever possible, especially for instructions or preferences.
+
+## Categories (output in this order):
+
+1. **User Instructions in This Session**
+Rules or directions I gave you during this conversation about how you should respond, format outputs, tone, behavior, etc.
+
+2. **User Goals / Intent**
+Things I am trying to achieve in this session.
+
+3. **User Context**
+Facts about me mentioned during this session (location, situation, tools I'm using, limitations like token limits, etc.)
+
+4. **Ideas / Prompts / Frameworks I Created**
+Prompts, frameworks, or systems I asked you to build or modify.
+
+5. **Key Decisions or Constraints**
+Important constraints or decisions mentioned (e.g., token limits, workflow choices, platform limitations).
+
+6. **Important Conversation Content**
+Any information from this session that would be useful for continuing the conversation in another chat.
+
+## Format
+
+Use this exact format:
+
+[SESSION_CONTEXT_EXPORT]
+
+### Category Name
+- item
+- item
+- item
+
+### Category Name
+- item
+- item
+
+Rules:
+- Use bullet points.
+- Preserve my wording whenever possible.
+- Do not summarize aggressively — keep useful detail.
+- Only include information from THIS chat session.
+
+## Purpose
+
+This export will be pasted into a new chat so the assistant there can restore the context of this conversation.
+
+End the output with:
+
+[END_SESSION_CONTEXT_EXPORT]

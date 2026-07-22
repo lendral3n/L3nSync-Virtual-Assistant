@@ -1,0 +1,83 @@
+# Arsitektur Aplikasi (ASCII Visual & Penjelasan)
+
+Karena tidak semua *Markdown Viewer* bisa langsung menampilkan gambar diagram Mermaid, berikut aku buatkan **Gambar Blok Arsitektur (ASCII Art)** agar kamu bisa langsung melihat bentuk "Bangunan" dari aplikasimu tanpa butuh file/ekstensi tambahan:
+
+```text
+=============================================================================
+                              USER INTERACTION
+                [ Microphone ]   [ Android Screen ]   [ Floating View ]
+=============================================================================
+                      |                  |                    ^
+              (Suara) v          (Tap)   v         (Visual)   |
+=============================================================================
+                      ANDROID APP LAYER (KOTLIN / JAVA)
+                            (Platform Induk)
+
+  [ UI & SERVICES ]
+  +----------------+      +------------------+      +------------------+
+  | App Dashboard  |      | Permision Check  |      | Floating Service |
+  | (Settings)     |      | (Mic, Overlay)   |      | (Window Manager) |
+  +----------------+      +------------------+      +------------------+
+                                                             |
+  [ CORE PROCESS ]                                           |
+  +----------------+  Teks  +----------------+ Teks + Emotion|
+  | Speech-to-Text | -----> | OpenClaw  API  | --------------+
+  | (Google/Sys)   |        | Client Logic   |               |
+  +----------------+        +----------------+               v
+                                   | Teks             +------------------+
+                                   v                  | UaaL Bridge      |
+                            +----------------+ Audio  | (Penerjemah dari |
+                            | ElevenLabs API | -----> |  Android ke      |
+                            | Client Logic   |        |  C# Unity)       |
+                            +----------------+        +------------------+
+=============================================================================
+                                   | (Mengirim Data: Audio, Emosi, State)
+                                   v
+=============================================================================
+                    UNITY ENGINE LAYER (C# LIBRARY) = SUB-VIEW
+                           (Mesin Karakter / UaaL)
+
+  [ UNITY RECEIVER ]
+  +------------------------------------------------------------------------+
+  |                   JNI Bridge / Command Listener (C#)                   |
+  |                  (Menangkap UnityPlayer.UnitySendMessage)              |
+  +------------------------------------------------------------------------+
+                                        |
+                     +------------------+------------------+
+       Data Audio    |            Trigger State            | Parameter Emosi
+                     v                                     v
+  +-------------------------+                 +-------------------------+
+  |      AudioSource        |                 |   Character Systems     |
+  | (Memancarkan suara MP3) |                 | (C# Scripts pengatur)   |
+  +-------------------------+                 +-------------------------+
+               |                                /          |          \
+     (Analisa Frekuensi)                 (State)           |           (Blendshape)
+               v                              /            |             \
+  +-------------------------+   +---------------+   +--------------+   +---------------+
+  |      LipSyncSystem      |   | GestureSystem |   |  IdleSystem  |   | EmotionSystem |
+  | (A,I,U,E,O Otomatis)    |   +---------------+   +--------------+   +---------------+
+  +-------------------------+             \                |             /
+               |                           v               v            /
+               |                     +---------------------------+     /
+               |                     |      Unity Animator       |    /
+               |                     |    (State Controller)     |   /
+               |                     +---------------------------+  /
+               |                                   |               / 
+               v                                   v              v
+  +------------------------------------------------------------------------+
+  |                                                                        |
+  |                           KOHAKU VRM MODEL                             |
+  |           (Tampilan Visual, Baju Bergoyang, Animasi Tulang)            |
+  |                                                                        |
+  +------------------------------------------------------------------------+
+=============================================================================
+```
+
+### Penjelasan Gambar:
+1. **Paling Atas (User):** User menggunakan suara dan melihat ke layar handphone.
+2. **Layer Tengah (Android):** Ini adalah *rumah* sebenarnya dari aplikasi ini. Semua mikir, rekam suara, internet nembak OpenClaw, nembak ElevenLabs, itu dikerjain di kotak ini. Kotak ini me-*manage* baterai dan proses kerja secara *background* maupun sebagai layanan mengambang (Floating Service).
+3. **Layer Bawah (Unity):** Unity dipenjara/dibungkus dan dimasukkan ke dalam Android (sebelah kanan atas: *UaaL Bridge* dan *Floating Service*). Unity tidak mengakses internet, tidak merekam suara secara native. Unity cuma duduk diam nunggu disuruh Android: *"Hei Unity, mainkan audio ini dan pasang muka ceria!"*.
+   - Begitu data masuk ke `JNI Bridge` di Unity, barulah script `C# System`-mu (seperti GestureSystem.cs, LipSyncSystem.cs) menyala.
+   - Script ini menyuruh `Animator` untuk mengganti *pose* dan mengubah ukuran `Blendshape` pada **Kohaku VRM Model** kamu.
+
+File teks kotak ini sudah aku simpan biar kamu bisa buka juga kapan saja.

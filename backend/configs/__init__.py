@@ -1,3 +1,0 @@
-# __init__.py di dalam folder configs
-
-from .config import OPENAI_API_KEY, ELEVENLABS_API_KEY, CLOUDNAMECLOUDINARY, APIKEYCLOUDINARY, APISECRETCLOUDINARY

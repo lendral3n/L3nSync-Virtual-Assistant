@@ -1,0 +1,19 @@
+--- Gopal ---
+
+1. Download file vrm dari Drive
+2. import file character kohaku vrm ke blender
+3. buat animasi lipsync di blender menggunakan triger audio
+4. export animasi tersebut menjadi code c#
+
+--- Julio ---
+
+1. Membuat requirements phase 1 app
+2. Membuat standar struktur 
+3. Membuat UI Dashboard App
+4. Membuat Application phase 1
+
+--- Lendra ---
+
+1. Merapikan Useless Code
+2. Research Memperhemat Token Model
+3. 

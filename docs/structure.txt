@@ -1,0 +1,28 @@
+ai-avatar-assistant
+│
+├ android-app
+│   ├ app
+│   │
+│   ├ overlay
+│   │   ├ FloatingService.kt
+│   │   ├ OverlayManager.kt
+│   │
+│   ├ voice
+│   │   ├ SpeechRecognizer.kt
+│   │   ├ ElevenLabsClient.kt
+│   │
+│   ├ ai
+│   │   ├ AIClient.kt
+│   │   └ EmotionEngine.kt
+│
+├ unity-avatar-engine
+│   ├ Assets
+│   │   ├ Avatar
+│   │   ├ Animations
+│   │   ├ LipSync
+│   │
+│   └ Scripts
+│       ├ AvatarController.cs
+│       ├ LipSyncController.cs
+│       └ EmotionController.cs
+

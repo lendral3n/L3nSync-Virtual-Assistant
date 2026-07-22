@@ -1,0 +1,12 @@
+{
+    "asset": "8a4693f4e77124b07987d6714e542341",
+    "fileName": "019e1612-831d-74be-bf1f-c0ff30acebd8.pose.json",
+    "prompt": "Energetic anime character idle, cute bobbing, high energy, active, smooth looping motion",
+    "negativePrompt": "",
+    "model": "unity-text-to-motion",
+    "modelName": "Text to Motion",
+    "customSeed": 1998624260,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "isTrimmed": false
+}

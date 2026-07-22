@@ -1,0 +1,44 @@
+Export only the memories and context that are **relevant to my current active projects**. Ignore unrelated personal history unless it directly impacts the projects.
+
+Preserve my words verbatim where possible, especially for instructions, requirements, and decisions related to the projects.
+
+## Categories (output in this order):
+
+1. **Project Instructions**
+   Rules or instructions I have given that should be followed while working on my current projects. This includes workflow preferences, output format requirements, constraints, or “always/never” style rules related to the projects.
+
+2. **Current Projects**
+   Projects I am actively building or maintaining. Ideally ONE entry per project.
+   Each entry should include:
+
+* What the project does
+* Current status
+* Key decisions or constraints
+* Tools/technologies involved (if known)
+
+Start each entry with the **project name or short descriptor**.
+
+3. **Project Goals**
+   Goals, milestones, or outcomes I want to achieve with the current projects.
+
+4. **Project Preferences**
+   Working style, design preferences, automation preferences, or other opinions that influence how the current projects should be built.
+
+## Format
+
+Use section headers for each category.
+Within each category, list one entry per line, sorted by oldest date first.
+
+Format each line as:
+
+[YYYY-MM-DD] - Entry content here.
+
+If no date is known, use:
+
+[unknown] - Entry content here.
+
+## Output
+
+* Wrap the entire export in a single code block for easy copying.
+* Only include information relevant to **current projects**.
+* After the code block, state whether this is the complete set or if more relevant context may exist.

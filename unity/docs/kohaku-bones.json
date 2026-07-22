@@ -1,0 +1,1230 @@
+{
+  "metadata": {
+    "source": "Kohaku_dress_1.10_VRM.vrm",
+    "totalNodes": 266,
+    "humanoidBoneCount": 53,
+    "extractedAt": "2026-05-10",
+    "note": "Generated via direct glTF binary parse \u2014 no Unity Editor needed"
+  },
+  "humanoidBones": [
+    {
+      "humanBodyBones": "hips",
+      "nodeName": "Hips",
+      "nodeIndex": 1,
+      "parentNodeName": "Armature",
+      "parentHumanBodyBones": null,
+      "translation": [
+        5.818582e-25,
+        0.7922017,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftUpperLeg",
+      "nodeName": "LeftUpLeg",
+      "nodeIndex": 2,
+      "parentNodeName": "Hips",
+      "parentHumanBodyBones": "hips",
+      "translation": [
+        -0.06292034,
+        -0.08125466,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightUpperLeg",
+      "nodeName": "RightUpLeg",
+      "nodeIndex": 7,
+      "parentNodeName": "Hips",
+      "parentHumanBodyBones": "hips",
+      "translation": [
+        0.06292034,
+        -0.08125454,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftLowerLeg",
+      "nodeName": "LeftLeg",
+      "nodeIndex": 3,
+      "parentNodeName": "LeftUpLeg",
+      "parentHumanBodyBones": "leftUpperLeg",
+      "translation": [
+        0,
+        -0.322729319,
+        -2.39130821e-16
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightLowerLeg",
+      "nodeName": "RightLeg",
+      "nodeIndex": 8,
+      "parentNodeName": "RightUpLeg",
+      "parentHumanBodyBones": "rightUpperLeg",
+      "translation": [
+        0,
+        -0.322729945,
+        1.9083197e-16
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftFoot",
+      "nodeName": "LeftFoot",
+      "nodeIndex": 4,
+      "parentNodeName": "LeftLeg",
+      "parentHumanBodyBones": "leftLowerLeg",
+      "translation": [
+        0,
+        -0.3269528,
+        0.02385772
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightFoot",
+      "nodeName": "RightFoot",
+      "nodeIndex": 9,
+      "parentNodeName": "RightLeg",
+      "parentHumanBodyBones": "rightLowerLeg",
+      "translation": [
+        0,
+        -0.326952279,
+        0.0238577556
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "spine",
+      "nodeName": "Spine",
+      "nodeIndex": 74,
+      "parentNodeName": "Hips",
+      "parentHumanBodyBones": "hips",
+      "translation": [
+        1.66455809e-08,
+        0.0133709908,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "chest",
+      "nodeName": "Chest",
+      "nodeIndex": 75,
+      "parentNodeName": "Spine",
+      "parentHumanBodyBones": "spine",
+      "translation": [
+        1.67043677e-08,
+        0.08637339,
+        -0.00572543126
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "neck",
+      "nodeName": "Neck",
+      "nodeIndex": 105,
+      "parentNodeName": "Chest",
+      "parentHumanBodyBones": "chest",
+      "translation": [
+        -2.36993714e-09,
+        0.198083282,
+        0.02411209
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "head",
+      "nodeName": "Head",
+      "nodeIndex": 106,
+      "parentNodeName": "Neck",
+      "parentHumanBodyBones": "neck",
+      "translation": [
+        1.36287071e-09,
+        0.0371165276,
+        -0.00314100459
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftShoulder",
+      "nodeName": "LeftShoulder",
+      "nodeIndex": 78,
+      "parentNodeName": "Chest",
+      "parentHumanBodyBones": "chest",
+      "translation": [
+        -0.03646795,
+        0.163519859,
+        0.0231374837
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightShoulder",
+      "nodeName": "RightShoulder",
+      "nodeIndex": 216,
+      "parentNodeName": "Chest",
+      "parentHumanBodyBones": "chest",
+      "translation": [
+        0.0364679657,
+        0.163523912,
+        0.0231375322
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftUpperArm",
+      "nodeName": "LeftArm",
+      "nodeIndex": 79,
+      "parentNodeName": "LeftShoulder",
+      "parentHumanBodyBones": "leftShoulder",
+      "translation": [
+        -0.0450795777,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightUpperArm",
+      "nodeName": "RightArm",
+      "nodeIndex": 217,
+      "parentNodeName": "RightShoulder",
+      "parentHumanBodyBones": "rightShoulder",
+      "translation": [
+        0.0450795926,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftLowerArm",
+      "nodeName": "LeftForeArm",
+      "nodeIndex": 80,
+      "parentNodeName": "LeftArm",
+      "parentHumanBodyBones": "leftUpperArm",
+      "translation": [
+        -0.207909539,
+        0,
+        0.00520541146
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightLowerArm",
+      "nodeName": "RightForeArm",
+      "nodeIndex": 218,
+      "parentNodeName": "RightArm",
+      "parentHumanBodyBones": "rightUpperArm",
+      "translation": [
+        0.2079094,
+        0,
+        0.00520540029
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftHand",
+      "nodeName": "LeftHand",
+      "nodeIndex": 84,
+      "parentNodeName": "LeftForeArm",
+      "parentHumanBodyBones": "leftLowerArm",
+      "translation": [
+        -0.175329342,
+        0,
+        -0.00520541146
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightHand",
+      "nodeName": "RightHand",
+      "nodeIndex": 222,
+      "parentNodeName": "RightForeArm",
+      "parentHumanBodyBones": "rightLowerArm",
+      "translation": [
+        0.17532897,
+        0,
+        -0.00520540029
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftToes",
+      "nodeName": "LeftToeBase",
+      "nodeIndex": 5,
+      "parentNodeName": "LeftFoot",
+      "parentHumanBodyBones": "leftFoot",
+      "translation": [
+        0,
+        -0.0731284,
+        -0.0396266133
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightToes",
+      "nodeName": "RightToeBase",
+      "nodeIndex": 10,
+      "parentNodeName": "RightFoot",
+      "parentHumanBodyBones": "rightFoot",
+      "translation": [
+        0,
+        -0.0731284,
+        -0.0396265835
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftEye",
+      "nodeName": "LeftEye",
+      "nodeIndex": 209,
+      "parentNodeName": "Head",
+      "parentHumanBodyBones": "head",
+      "translation": [
+        -0.03328047,
+        0.0551469326,
+        -0.0047448203
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightEye",
+      "nodeName": "RightEye",
+      "nodeIndex": 213,
+      "parentNodeName": "Head",
+      "parentHumanBodyBones": "head",
+      "translation": [
+        0.03328043,
+        0.0551419258,
+        -0.0047448203
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftThumbProximal",
+      "nodeName": "LeftHandThumb1",
+      "nodeIndex": 101,
+      "parentNodeName": "LeftHand",
+      "parentHumanBodyBones": "leftHand",
+      "translation": [
+        -0.0199998319,
+        -0.007045388,
+        -0.0203842167
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftThumbIntermediate",
+      "nodeName": "LeftHandThumb2",
+      "nodeIndex": 102,
+      "parentNodeName": "LeftHandThumb1",
+      "parentHumanBodyBones": "leftThumbProximal",
+      "translation": [
+        -0.0261109769,
+        -0.00608003139,
+        -0.0159176942
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftThumbDistal",
+      "nodeName": "LeftHandThumb3",
+      "nodeIndex": 103,
+      "parentNodeName": "LeftHandThumb2",
+      "parentHumanBodyBones": "leftThumbIntermediate",
+      "translation": [
+        -0.0236673951,
+        -0.00509142876,
+        -0.0157590453
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftIndexProximal",
+      "nodeName": "LeftHandIndex1",
+      "nodeIndex": 85,
+      "parentNodeName": "LeftHand",
+      "parentHumanBodyBones": "leftHand",
+      "translation": [
+        -0.07359323,
+        0.00129020214,
+        -0.019658085
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftIndexIntermediate",
+      "nodeName": "LeftHandIndex2",
+      "nodeIndex": 86,
+      "parentNodeName": "LeftHandIndex1",
+      "parentHumanBodyBones": "leftIndexProximal",
+      "translation": [
+        -0.0267224461,
+        0,
+        -0.00116672553
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftIndexDistal",
+      "nodeName": "LeftHandIndex3",
+      "nodeIndex": 87,
+      "parentNodeName": "LeftHandIndex2",
+      "parentHumanBodyBones": "leftIndexIntermediate",
+      "translation": [
+        -0.01728046,
+        -0.0004349947,
+        -0.000754488632
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftMiddleProximal",
+      "nodeName": "LeftHandMiddle1",
+      "nodeIndex": 89,
+      "parentNodeName": "LeftHand",
+      "parentHumanBodyBones": "leftHand",
+      "translation": [
+        -0.07224104,
+        0.00177335739,
+        -0.00430237129
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftMiddleIntermediate",
+      "nodeName": "LeftHandMiddle2",
+      "nodeIndex": 90,
+      "parentNodeName": "LeftHandMiddle1",
+      "parentHumanBodyBones": "leftMiddleProximal",
+      "translation": [
+        -0.0332215577,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftMiddleDistal",
+      "nodeName": "LeftHandMiddle3",
+      "nodeIndex": 91,
+      "parentNodeName": "LeftHandMiddle2",
+      "parentHumanBodyBones": "leftMiddleIntermediate",
+      "translation": [
+        -0.021101892,
+        -0.0004349947,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftRingProximal",
+      "nodeName": "LeftHandRing1",
+      "nodeIndex": 97,
+      "parentNodeName": "LeftHand",
+      "parentHumanBodyBones": "leftHand",
+      "translation": [
+        -0.0701865554,
+        0.00041270256,
+        0.0119445361
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftRingIntermediate",
+      "nodeName": "LeftHandRing2",
+      "nodeIndex": 98,
+      "parentNodeName": "LeftHandRing1",
+      "parentHumanBodyBones": "leftRingProximal",
+      "translation": [
+        -0.0297977179,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftRingDistal",
+      "nodeName": "LeftHandRing3",
+      "nodeIndex": 99,
+      "parentNodeName": "LeftHandRing2",
+      "parentHumanBodyBones": "leftRingIntermediate",
+      "translation": [
+        -0.0201687217,
+        -0.0004351139,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftLittleProximal",
+      "nodeName": "LeftHandPinky1",
+      "nodeIndex": 93,
+      "parentNodeName": "LeftHand",
+      "parentHumanBodyBones": "leftHand",
+      "translation": [
+        -0.0660796762,
+        -0.00403523445,
+        0.0259150341
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftLittleIntermediate",
+      "nodeName": "LeftHandPinky2",
+      "nodeIndex": 94,
+      "parentNodeName": "LeftHandPinky1",
+      "parentHumanBodyBones": "leftLittleProximal",
+      "translation": [
+        -0.022191152,
+        0,
+        0.002322588
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "leftLittleDistal",
+      "nodeName": "LeftHandPinky3",
+      "nodeIndex": 95,
+      "parentNodeName": "LeftHandPinky2",
+      "parentHumanBodyBones": "leftLittleIntermediate",
+      "translation": [
+        -0.0134878755,
+        0,
+        0.00144360214
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightThumbProximal",
+      "nodeName": "RightHandThumb1",
+      "nodeIndex": 239,
+      "parentNodeName": "RightHand",
+      "parentHumanBodyBones": "rightHand",
+      "translation": [
+        0.02000001,
+        -0.00705003738,
+        -0.0203842614
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightThumbIntermediate",
+      "nodeName": "RightHandThumb2",
+      "nodeIndex": 240,
+      "parentNodeName": "RightHandThumb1",
+      "parentHumanBodyBones": "rightThumbProximal",
+      "translation": [
+        0.0261109769,
+        -0.006079912,
+        -0.0159177389
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightThumbDistal",
+      "nodeName": "RightHandThumb3",
+      "nodeIndex": 241,
+      "parentNodeName": "RightHandThumb2",
+      "parentHumanBodyBones": "rightThumbIntermediate",
+      "translation": [
+        0.0236679912,
+        -0.00509011745,
+        -0.015759
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightIndexProximal",
+      "nodeName": "RightHandIndex1",
+      "nodeIndex": 223,
+      "parentNodeName": "RightHand",
+      "parentHumanBodyBones": "rightHand",
+      "translation": [
+        0.07359403,
+        0.00128996372,
+        -0.0196581315
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightIndexIntermediate",
+      "nodeName": "RightHandIndex2",
+      "nodeIndex": 224,
+      "parentNodeName": "RightHandIndex1",
+      "parentHumanBodyBones": "rightIndexProximal",
+      "translation": [
+        0.0267219543,
+        0,
+        -0.00116672926
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightIndexDistal",
+      "nodeName": "RightHandIndex3",
+      "nodeIndex": 225,
+      "parentNodeName": "RightHandIndex2",
+      "parentHumanBodyBones": "rightIndexIntermediate",
+      "translation": [
+        0.0172810555,
+        -0.0004400015,
+        -0.0007544905
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightMiddleProximal",
+      "nodeName": "RightHandMiddle1",
+      "nodeIndex": 227,
+      "parentNodeName": "RightHand",
+      "parentHumanBodyBones": "rightHand",
+      "translation": [
+        0.07224101,
+        0.00177001953,
+        -0.004302401
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightMiddleIntermediate",
+      "nodeName": "RightHandMiddle2",
+      "nodeIndex": 228,
+      "parentNodeName": "RightHandMiddle1",
+      "parentHumanBodyBones": "rightMiddleProximal",
+      "translation": [
+        0.03322202,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightMiddleDistal",
+      "nodeName": "RightHandMiddle3",
+      "nodeIndex": 229,
+      "parentNodeName": "RightHandMiddle2",
+      "parentHumanBodyBones": "rightMiddleIntermediate",
+      "translation": [
+        0.0211020112,
+        -0.0004400015,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightRingProximal",
+      "nodeName": "RightHandRing1",
+      "nodeIndex": 235,
+      "parentNodeName": "RightHand",
+      "parentHumanBodyBones": "rightHand",
+      "translation": [
+        0.07018703,
+        0.000409960747,
+        0.0119444989
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightRingIntermediate",
+      "nodeName": "RightHandRing2",
+      "nodeIndex": 236,
+      "parentNodeName": "RightHandRing1",
+      "parentHumanBodyBones": "rightRingProximal",
+      "translation": [
+        0.0297979712,
+        0,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightRingDistal",
+      "nodeName": "RightHandRing3",
+      "nodeIndex": 237,
+      "parentNodeName": "RightHandRing2",
+      "parentHumanBodyBones": "rightRingIntermediate",
+      "translation": [
+        0.0201680064,
+        -0.0004400015,
+        0
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightLittleProximal",
+      "nodeName": "RightHandPinky1",
+      "nodeIndex": 231,
+      "parentNodeName": "RightHand",
+      "parentHumanBodyBones": "rightHand",
+      "translation": [
+        0.0660800338,
+        -0.004040003,
+        0.0259149969
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightLittleIntermediate",
+      "nodeName": "RightHandPinky2",
+      "nodeIndex": 232,
+      "parentNodeName": "RightHandPinky1",
+      "parentHumanBodyBones": "rightLittleProximal",
+      "translation": [
+        0.0221909881,
+        0,
+        0.00232259929
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "humanBodyBones": "rightLittleDistal",
+      "nodeName": "RightHandPinky3",
+      "nodeIndex": 233,
+      "parentNodeName": "RightHandPinky2",
+      "parentHumanBodyBones": "rightLittleIntermediate",
+      "translation": [
+        0.0134879947,
+        0,
+        0.00144360214
+      ],
+      "rotation": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+1. Gerakan ketika dipanggil namanya
+
+Ini biasanya disebut:
+
+Attention Animation
+
+Contoh:
+
+telinga bergerak
+
+kepala menoleh
+
+mata fokus
+
+badan sedikit tegak
+
+Ini sangat penting karena memberi kesan:
+
+karakter "sadar dipanggil"
+
+Biasanya durasinya:
+
+0.5 – 1.5 detik
+2. Gerakan mulut ketika berbicara
+
+Ini disebut:
+
+Lip Sync Animation
+
+Biasanya menggunakan phoneme:
+
+A
+I
+U
+E
+O
+
+Model Kohaku kamu sudah memiliki blendshape ini.
+
+Yang perlu ditambahkan:
+
+jaw movement
+
+cheek movement
+
+subtle head motion saat bicara
+
+3. Gerakan kepala, mimik wajah, mata, telinga saat bicara / diam
+
+Ini disebut:
+
+Facial Micro Animation
+
+Contoh:
+
+saat bicara:
+
+mata berkedip
+
+alis bergerak
+
+telinga twitch
+
+kepala sedikit nod
+
+saat diam:
+
+micro breathing
+
+eye dart
+
+ear flick
+
+Ini membuat karakter tidak terasa seperti robot.
+
+4. Gerakan tangan
+
+Biasanya disebut:
+
+Gesture Animation
+
+Contoh:
+
+menunjuk
+
+menjelaskan
+
+open palm
+
+small wave
+
+Gesture sangat membantu ketika karakter menjelaskan sesuatu.
+
+5. Gerakan tubuh
+
+Ini disebut:
+
+Body Motion
+
+Contoh:
+
+body sway
+
+shift weight
+
+slight lean
+
+Karakter tidak boleh terlalu kaku.
+
+6. Animasi ketika tidak ada aktivitas
+
+Ini disebut:
+
+Idle Animation
+
+Biasanya terdiri dari beberapa variasi:
+
+Idle_A
+Idle_B
+Idle_C
+
+Contoh:
+
+lihat sekitar
+
+main rambut
+
+ekor bergerak
+
+stretching kecil
+
+7. Animasi saat backend sedang memproses pertanyaan
+
+Ini disebut:
+
+Thinking Animation
+
+Contoh:
+
+tangan di dagu
+
+mata melihat ke atas
+
+telinga bergerak
+
+sedikit tilt kepala
+
+Ini penting untuk UX.
+
+2. Animasi Penting Yang Masih Kurang
+
+Ada beberapa kategori animasi yang biasanya ada di sistem AI karakter modern.
+
+1. Listening Animation
+
+Saat user sedang bicara.
+
+Contoh:
+
+kepala sedikit nod
+
+mata fokus
+
+telinga bergerak
+
+Ini memberi kesan:
+
+karakter benar-benar mendengarkan.
+
+2. Reaction Animation
+
+Ketika karakter merespon sesuatu.
+
+Contoh:
+
+ketika user bilang sesuatu lucu:
+
+tertawa
+
+tangan menutup mulut
+
+ketika user bertanya aneh:
+
+kepala tilt
+
+ekspresi bingung
+
+3. Emotion Animation
+
+Ekspresi emosi penuh.
+
+Misalnya:
+
+happy
+confused
+embarrassed
+sad
+excited
+curious
+
+Karakter AI yang bagus selalu punya emotion states.
+
+4. Greeting Animation
+
+Ketika app dibuka.
+
+Contoh:
+
+melambaikan tangan
+
+senyum
+
+sedikit membungkuk
+
+5. Farewell Animation
+
+Ketika user menutup app.
+
+Contoh:
+
+wave
+
+senyum
+
+mata tertutup
+
+6. Surprise Animation
+
+Ketika user mengatakan sesuatu tak terduga.
+
+Contoh:
+
+mata besar
+
+telinga tegak
+
+sedikit mundur
+
+3. Ide Animasi Unik Untuk Karakter Fox Girl
+
+Karena karakter kamu fox girl, ada beberapa animasi yang bisa membuatnya sangat hidup.
+
+1. Tail Emotion System
+
+Ekor bisa menunjukkan emosi.
+
+misalnya:
+
+happy → tail wag
+angry → tail stiff
+curious → tail slow sway
+embarrassed → tail curl
+
+Ini sangat kuat untuk karakter fox.
+
+2. Ear Emotion System
+
+Telinga juga bisa ekspresif.
+
+contoh:
+
+excited → ear up
+sad → ear down
+confused → one ear tilt
+curious → ear twitch
+3. Random Micro Behavior
+
+Setiap beberapa detik:
+
+telinga twitch
+
+lihat sekitar
+
+kedip lambat
+
+pegang rambut
+
+Ini membuat karakter terasa hidup.
+
+4. User Focus System
+
+Jika user menyentuh layar:
+
+karakter:
+
+melihat titik sentuh
+
+bereaksi
+
+5. Personality Animation
+
+Karakter bisa punya sifat.
+
+misalnya:
+
+pemalu
+
+tangan di belakang
+
+head tilt
+
+senyum kecil
+
+atau:
+
+energetic
+
+banyak gesture
+
+gerakan cepat
+

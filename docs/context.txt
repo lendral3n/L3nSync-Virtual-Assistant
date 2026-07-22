@@ -1,0 +1,284 @@
+User Instructions in This Session
+
+“jangan pernah menggunakan kata atau kalimat biasanya, . aku mau bukti asli bukan sekadar spekulasi”
+
+Dokumentasi diminta menggunakan bahasa indonesia.
+
+Dokumentasi hanya berisi informasi nyata dari struktur file/bone yang ditemukan, bukan asumsi.
+
+Meminta penjelasan lengkap dan detail, tidak hanya jawaban singkat.
+
+Meminta step-by-step kecil, bukan langkah besar langsung.
+
+Meminta output yang bisa disimpan ke file text untuk dokumentasi.
+
+Meminta struktur jawaban yang jelas dan sistematis untuk membantu membangun project.
+
+User Goals / Intent
+
+Membuat aplikasi Android AI assistant berbentuk karakter 3D VTuber.
+
+Karakter akan:
+
+muncul sebagai floating overlay di Android
+
+tetap muncul walaupun user membuka aplikasi lain
+
+bersifat seperti AI assistant yang bisa diajak bicara
+
+Karakter menggunakan model VRM yang dibeli dari marketplace Jepang seharga 8000 yen.
+
+Menghubungkan karakter dengan:
+
+AI backend
+
+ElevenLabs TTS
+
+Membuat karakter:
+
+memiliki lip sync dengan suara
+
+memiliki emosi
+
+memiliki gesture dan body movement
+
+tidak terlihat kaku seperti robot
+
+Tujuan akhir:
+
+aplikasi bisa dipublish ke Play Store
+
+Menggunakan Unity + Android Studio untuk membangun aplikasi.
+
+Fokus utama:
+
+FPS tinggi
+
+kualitas karakter tinggi
+
+User Context
+
+Menggunakan MacBook Air.
+
+Menggunakan Unity Editor 6000.3.10f1.
+
+Menggunakan Unity Hub.
+
+Sudah:
+
+install Unity Editor
+
+install Unity modules
+
+membuat project Unity baru
+
+Menggunakan template:
+
+3D (Core)
+
+Sudah mengimport:
+
+UniVRM v0
+
+VRM character file
+
+File karakter yang digunakan:
+
+Kohaku_dress_1.10_VRM
+
+Struktur project Assets yang ditemukan:
+
+Kohaku_dress_1.10_VRM.Avatar
+Kohaku_dress_1.10_VRM.AvatarDescription
+Kohaku_dress_1.10_VRM.BlendShapes
+Kohaku_dress_1.10_VRM.Materials
+Kohaku_dress_1.10_VRM.Meshes
+Kohaku_dress_1.10_VRM.Textures
+Kohaku_dress_1.10_VRM.prefab
+Kohaku_dress_1.10_VRM.vrm
+
+Blendshape yang ditemukan:
+
+A
+I
+U
+E
+O
+Blink
+Blink_L
+Blink_R
+LookUp
+LookDown
+LookLeft
+LookRight
+Joy
+Angry
+Sorrow
+Fun
+Neutral
+
+Bone structure ditemukan di Unity Hierarchy.
+
+Contoh bagian kepala:
+
+Neck
+ └ Head
+     ├ HairFront_A_01
+     ├ HairFront_B_01
+     ├ HairFront_C_01
+     ├ HairLeftBack_01
+     ├ HairLeftSide_A_01
+     ├ HairLeftSide_B
+     ├ HairRightBack_01
+     ├ HairRightSide_A_01
+     ├ HairRightSide_B
+     ├ Head_End
+     ├ Left_Foxear_01
+     ├ Right_Foxear_01
+     ├ LeftEye
+     └ RightEye
+
+Tail structure:
+
+Tail_01
+Tail_02
+Tail_03
+Tail_04
+Tail_05
+Tail_06
+
+Tail berada sejajar dengan Spine.
+
+Ideas / Prompts / Frameworks I Created
+
+User merancang sistem animasi karakter AI dengan daftar berikut:
+
+Lip Sync Animation
+Thinking Animation 
+Idle Animation
+Listening Animation
+
+Attention Animation
+Facial Micro Animation
+Gesture Animation
+Tail emotion system
+Ear emotion system
+Body Motion
+Reaction Animation
+Emotion animation
+Greeting animation
+Farewell animation
+Surprise Animation
+User Focus System
+Personality Animation
+Micro idle behaviour
+Reaction animation
+
+User juga menyatakan sistem interaksi AI seperti ini:
+
+User bertanya
+→ pertanyaan dikirim ke backend
+
+Backend memproses
+
+Selama proses:
+→ karakter menjalankan thinking animation
+
+Ketika jawaban keluar:
+→ karakter berbicara
+→ lip sync mengikuti suara ElevenLabs
+
+User juga ingin sistem karakter seperti:
+
+floating AI assistant
+
+di Android:
+
+app aktif → karakter muncul sebagai overlay transparan
+keluar dari app → karakter tetap ada
+user bisa buka app lain
+Key Decisions or Constraints
+
+Menggunakan Unity untuk rendering karakter VRM.
+
+Menggunakan Android Studio untuk aplikasi Android.
+
+Tidak menggunakan Unity sebagai app utama UI, tetapi sebagai engine karakter.
+
+Karakter harus:
+
+floating overlay
+
+transparan
+
+Menggunakan VRM format.
+
+Model yang dibeli sudah memiliki:
+
+physics
+
+blendshape
+
+VRChat-compatible rig.
+
+User memilih:
+
+VRM v0
+
+untuk menghindari konflik dengan VRM1 importer.
+
+Fokus performa:
+
+prioritas fps character
+kualitas character
+Important Conversation Content
+
+User mengalami beberapa error saat setup environment:
+
+Android Studio runtime architecture error:
+
+Failed to load 'libjli.dylib'
+incompatible architecture x86_64 vs arm64
+
+Unity Package Manager error:
+
+Could not find Unity Package Manager local server application
+
+Unity Diagnostics launcher error:
+
+Launcher process '/usr/bin/open' exited unexpectedly
+
+User sempat mengalami konflik saat mengimport:
+
+VRM 0.x
+VRM 1.0
+
+yang menyebabkan:
+
+Identifier uniqueness violation
+VRM10SpringBoneCollider
+
+Solusi yang dilakukan:
+
+recreate Unity project
+
+import UniVRM v0 saja
+
+Karakter berhasil dimuat dan physics bekerja:
+
+baju dan ekor bergerak saat Play
+
+Saat ini user berada di tahap:
+
+Unity animation setup
+
+dan sedang mencoba membuat animation clips pertama.
+
+User juga mempertanyakan:
+
+kenapa harus membuat animasi manual
+kenapa tidak menggunakan code saja
+
+User masih pemula dalam Unity animation system.
+
+[END_SESSION_CONTEXT_EXPORT]

@@ -1,0 +1,19 @@
+Gambaran Sistem yang Akan Kita Buat
+
+User bicara
+      ↓
+Backend AI memproses
+      ↓
+Unity memutar animasi
+
+
+Contoh :
+
+User bertanya
+→ Kohaku Listening animation
+
+AI sedang berpikir
+→ Kohaku Thinking animation
+
+AI menjawab
+→ LipSync + Gesture animation

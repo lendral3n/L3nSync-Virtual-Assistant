@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Lia VA</string>
+    <string name="overlay_notification_title">Lia sedang aktif</string>
+    <string name="overlay_notification_text">Tap untuk kontrol</string>
+    <string name="overlay_channel_name">Lia Overlay</string>
+    <string name="overlay_channel_description">Notifikasi persistent saat Lia mengambang di layar</string>
+</resources>
