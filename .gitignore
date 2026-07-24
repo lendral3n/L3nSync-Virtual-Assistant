@@ -111,8 +111,11 @@ static/
 android/secrets.properties
 
 # ─── Cleanup 2026-07-22: keluarkan binari besar, download mentah, konten terlarang ───
-# Folder aset MENTAH (VRM/FBX/mocap/download) — yang dipakai sudah dikopi ke unity/Assets
-assets/
+# Folder aset MENTAH (VRM/FBX/mocap/download) di ROOT saja.
+# PENTING: harus pakai leading slash "/assets/". Tanpa slash, "assets/" di macOS
+# (filesystem case-insensitive) IKUT meng-ignore "unity/Assets/" → SELURUH kode hilang!
+/assets/
+/character/
 # Unity generated (regenerable)
 unity/Library/
 unity/Temp/
@@ -128,3 +131,29 @@ android/unityLibrary/
 android/unityexport_tmp/
 # Screenshots verifikasi
 unity/Assets/Screenshots/
+
+# ─── Build output app (JANGAN commit .app 200MB+ & lia_ai.env di dalamnya) ───
+build-mac/
+BvhBrowser/build-mac/
+
+# ─── Binary besar / aset pihak-ketiga berlisensi — JANGAN redistribusi ───────
+# (taruh manual sesuai README; ini regenerable / berlisensi)
+unity/Assets/**/*.vrm
+unity/Assets/uLipSync/Samples/
+unity/Assets/Blender/
+unity/Assets/GeneratedAssets/
+# Model Kohaku hasil import UniVRM (berlisensi NFD) — regen dari .vrm
+unity/Assets/Kohaku_*_VRM.Meshes/
+unity/Assets/Kohaku_*_VRM.Textures/
+unity/Assets/Kohaku_*_VRM.Materials/
+unity/Assets/Kohaku_*_VRM.BlendShapes/
+unity/Assets/Kohaku_*_VRM.prefab
+unity/Assets/5988336557246295560.Meshes/
+
+# API keys (jangan commit)
+lia_ai.env
+**/lia_ai.env
+
+# macOS junk
+.DS_Store
+**/.DS_Store

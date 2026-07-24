@@ -1,0 +1,1732 @@
+﻿========================================================================
+  BONE MAP – KOHAKU VRM
+  Generated: 2026-03-15 20:20:50
+  Object: Kohaku_dress_1.10_VRM
+  Unity Version: 2022.3.62f3
+========================================================================
+
+========================================================================
+SECTION 1 – HUMANOID BONE MAPPING (Animator.GetBoneTransform)
+========================================================================
+  Format: [HumanBodyBone enum]  →  nama bone di model / NULL
+
+  Hips                         OK  → Hips  local=(0.000,0.792,0.000)
+  LeftUpperLeg                 OK  → LeftUpLeg  local=(-0.063,-0.081,0.000)
+  RightUpperLeg                OK  → RightUpLeg  local=(0.063,-0.081,0.000)
+  LeftLowerLeg                 OK  → LeftLeg  local=(0.000,-0.323,0.000)
+  RightLowerLeg                OK  → RightLeg  local=(0.000,-0.323,0.000)
+  LeftFoot                     OK  → LeftFoot  local=(0.000,-0.327,-0.024)
+  RightFoot                    OK  → RightFoot  local=(0.000,-0.327,-0.024)
+  Spine                        OK  → Spine  local=(0.000,0.013,0.000)
+  Chest                        OK  → Chest  local=(0.000,0.086,0.006)
+  Neck                         OK  → Neck  local=(0.000,0.198,-0.024)
+  Head                         OK  → Head  local=(0.000,0.037,0.003)
+  LeftShoulder                 OK  → LeftShoulder  local=(-0.036,0.164,-0.023)
+  RightShoulder                OK  → RightShoulder  local=(0.036,0.164,-0.023)
+  LeftUpperArm                 OK  → LeftArm  local=(-0.045,0.000,0.000)
+  RightUpperArm                OK  → RightArm  local=(0.045,0.000,0.000)
+  LeftLowerArm                 OK  → LeftForeArm  local=(-0.208,0.000,-0.005)
+  RightLowerArm                OK  → RightForeArm  local=(0.208,0.000,-0.005)
+  LeftHand                     OK  → LeftHand  local=(-0.175,0.000,0.005)
+  RightHand                    OK  → RightHand  local=(0.175,0.000,0.005)
+  LeftToes                     OK  → LeftToeBase  local=(0.000,-0.073,0.040)
+  RightToes                    OK  → RightToeBase  local=(0.000,-0.073,0.040)
+  LeftEye                      OK  → LeftEye  local=(-0.033,0.055,0.005)
+  RightEye                     OK  → RightEye  local=(0.033,0.055,0.005)
+  Jaw                          NULL  (tidak ada di model ini)
+  LeftThumbProximal            OK  → LeftHandThumb1  local=(-0.020,-0.007,0.020)
+  LeftThumbIntermediate        OK  → LeftHandThumb2  local=(-0.026,-0.006,0.016)
+  LeftThumbDistal              OK  → LeftHandThumb3  local=(-0.024,-0.005,0.016)
+  LeftIndexProximal            OK  → LeftHandIndex1  local=(-0.074,0.001,0.020)
+  LeftIndexIntermediate        OK  → LeftHandIndex2  local=(-0.027,0.000,0.001)
+  LeftIndexDistal              OK  → LeftHandIndex3  local=(-0.017,0.000,0.001)
+  LeftMiddleProximal           OK  → LeftHandMiddle1  local=(-0.072,0.002,0.004)
+  LeftMiddleIntermediate       OK  → LeftHandMiddle2  local=(-0.033,0.000,0.000)
+  LeftMiddleDistal             OK  → LeftHandMiddle3  local=(-0.021,0.000,0.000)
+  LeftRingProximal             OK  → LeftHandRing1  local=(-0.070,0.000,-0.012)
+  LeftRingIntermediate         OK  → LeftHandRing2  local=(-0.030,0.000,0.000)
+  LeftRingDistal               OK  → LeftHandRing3  local=(-0.020,0.000,0.000)
+  LeftLittleProximal           OK  → LeftHandPinky1  local=(-0.066,-0.004,-0.026)
+  LeftLittleIntermediate       OK  → LeftHandPinky2  local=(-0.022,0.000,-0.002)
+  LeftLittleDistal             OK  → LeftHandPinky3  local=(-0.013,0.000,-0.001)
+  RightThumbProximal           OK  → RightHandThumb1  local=(0.020,-0.007,0.020)
+  RightThumbIntermediate       OK  → RightHandThumb2  local=(0.026,-0.006,0.016)
+  RightThumbDistal             OK  → RightHandThumb3  local=(0.024,-0.005,0.016)
+  RightIndexProximal           OK  → RightHandIndex1  local=(0.074,0.001,0.020)
+  RightIndexIntermediate       OK  → RightHandIndex2  local=(0.027,0.000,0.001)
+  RightIndexDistal             OK  → RightHandIndex3  local=(0.017,0.000,0.001)
+  RightMiddleProximal          OK  → RightHandMiddle1  local=(0.072,0.002,0.004)
+  RightMiddleIntermediate      OK  → RightHandMiddle2  local=(0.033,0.000,0.000)
+  RightMiddleDistal            OK  → RightHandMiddle3  local=(0.021,0.000,0.000)
+  RightRingProximal            OK  → RightHandRing1  local=(0.070,0.000,-0.012)
+  RightRingIntermediate        OK  → RightHandRing2  local=(0.030,0.000,0.000)
+  RightRingDistal              OK  → RightHandRing3  local=(0.020,0.000,0.000)
+  RightLittleProximal          OK  → RightHandPinky1  local=(0.066,-0.004,-0.026)
+  RightLittleIntermediate      OK  → RightHandPinky2  local=(0.022,0.000,-0.002)
+  RightLittleDistal            OK  → RightHandPinky3  local=(0.013,0.000,-0.001)
+  UpperChest                   NULL  (tidak ada di model ini)
+
+  Ditemukan : 53
+  NULL      : 2
+
+========================================================================
+SECTION 2 – FULL TRANSFORM HIERARCHY (semua bone / object)
+========================================================================
+  Format: [depth] indentasi NamaBone  (child_count children)
+          local position: X Y Z
+
+  [00] Kohaku_dress_1.10_VRM  (18 ch)
+  [01]   Armature  (1 ch)
+            pos_local=(0.000,0.038,0.000)  rot_local=(0.0,0.0,0.0)
+  [02]     Hips  (5 ch)
+              pos_local=(0.000,0.792,0.000)  rot_local=(0.0,0.0,0.0)
+  [03]       LeftUpLeg  (1 ch)
+                pos_local=(-0.063,-0.081,0.000)  rot_local=(0.0,0.0,0.0)
+  [04]         LeftLeg  (1 ch)
+                  pos_local=(0.000,-0.323,0.000)  rot_local=(0.0,0.0,0.0)
+  [05]           LeftFoot  (1 ch)
+                    pos_local=(0.000,-0.327,-0.024)  rot_local=(0.0,0.0,0.0)
+  [06]             LeftToeBase  (1 ch)
+                      pos_local=(0.000,-0.073,0.040)  rot_local=(0.0,0.0,0.0)
+  [07]               LeftToe_End  (0 ch)
+                        pos_local=(0.000,0.000,0.048)  rot_local=(0.0,0.0,0.0)
+  [03]       RightUpLeg  (1 ch)
+                pos_local=(0.063,-0.081,0.000)  rot_local=(0.0,0.0,0.0)
+  [04]         RightLeg  (1 ch)
+                  pos_local=(0.000,-0.323,0.000)  rot_local=(0.0,0.0,0.0)
+  [05]           RightFoot  (1 ch)
+                    pos_local=(0.000,-0.327,-0.024)  rot_local=(0.0,0.0,0.0)
+  [06]             RightToeBase  (1 ch)
+                      pos_local=(0.000,-0.073,0.040)  rot_local=(0.0,0.0,0.0)
+  [07]               RightToe_End  (0 ch)
+                        pos_local=(0.000,0.000,0.048)  rot_local=(0.0,0.0,0.0)
+  [03]       SkirtRoot  (12 ch)
+                pos_local=(-0.001,0.005,0.000)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_Back_01  (1 ch)
+                  pos_local=(0.001,-0.023,-0.088)  rot_local=(0.0,0.0,0.0)
+  [05]           Skirt_Back_02  (1 ch)
+                    pos_local=(0.000,-0.061,-0.052)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_Back_03  (1 ch)
+                      pos_local=(0.000,-0.074,-0.060)  rot_local=(0.0,0.0,0.0)
+  [07]               Skirt_Back_04  (1 ch)
+                        pos_local=(0.000,-0.063,-0.056)  rot_local=(0.0,0.0,0.0)
+  [08]                 Skirt_Back_05  (0 ch)
+                          pos_local=(0.000,-0.071,-0.062)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_Front_01  (1 ch)
+                  pos_local=(0.001,-0.026,0.094)  rot_local=(0.0,0.0,0.0)
+  [05]           Skirt_Front_02  (1 ch)
+                    pos_local=(0.000,-0.064,0.000)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_Front_03  (1 ch)
+                      pos_local=(0.000,-0.081,0.000)  rot_local=(0.0,0.0,0.0)
+  [07]               Skirt_Front_04  (0 ch)
+                        pos_local=(0.000,-0.084,0.000)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_Left_A_01  (1 ch)
+                  pos_local=(-0.109,-0.022,0.034)  rot_local=(357.4,1.7,352.0)
+  [05]           Skirt_Left_A_02  (1 ch)
+                    pos_local=(-0.022,-0.069,-0.006)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_Left_A_03  (1 ch)
+                      pos_local=(-0.023,-0.072,-0.006)  rot_local=(0.0,0.0,0.0)
+  [07]               Skirt_Left_A_04  (1 ch)
+                        pos_local=(-0.055,-0.144,-0.011)  rot_local=(0.0,0.0,0.0)
+  [08]                 Skirt_Left_A_05  (1 ch)
+                          pos_local=(-0.053,-0.129,-0.013)  rot_local=(0.0,0.0,0.0)
+  [09]                   Skirt_Left_A_06  (0 ch)
+                            pos_local=(-0.061,-0.148,-0.013)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_Left_B_01  (1 ch)
+                  pos_local=(-0.119,-0.023,-0.008)  rot_local=(0.0,0.0,0.0)
+  [05]           Skirt_Left_B_02  (1 ch)
+                    pos_local=(-0.021,-0.049,-0.012)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_Left_B_03  (1 ch)
+                      pos_local=(-0.028,-0.056,-0.013)  rot_local=(0.0,0.0,0.0)
+  [07]               Skirt_Left_B_04  (1 ch)
+                        pos_local=(-0.061,-0.111,-0.032)  rot_local=(0.0,0.0,0.0)
+  [08]                 Skirt_Left_B_05  (1 ch)
+                          pos_local=(-0.055,-0.101,-0.034)  rot_local=(0.0,0.0,0.0)
+  [09]                   Skirt_Left_B_06  (0 ch)
+                            pos_local=(-0.064,-0.115,-0.040)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_LeftBack_A_01  (1 ch)
+                  pos_local=(-0.106,-0.026,-0.051)  rot_local=(0.0,0.0,0.0)
+  [05]           Skirt_LeftBack_A_02  (1 ch)
+                    pos_local=(-0.019,-0.034,-0.020)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_LeftBack_A_03  (1 ch)
+                      pos_local=(-0.019,-0.039,-0.023)  rot_local=(0.0,0.0,0.0)
+  [07]               Skirt_LeftBack_A_04  (1 ch)
+                        pos_local=(-0.041,-0.083,-0.050)  rot_local=(0.0,0.0,0.0)
+  [08]                 Skirt_LeftBack_A_05  (1 ch)
+                          pos_local=(-0.041,-0.074,-0.049)  rot_local=(0.0,0.0,0.0)
+  [09]                   Skirt_LeftBack_A_06  (0 ch)
+                            pos_local=(-0.046,-0.083,-0.059)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_LeftBack_B_01  (1 ch)
+                  pos_local=(-0.057,-0.025,-0.083)  rot_local=(0.0,0.0,0.0)
+  [05]           Skirt_LeftBack_B_02  (1 ch)
+                    pos_local=(-0.014,-0.065,-0.046)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_LeftBack_B_03  (1 ch)
+                      pos_local=(-0.015,-0.072,-0.060)  rot_local=(0.0,0.0,0.0)
+  [07]               Skirt_LeftBack_B_04  (1 ch)
+                        pos_local=(-0.014,-0.064,-0.055)  rot_local=(0.0,0.0,0.0)
+  [08]                 Skirt_LeftBack_B_05  (0 ch)
+                          pos_local=(-0.016,-0.072,-0.062)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_LeftSide_01  (1 ch)
+                  pos_local=(-0.073,-0.012,0.074)  rot_local=(0.0,0.0,0.0)
+  [05]           Skirt_LeftSide_02  (1 ch)
+                    pos_local=(-0.015,-0.036,0.004)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_LeftSide_03  (0 ch)
+                      pos_local=(-0.020,-0.053,0.003)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_Right_A_01  (1 ch)
+                  pos_local=(0.109,-0.022,0.034)  rot_local=(356.8,357.9,9.6)
+  [05]           Skirt_Right_A_02  (1 ch)
+                    pos_local=(0.022,-0.069,-0.006)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_Right_A_03  (1 ch)
+                      pos_local=(0.023,-0.072,-0.006)  rot_local=(0.0,0.0,0.0)
+  [07]               Skirt_Right_A_04  (1 ch)
+                        pos_local=(0.055,-0.144,-0.011)  rot_local=(0.0,0.0,0.0)
+  [08]                 Skirt_Right_A_05  (1 ch)
+                          pos_local=(0.053,-0.129,-0.013)  rot_local=(0.0,0.0,0.0)
+  [09]                   Skirt_Right_A_06  (0 ch)
+                            pos_local=(0.061,-0.148,-0.013)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_Right_B_01  (1 ch)
+                  pos_local=(0.119,-0.023,-0.008)  rot_local=(0.0,0.0,0.0)
+  [05]           Skirt_Right_B_02  (1 ch)
+                    pos_local=(0.021,-0.049,-0.012)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_Right_B_03  (1 ch)
+                      pos_local=(0.028,-0.056,-0.013)  rot_local=(0.0,0.0,0.0)
+  [07]               Skirt_Right_B_04  (1 ch)
+                        pos_local=(0.061,-0.111,-0.032)  rot_local=(0.0,0.0,0.0)
+  [08]                 Skirt_Right_B_05  (1 ch)
+                          pos_local=(0.055,-0.101,-0.034)  rot_local=(0.0,0.0,0.0)
+  [09]                   Skirt_Right_B_06  (0 ch)
+                            pos_local=(0.064,-0.115,-0.040)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_RightBack_A_01  (1 ch)
+                  pos_local=(0.106,-0.026,-0.051)  rot_local=(0.0,0.0,0.0)
+  [05]           Skirt_RightBack_A_02  (1 ch)
+                    pos_local=(0.019,-0.034,-0.020)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_RightBack_A_03  (1 ch)
+                      pos_local=(0.019,-0.039,-0.023)  rot_local=(0.0,0.0,0.0)
+  [07]               Skirt_RightBack_A_04  (1 ch)
+                        pos_local=(0.041,-0.083,-0.050)  rot_local=(0.0,0.0,0.0)
+  [08]                 Skirt_RightBack_A_05  (1 ch)
+                          pos_local=(0.041,-0.074,-0.049)  rot_local=(0.0,0.0,0.0)
+  [09]                   Skirt_RightBack_A_06  (0 ch)
+                            pos_local=(0.046,-0.083,-0.059)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_RightBack_B_01  (1 ch)
+                  pos_local=(0.057,-0.025,-0.083)  rot_local=(0.0,0.0,0.0)
+  [05]           Skirt_RightBack_B_02  (1 ch)
+                    pos_local=(0.014,-0.065,-0.046)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_RightBack_B_03  (1 ch)
+                      pos_local=(0.015,-0.072,-0.060)  rot_local=(0.0,0.0,0.0)
+  [07]               Skirt_RightBack_B_04  (1 ch)
+                        pos_local=(0.014,-0.064,-0.055)  rot_local=(0.0,0.0,0.0)
+  [08]                 Skirt_RightBack_B_05  (0 ch)
+                          pos_local=(0.016,-0.072,-0.062)  rot_local=(0.0,0.0,0.0)
+  [04]         Skirt_RightSide_01  (1 ch)
+                  pos_local=(0.073,-0.012,0.074)  rot_local=(0.0,0.0,0.0)
+  [05]           Skirt_RightSide_02  (1 ch)
+                    pos_local=(0.015,-0.036,0.004)  rot_local=(0.0,0.0,0.0)
+  [06]             Skirt_RightSide_03  (0 ch)
+                      pos_local=(0.020,-0.053,0.003)  rot_local=(0.0,0.0,0.0)
+  [03]       Spine  (1 ch)
+                pos_local=(0.000,0.013,0.000)  rot_local=(0.0,0.0,0.0)
+  [04]         Chest  (5 ch)
+                  pos_local=(0.000,0.086,0.006)  rot_local=(0.0,0.0,0.0)
+  [05]           LeftBreast  (1 ch)
+                    pos_local=(-0.042,0.072,0.014)  rot_local=(0.0,0.0,0.0)
+  [06]             LeftBreast_End  (0 ch)
+                      pos_local=(-0.037,0.022,0.115)  rot_local=(0.0,0.0,0.0)
+  [05]           LeftShoulder  (1 ch)
+                    pos_local=(-0.036,0.164,-0.023)  rot_local=(0.0,0.0,0.0)
+  [06]             LeftArm  (1 ch)
+                      pos_local=(-0.045,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [07]               LeftForeArm  (2 ch)
+                        pos_local=(-0.208,0.000,-0.005)  rot_local=(0.0,0.0,0.0)
+  [08]                 Left_Sode_01  (1 ch)
+                          pos_local=(-0.033,-0.034,0.009)  rot_local=(0.0,0.0,0.0)
+  [09]                   Left_Sode_02  (1 ch)
+                            pos_local=(-0.075,-0.032,0.000)  rot_local=(0.0,0.0,0.0)
+  [10]                     Left_Sode_03  (0 ch)
+                              pos_local=(-0.082,-0.036,0.000)  rot_local=(0.0,0.0,0.0)
+  [08]                 LeftHand  (5 ch)
+                          pos_local=(-0.175,0.000,0.005)  rot_local=(0.0,0.0,0.0)
+  [09]                   LeftHandIndex1  (1 ch)
+                            pos_local=(-0.074,0.001,0.020)  rot_local=(0.0,0.0,0.0)
+  [10]                     LeftHandIndex2  (1 ch)
+                              pos_local=(-0.027,0.000,0.001)  rot_local=(0.0,0.0,0.0)
+  [11]                       LeftHandIndex3  (1 ch)
+                                pos_local=(-0.017,0.000,0.001)  rot_local=(0.0,0.0,0.0)
+  [12]                         LeftHandIndex4  (0 ch)
+                                  pos_local=(-0.017,0.000,0.001)  rot_local=(0.0,0.0,0.0)
+  [09]                   LeftHandMiddle1  (1 ch)
+                            pos_local=(-0.072,0.002,0.004)  rot_local=(0.0,0.0,0.0)
+  [10]                     LeftHandMiddle2  (1 ch)
+                              pos_local=(-0.033,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [11]                       LeftHandMiddle3  (1 ch)
+                                pos_local=(-0.021,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [12]                         LeftHandMiddle4  (0 ch)
+                                  pos_local=(-0.019,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [09]                   LeftHandPinky1  (1 ch)
+                            pos_local=(-0.066,-0.004,-0.026)  rot_local=(0.0,0.0,0.0)
+  [10]                     LeftHandPinky2  (1 ch)
+                              pos_local=(-0.022,0.000,-0.002)  rot_local=(0.0,0.0,0.0)
+  [11]                       LeftHandPinky3  (1 ch)
+                                pos_local=(-0.013,0.000,-0.001)  rot_local=(0.0,0.0,0.0)
+  [12]                         LeftHandPinky4  (0 ch)
+                                  pos_local=(-0.015,0.000,-0.002)  rot_local=(0.0,0.0,0.0)
+  [09]                   LeftHandRing1  (1 ch)
+                            pos_local=(-0.070,0.000,-0.012)  rot_local=(0.0,0.0,0.0)
+  [10]                     LeftHandRing2  (1 ch)
+                              pos_local=(-0.030,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [11]                       LeftHandRing3  (1 ch)
+                                pos_local=(-0.020,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [12]                         LeftHandRing4  (0 ch)
+                                  pos_local=(-0.018,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [09]                   LeftHandThumb1  (1 ch)
+                            pos_local=(-0.020,-0.007,0.020)  rot_local=(0.0,0.0,0.0)
+  [10]                     LeftHandThumb2  (1 ch)
+                              pos_local=(-0.026,-0.006,0.016)  rot_local=(0.0,0.0,0.0)
+  [11]                       LeftHandThumb3  (1 ch)
+                                pos_local=(-0.024,-0.005,0.016)  rot_local=(0.0,0.0,0.0)
+  [12]                         LeftHandThumb4  (0 ch)
+                                  pos_local=(-0.013,-0.002,0.009)  rot_local=(0.0,0.0,0.0)
+  [05]           Neck  (1 ch)
+                    pos_local=(0.000,0.198,-0.024)  rot_local=(0.0,0.0,0.0)
+  [06]             Head  (14 ch)
+                      pos_local=(0.000,0.037,0.003)  rot_local=(0.0,0.0,0.0)
+  [07]               HairFront_A_01  (1 ch)
+                        pos_local=(0.000,0.128,0.097)  rot_local=(0.0,0.0,0.0)
+  [08]                 HairFront_A_02  (0 ch)
+                          pos_local=(0.000,-0.083,0.006)  rot_local=(0.0,0.0,0.0)
+  [07]               HairFront_B_01  (1 ch)
+                        pos_local=(-0.053,0.130,0.080)  rot_local=(0.0,0.0,0.0)
+  [08]                 HairFront_B_02  (0 ch)
+                          pos_local=(-0.006,-0.088,0.000)  rot_local=(0.0,0.0,0.0)
+  [07]               HairFront_C_01  (1 ch)
+                        pos_local=(0.053,0.130,0.080)  rot_local=(0.0,0.0,0.0)
+  [08]                 HairFront_C_02  (0 ch)
+                          pos_local=(0.006,-0.088,0.000)  rot_local=(0.0,0.0,0.0)
+  [07]               HairLeftBack_01  (1 ch)
+                        pos_local=(-0.043,0.073,-0.047)  rot_local=(0.0,0.0,0.0)
+  [08]                 HairLeftBack_02  (1 ch)
+                          pos_local=(-0.019,-0.081,-0.026)  rot_local=(0.0,0.0,0.0)
+  [09]                   HairLeftBack_03  (1 ch)
+                            pos_local=(-0.028,-0.095,-0.038)  rot_local=(0.0,0.0,0.0)
+  [10]                     HairLeftBack_04  (6 ch)
+                              pos_local=(-0.004,-0.020,-0.004)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairLeftBack_A_01  (1 ch)
+                                pos_local=(0.001,-0.009,-0.003)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairLeftBack_A_02  (1 ch)
+                                  pos_local=(-0.025,-0.114,-0.039)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairLeftBack_A_03  (1 ch)
+                                    pos_local=(-0.071,-0.177,-0.045)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairLeftBack_A_04  (1 ch)
+                                      pos_local=(-0.091,-0.190,0.022)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairLeftBack_A_05  (0 ch)
+                                        pos_local=(0.059,-0.108,0.065)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairLeftBack_B_01  (1 ch)
+                                pos_local=(0.008,-0.014,-0.001)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairLeftBack_B_02  (1 ch)
+                                  pos_local=(-0.027,-0.117,-0.025)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairLeftBack_B_03  (1 ch)
+                                    pos_local=(-0.068,-0.172,0.001)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairLeftBack_B_04  (2 ch)
+                                      pos_local=(0.007,-0.161,0.027)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairLeftBack_B_05  (0 ch)
+                                        pos_local=(-0.119,-0.128,-0.071)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairLeftBack_B_06  (1 ch)
+                                        pos_local=(-0.006,-0.077,-0.042)  rot_local=(0.0,0.0,0.0)
+  [16]                                 HairLeftBack_B_07  (0 ch)
+                                          pos_local=(-0.079,-0.040,-0.055)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairLeftBack_C_01  (1 ch)
+                                pos_local=(-0.009,-0.009,-0.003)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairLeftBack_C_02  (1 ch)
+                                  pos_local=(-0.029,-0.121,0.000)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairLeftBack_C_03  (1 ch)
+                                    pos_local=(-0.074,-0.158,0.038)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairLeftBack_C_04  (1 ch)
+                                      pos_local=(-0.118,-0.188,-0.059)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairLeftBack_C_05  (0 ch)
+                                        pos_local=(0.059,-0.160,-0.098)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairLeftBack_D_01  (1 ch)
+                                pos_local=(0.003,-0.014,0.005)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairLeftBack_D_02  (1 ch)
+                                  pos_local=(-0.025,-0.137,0.014)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairLeftBack_D_03  (1 ch)
+                                    pos_local=(-0.055,-0.156,-0.057)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairLeftBack_D_04  (1 ch)
+                                      pos_local=(-0.039,-0.184,-0.020)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairLeftBack_D_05  (0 ch)
+                                        pos_local=(-0.097,-0.058,0.069)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairLeftBack_E_01  (1 ch)
+                                pos_local=(0.008,-0.018,0.002)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairLeftBack_E_02  (1 ch)
+                                  pos_local=(-0.002,-0.109,0.006)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairLeftBack_E_03  (1 ch)
+                                    pos_local=(-0.034,-0.125,-0.004)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairLeftBack_E_04  (1 ch)
+                                      pos_local=(-0.095,-0.159,-0.064)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairLeftBack_E_05  (0 ch)
+                                        pos_local=(-0.018,-0.174,0.039)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairLeftBack_F_01  (1 ch)
+                                pos_local=(-0.005,-0.005,0.002)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairLeftBack_F_02  (1 ch)
+                                  pos_local=(-0.020,-0.141,0.004)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairLeftBack_F_03  (1 ch)
+                                    pos_local=(-0.077,-0.139,-0.018)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairLeftBack_F_04  (1 ch)
+                                      pos_local=(-0.115,-0.116,-0.078)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairLeftBack_F_05  (1 ch)
+                                        pos_local=(-0.009,-0.163,-0.016)  rot_local=(0.0,0.0,0.0)
+  [16]                                 HairLeftBack_F_06  (0 ch)
+                                          pos_local=(0.142,-0.024,0.117)  rot_local=(0.0,0.0,0.0)
+  [07]               HairLeftSide_A_01  (1 ch)
+                        pos_local=(-0.080,0.071,0.017)  rot_local=(0.0,0.0,0.0)
+  [08]                 HairLeftSide_A_02  (0 ch)
+                          pos_local=(0.024,-0.075,0.021)  rot_local=(0.0,0.0,0.0)
+  [07]               HairLeftSide_B  (2 ch)
+                        pos_local=(-0.082,0.070,0.010)  rot_local=(0.0,0.0,0.0)
+  [08]                 HairLeftSide_B_05  (1 ch)
+                          pos_local=(0.001,-0.059,-0.001)  rot_local=(0.0,0.0,0.0)
+  [09]                   HairLeftSide_B_06  (1 ch)
+                            pos_local=(0.002,-0.080,0.038)  rot_local=(0.0,0.0,0.0)
+  [10]                     HairLeftSide_B_07  (0 ch)
+                              pos_local=(0.029,-0.090,0.090)  rot_local=(0.0,0.0,0.0)
+  [08]                 HairLeftSideB_B_01  (1 ch)
+                          pos_local=(0.013,-0.059,0.017)  rot_local=(0.0,0.0,0.0)
+  [09]                   HairLeftSide_B_02  (1 ch)
+                            pos_local=(0.007,-0.080,0.020)  rot_local=(0.0,0.0,0.0)
+  [10]                     HairLeftSide_B_03  (0 ch)
+                              pos_local=(0.037,-0.062,0.080)  rot_local=(0.0,0.0,0.0)
+  [07]               HairRightBack_01  (1 ch)
+                        pos_local=(0.043,0.073,-0.047)  rot_local=(0.0,0.0,0.0)
+  [08]                 HairRightBack_02  (1 ch)
+                          pos_local=(0.019,-0.081,-0.026)  rot_local=(0.0,0.0,0.0)
+  [09]                   HairRightBack_03  (1 ch)
+                            pos_local=(0.028,-0.095,-0.038)  rot_local=(0.0,0.0,0.0)
+  [10]                     HairRightBack_04  (6 ch)
+                              pos_local=(0.004,-0.020,-0.004)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairRightBack_A_01  (1 ch)
+                                pos_local=(-0.001,-0.009,-0.003)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairRightBack_A_02  (1 ch)
+                                  pos_local=(0.025,-0.114,-0.039)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairRightBack_A_03  (1 ch)
+                                    pos_local=(0.071,-0.177,-0.045)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairRightBack_A_04  (1 ch)
+                                      pos_local=(0.091,-0.190,0.022)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairRightBack_A_05  (0 ch)
+                                        pos_local=(-0.059,-0.108,0.065)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairRightBack_B_01  (1 ch)
+                                pos_local=(-0.008,-0.014,-0.001)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairRightBack_B_02  (1 ch)
+                                  pos_local=(0.027,-0.117,-0.025)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairRightBack_B_03  (1 ch)
+                                    pos_local=(0.068,-0.172,0.001)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairRightBack_B_04  (2 ch)
+                                      pos_local=(-0.007,-0.161,0.027)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairRightBack_B_05  (0 ch)
+                                        pos_local=(0.119,-0.128,-0.071)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairRightBack_B_06  (1 ch)
+                                        pos_local=(0.006,-0.077,-0.042)  rot_local=(0.0,0.0,0.0)
+  [16]                                 HairRightBack_B_07  (0 ch)
+                                          pos_local=(0.079,-0.040,-0.055)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairRightBack_C_01  (1 ch)
+                                pos_local=(0.009,-0.009,-0.003)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairRightBack_C_02  (1 ch)
+                                  pos_local=(0.029,-0.121,0.000)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairRightBack_C_03  (1 ch)
+                                    pos_local=(0.074,-0.158,0.038)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairRightBack_C_04  (1 ch)
+                                      pos_local=(0.118,-0.188,-0.059)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairRightBack_C_05  (0 ch)
+                                        pos_local=(-0.059,-0.160,-0.098)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairRightBack_D_01  (1 ch)
+                                pos_local=(-0.003,-0.014,0.005)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairRightBack_D_02  (1 ch)
+                                  pos_local=(0.025,-0.137,0.014)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairRightBack_D_03  (1 ch)
+                                    pos_local=(0.055,-0.156,-0.057)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairRightBack_D_04  (1 ch)
+                                      pos_local=(0.039,-0.184,-0.020)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairRightBack_D_05  (0 ch)
+                                        pos_local=(0.097,-0.058,0.069)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairRightBack_E_01  (1 ch)
+                                pos_local=(-0.008,-0.018,0.002)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairRightBack_E_02  (1 ch)
+                                  pos_local=(0.002,-0.109,0.006)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairRightBack_E_03  (1 ch)
+                                    pos_local=(0.034,-0.125,-0.004)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairRightBack_E_04  (1 ch)
+                                      pos_local=(0.095,-0.159,-0.064)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairRightBack_E_05  (0 ch)
+                                        pos_local=(0.018,-0.174,0.039)  rot_local=(0.0,0.0,0.0)
+  [11]                       HairRightBack_F_01  (1 ch)
+                                pos_local=(0.005,-0.005,0.002)  rot_local=(0.0,0.0,0.0)
+  [12]                         HairRightBack_F_02  (1 ch)
+                                  pos_local=(0.020,-0.141,0.004)  rot_local=(0.0,0.0,0.0)
+  [13]                           HairRightBack_F_03  (1 ch)
+                                    pos_local=(0.077,-0.139,-0.018)  rot_local=(0.0,0.0,0.0)
+  [14]                             HairRightBack_F_04  (1 ch)
+                                      pos_local=(0.115,-0.116,-0.078)  rot_local=(0.0,0.0,0.0)
+  [15]                               HairRightBack_F_05  (1 ch)
+                                        pos_local=(0.009,-0.163,-0.016)  rot_local=(0.0,0.0,0.0)
+  [16]                                 HairRightBack_F_06  (0 ch)
+                                          pos_local=(-0.142,-0.024,0.117)  rot_local=(0.0,0.0,0.0)
+  [07]               HairRightSide_A_01  (1 ch)
+                        pos_local=(0.080,0.071,0.017)  rot_local=(0.0,0.0,0.0)
+  [08]                 HairRightSide_A_02  (0 ch)
+                          pos_local=(-0.024,-0.075,0.021)  rot_local=(0.0,0.0,0.0)
+  [07]               HairRightSide_B  (2 ch)
+                        pos_local=(0.082,0.070,0.010)  rot_local=(0.0,0.0,0.0)
+  [08]                 HairRightSide_B_05  (1 ch)
+                          pos_local=(-0.001,-0.058,-0.001)  rot_local=(0.0,0.0,0.0)
+  [09]                   HairRightSide_B_06  (1 ch)
+                            pos_local=(-0.002,-0.080,0.038)  rot_local=(0.0,0.0,0.0)
+  [10]                     HairRightSide_B_07  (0 ch)
+                              pos_local=(-0.029,-0.090,0.090)  rot_local=(0.0,0.0,0.0)
+  [08]                 HairRightSideB_B_01  (1 ch)
+                          pos_local=(-0.013,-0.058,0.017)  rot_local=(0.0,0.0,0.0)
+  [09]                   HairRightSide_B_02  (1 ch)
+                            pos_local=(-0.007,-0.080,0.020)  rot_local=(0.0,0.0,0.0)
+  [10]                     HairRightSide_B_03  (0 ch)
+                              pos_local=(-0.037,-0.062,0.080)  rot_local=(0.0,0.0,0.0)
+  [07]               Head_End  (0 ch)
+                        pos_local=(0.000,0.201,-0.003)  rot_local=(0.0,0.0,0.0)
+  [07]               Left_Foxear_01  (1 ch)
+                        pos_local=(-0.042,0.180,0.015)  rot_local=(0.0,0.0,0.0)
+  [08]                 Left_Foxear_02  (1 ch)
+                          pos_local=(-0.009,0.067,0.016)  rot_local=(0.0,0.0,0.0)
+  [09]                   Left_Foxear_03  (0 ch)
+                            pos_local=(0.011,0.082,0.018)  rot_local=(0.0,0.0,0.0)
+  [07]               LeftEye  (0 ch)
+                        pos_local=(-0.033,0.055,0.005)  rot_local=(0.0,0.0,0.0)
+  [07]               Right_Foxear_01  (1 ch)
+                        pos_local=(0.042,0.180,0.015)  rot_local=(0.0,0.0,0.0)
+  [08]                 Right_Foxear_02  (1 ch)
+                          pos_local=(0.009,0.067,0.016)  rot_local=(0.0,0.0,0.0)
+  [09]                   Right_Foxear_03  (0 ch)
+                            pos_local=(-0.011,0.082,0.018)  rot_local=(0.0,0.0,0.0)
+  [07]               RightEye  (0 ch)
+                        pos_local=(0.033,0.055,0.005)  rot_local=(0.0,0.0,0.0)
+  [05]           RightBreast  (1 ch)
+                    pos_local=(0.042,0.072,0.014)  rot_local=(0.0,0.0,0.0)
+  [06]             RightBreast_End  (0 ch)
+                      pos_local=(0.037,0.022,0.115)  rot_local=(0.0,0.0,0.0)
+  [05]           RightShoulder  (1 ch)
+                    pos_local=(0.036,0.164,-0.023)  rot_local=(0.0,0.0,0.0)
+  [06]             RightArm  (1 ch)
+                      pos_local=(0.045,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [07]               RightForeArm  (2 ch)
+                        pos_local=(0.208,0.000,-0.005)  rot_local=(0.0,0.0,0.0)
+  [08]                 Right_Sode_01  (1 ch)
+                          pos_local=(0.033,-0.034,0.009)  rot_local=(0.0,0.0,0.0)
+  [09]                   Right_Sode_02  (1 ch)
+                            pos_local=(0.075,-0.032,0.000)  rot_local=(0.0,0.0,0.0)
+  [10]                     Right_Sode_03  (0 ch)
+                              pos_local=(0.082,-0.036,0.000)  rot_local=(0.0,0.0,0.0)
+  [08]                 RightHand  (5 ch)
+                          pos_local=(0.175,0.000,0.005)  rot_local=(0.0,0.0,0.0)
+  [09]                   RightHandIndex1  (1 ch)
+                            pos_local=(0.074,0.001,0.020)  rot_local=(0.0,0.0,0.0)
+  [10]                     RightHandIndex2  (1 ch)
+                              pos_local=(0.027,0.000,0.001)  rot_local=(0.0,0.0,0.0)
+  [11]                       RightHandIndex3  (1 ch)
+                                pos_local=(0.017,0.000,0.001)  rot_local=(0.0,0.0,0.0)
+  [12]                         RightHandIndex4  (0 ch)
+                                  pos_local=(0.017,0.000,0.001)  rot_local=(0.0,0.0,0.0)
+  [09]                   RightHandMiddle1  (1 ch)
+                            pos_local=(0.072,0.002,0.004)  rot_local=(0.0,0.0,0.0)
+  [10]                     RightHandMiddle2  (1 ch)
+                              pos_local=(0.033,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [11]                       RightHandMiddle3  (1 ch)
+                                pos_local=(0.021,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [12]                         RightHandMiddle4  (0 ch)
+                                  pos_local=(0.019,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [09]                   RightHandPinky1  (1 ch)
+                            pos_local=(0.066,-0.004,-0.026)  rot_local=(0.0,0.0,0.0)
+  [10]                     RightHandPinky2  (1 ch)
+                              pos_local=(0.022,0.000,-0.002)  rot_local=(0.0,0.0,0.0)
+  [11]                       RightHandPinky3  (1 ch)
+                                pos_local=(0.013,0.000,-0.001)  rot_local=(0.0,0.0,0.0)
+  [12]                         RightHandPinky4  (0 ch)
+                                  pos_local=(0.015,0.000,-0.002)  rot_local=(0.0,0.0,0.0)
+  [09]                   RightHandRing1  (1 ch)
+                            pos_local=(0.070,0.000,-0.012)  rot_local=(0.0,0.0,0.0)
+  [10]                     RightHandRing2  (1 ch)
+                              pos_local=(0.030,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [11]                       RightHandRing3  (1 ch)
+                                pos_local=(0.020,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [12]                         RightHandRing4  (0 ch)
+                                  pos_local=(0.018,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [09]                   RightHandThumb1  (1 ch)
+                            pos_local=(0.020,-0.007,0.020)  rot_local=(0.0,0.0,0.0)
+  [10]                     RightHandThumb2  (1 ch)
+                              pos_local=(0.026,-0.006,0.016)  rot_local=(0.0,0.0,0.0)
+  [11]                       RightHandThumb3  (1 ch)
+                                pos_local=(0.024,-0.005,0.016)  rot_local=(0.0,0.0,0.0)
+  [12]                         RightHandThumb4  (0 ch)
+                                  pos_local=(0.013,-0.002,0.009)  rot_local=(0.0,0.0,0.0)
+  [03]       Tail_01  (1 ch)
+                pos_local=(0.000,-0.014,-0.028)  rot_local=(0.0,0.0,0.0)
+  [04]         Tail_02  (1 ch)
+                  pos_local=(0.000,0.007,-0.029)  rot_local=(0.0,0.0,0.0)
+  [05]           Tail_03  (1 ch)
+                    pos_local=(0.000,-0.030,-0.073)  rot_local=(0.0,0.0,0.0)
+  [06]             Tail_04  (1 ch)
+                      pos_local=(0.000,-0.109,-0.079)  rot_local=(0.0,0.0,0.0)
+  [07]               Tail_05  (1 ch)
+                        pos_local=(0.000,-0.076,-0.139)  rot_local=(0.0,0.0,0.0)
+  [08]                 Tail_06  (0 ch)
+                          pos_local=(0.000,0.061,-0.147)  rot_local=(0.0,0.0,0.0)
+  [01]   Body  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Bodybase  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Foxear  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Hair_back  (0 ch)
+            pos_local=(-0.200,0.022,-0.139)  rot_local=(351.7,270.1,355.7)
+  [01]   Kohaku_Hair_front  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Kamikazari  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Leotard  (0 ch)
+            pos_local=(-0.092,0.015,-0.103)  rot_local=(348.9,244.7,354.8)
+  [01]   Kohaku_Nail  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Pants  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Shoes  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Skirt  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Socks  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Sode  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Tail  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Tops1  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   Kohaku_Tops2  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+  [01]   secondary  (0 ch)
+            pos_local=(0.000,0.000,0.000)  rot_local=(0.0,0.0,0.0)
+
+  TOTAL TRANSFORM: 267
+
+========================================================================
+SECTION 3 – BONE SEARCH BY KEYWORD
+========================================================================
+  Mencari nama bone yang mengandung kata kunci berikut.
+  Format: path lengkap dari root
+
+  ── [Arm]  (5 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature  pos=(0.000,0.038,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm  pos=(-0.045,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm  pos=(-0.208,0.000,-0.005)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm  pos=(0.045,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm  pos=(0.208,0.000,-0.005)
+
+  ── [Breast]  (4 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftBreast  pos=(-0.042,0.072,0.014)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftBreast/LeftBreast_End  pos=(-0.037,0.022,0.115)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightBreast  pos=(0.042,0.072,0.014)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightBreast/RightBreast_End  pos=(0.037,0.022,0.115)
+
+  ── [Chest]  (1 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest  pos=(0.000,0.086,0.006)
+
+  ── [Ear]  (9 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm  pos=(-0.208,0.000,-0.005)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Left_Foxear_01  pos=(-0.042,0.180,0.015)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Left_Foxear_01/Left_Foxear_02  pos=(-0.009,0.067,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Left_Foxear_01/Left_Foxear_02/Left_Foxear_03  pos=(0.011,0.082,0.018)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Right_Foxear_01  pos=(0.042,0.180,0.015)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Right_Foxear_01/Right_Foxear_02  pos=(0.009,0.067,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Right_Foxear_01/Right_Foxear_02/Right_Foxear_03  pos=(-0.011,0.082,0.018)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm  pos=(0.208,0.000,-0.005)
+    Kohaku_dress_1.10_VRM/Kohaku_Foxear  pos=(0.000,0.000,0.000)
+
+  ── [Eye]  (2 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/LeftEye  pos=(-0.033,0.055,0.005)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/RightEye  pos=(0.033,0.055,0.005)
+
+  ── [Foot]  (2 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/LeftUpLeg/LeftLeg/LeftFoot  pos=(0.000,-0.327,-0.024)
+    Kohaku_dress_1.10_VRM/Armature/Hips/RightUpLeg/RightLeg/RightFoot  pos=(0.000,-0.327,-0.024)
+
+  ── [ForeArm]  (2 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm  pos=(-0.208,0.000,-0.005)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm  pos=(0.208,0.000,-0.005)
+
+  ── [Foxear]  (7 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Left_Foxear_01  pos=(-0.042,0.180,0.015)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Left_Foxear_01/Left_Foxear_02  pos=(-0.009,0.067,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Left_Foxear_01/Left_Foxear_02/Left_Foxear_03  pos=(0.011,0.082,0.018)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Right_Foxear_01  pos=(0.042,0.180,0.015)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Right_Foxear_01/Right_Foxear_02  pos=(0.009,0.067,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Right_Foxear_01/Right_Foxear_02/Right_Foxear_03  pos=(-0.011,0.082,0.018)
+    Kohaku_dress_1.10_VRM/Kohaku_Foxear  pos=(0.000,0.000,0.000)
+
+  ── [Hair]  (100 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairFront_A_01  pos=(0.000,0.128,0.097)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairFront_A_01/HairFront_A_02  pos=(0.000,-0.083,0.006)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairFront_B_01  pos=(-0.053,0.130,0.080)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairFront_B_01/HairFront_B_02  pos=(-0.006,-0.088,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairFront_C_01  pos=(0.053,0.130,0.080)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairFront_C_01/HairFront_C_02  pos=(0.006,-0.088,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01  pos=(-0.043,0.073,-0.047)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02  pos=(-0.019,-0.081,-0.026)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03  pos=(-0.028,-0.095,-0.038)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04  pos=(-0.004,-0.020,-0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_A_01  pos=(0.001,-0.009,-0.003)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_A_01/HairLeftBack_A_02  pos=(-0.025,-0.114,-0.039)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_A_01/HairLeftBack_A_02/HairLeftBack_A_03  pos=(-0.071,-0.177,-0.045)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_A_01/HairLeftBack_A_02/HairLeftBack_A_03/HairLeftBack_A_04  pos=(-0.091,-0.190,0.022)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_A_01/HairLeftBack_A_02/HairLeftBack_A_03/HairLeftBack_A_04/HairLeftBack_A_05  pos=(0.059,-0.108,0.065)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_B_01  pos=(0.008,-0.014,-0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_B_01/HairLeftBack_B_02  pos=(-0.027,-0.117,-0.025)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_B_01/HairLeftBack_B_02/HairLeftBack_B_03  pos=(-0.068,-0.172,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_B_01/HairLeftBack_B_02/HairLeftBack_B_03/HairLeftBack_B_04  pos=(0.007,-0.161,0.027)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_B_01/HairLeftBack_B_02/HairLeftBack_B_03/HairLeftBack_B_04/HairLeftBack_B_05  pos=(-0.119,-0.128,-0.071)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_B_01/HairLeftBack_B_02/HairLeftBack_B_03/HairLeftBack_B_04/HairLeftBack_B_06  pos=(-0.006,-0.077,-0.042)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_B_01/HairLeftBack_B_02/HairLeftBack_B_03/HairLeftBack_B_04/HairLeftBack_B_06/HairLeftBack_B_07  pos=(-0.079,-0.040,-0.055)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_C_01  pos=(-0.009,-0.009,-0.003)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_C_01/HairLeftBack_C_02  pos=(-0.029,-0.121,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_C_01/HairLeftBack_C_02/HairLeftBack_C_03  pos=(-0.074,-0.158,0.038)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_C_01/HairLeftBack_C_02/HairLeftBack_C_03/HairLeftBack_C_04  pos=(-0.118,-0.188,-0.059)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_C_01/HairLeftBack_C_02/HairLeftBack_C_03/HairLeftBack_C_04/HairLeftBack_C_05  pos=(0.059,-0.160,-0.098)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_D_01  pos=(0.003,-0.014,0.005)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_D_01/HairLeftBack_D_02  pos=(-0.025,-0.137,0.014)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_D_01/HairLeftBack_D_02/HairLeftBack_D_03  pos=(-0.055,-0.156,-0.057)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_D_01/HairLeftBack_D_02/HairLeftBack_D_03/HairLeftBack_D_04  pos=(-0.039,-0.184,-0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_D_01/HairLeftBack_D_02/HairLeftBack_D_03/HairLeftBack_D_04/HairLeftBack_D_05  pos=(-0.097,-0.058,0.069)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_E_01  pos=(0.008,-0.018,0.002)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_E_01/HairLeftBack_E_02  pos=(-0.002,-0.109,0.006)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_E_01/HairLeftBack_E_02/HairLeftBack_E_03  pos=(-0.034,-0.125,-0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_E_01/HairLeftBack_E_02/HairLeftBack_E_03/HairLeftBack_E_04  pos=(-0.095,-0.159,-0.064)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_E_01/HairLeftBack_E_02/HairLeftBack_E_03/HairLeftBack_E_04/HairLeftBack_E_05  pos=(-0.018,-0.174,0.039)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_F_01  pos=(-0.005,-0.005,0.002)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_F_01/HairLeftBack_F_02  pos=(-0.020,-0.141,0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_F_01/HairLeftBack_F_02/HairLeftBack_F_03  pos=(-0.077,-0.139,-0.018)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_F_01/HairLeftBack_F_02/HairLeftBack_F_03/HairLeftBack_F_04  pos=(-0.115,-0.116,-0.078)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_F_01/HairLeftBack_F_02/HairLeftBack_F_03/HairLeftBack_F_04/HairLeftBack_F_05  pos=(-0.009,-0.163,-0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftBack_01/HairLeftBack_02/HairLeftBack_03/HairLeftBack_04/HairLeftBack_F_01/HairLeftBack_F_02/HairLeftBack_F_03/HairLeftBack_F_04/HairLeftBack_F_05/HairLeftBack_F_06  pos=(0.142,-0.024,0.117)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftSide_A_01  pos=(-0.080,0.071,0.017)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftSide_A_01/HairLeftSide_A_02  pos=(0.024,-0.075,0.021)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftSide_B  pos=(-0.082,0.070,0.010)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftSide_B/HairLeftSide_B_05  pos=(0.001,-0.059,-0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftSide_B/HairLeftSide_B_05/HairLeftSide_B_06  pos=(0.002,-0.080,0.038)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftSide_B/HairLeftSide_B_05/HairLeftSide_B_06/HairLeftSide_B_07  pos=(0.029,-0.090,0.090)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftSide_B/HairLeftSideB_B_01  pos=(0.013,-0.059,0.017)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftSide_B/HairLeftSideB_B_01/HairLeftSide_B_02  pos=(0.007,-0.080,0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairLeftSide_B/HairLeftSideB_B_01/HairLeftSide_B_02/HairLeftSide_B_03  pos=(0.037,-0.062,0.080)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01  pos=(0.043,0.073,-0.047)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02  pos=(0.019,-0.081,-0.026)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03  pos=(0.028,-0.095,-0.038)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04  pos=(0.004,-0.020,-0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_A_01  pos=(-0.001,-0.009,-0.003)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_A_01/HairRightBack_A_02  pos=(0.025,-0.114,-0.039)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_A_01/HairRightBack_A_02/HairRightBack_A_03  pos=(0.071,-0.177,-0.045)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_A_01/HairRightBack_A_02/HairRightBack_A_03/HairRightBack_A_04  pos=(0.091,-0.190,0.022)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_A_01/HairRightBack_A_02/HairRightBack_A_03/HairRightBack_A_04/HairRightBack_A_05  pos=(-0.059,-0.108,0.065)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_B_01  pos=(-0.008,-0.014,-0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_B_01/HairRightBack_B_02  pos=(0.027,-0.117,-0.025)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_B_01/HairRightBack_B_02/HairRightBack_B_03  pos=(0.068,-0.172,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_B_01/HairRightBack_B_02/HairRightBack_B_03/HairRightBack_B_04  pos=(-0.007,-0.161,0.027)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_B_01/HairRightBack_B_02/HairRightBack_B_03/HairRightBack_B_04/HairRightBack_B_05  pos=(0.119,-0.128,-0.071)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_B_01/HairRightBack_B_02/HairRightBack_B_03/HairRightBack_B_04/HairRightBack_B_06  pos=(0.006,-0.077,-0.042)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_B_01/HairRightBack_B_02/HairRightBack_B_03/HairRightBack_B_04/HairRightBack_B_06/HairRightBack_B_07  pos=(0.079,-0.040,-0.055)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_C_01  pos=(0.009,-0.009,-0.003)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_C_01/HairRightBack_C_02  pos=(0.029,-0.121,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_C_01/HairRightBack_C_02/HairRightBack_C_03  pos=(0.074,-0.158,0.038)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_C_01/HairRightBack_C_02/HairRightBack_C_03/HairRightBack_C_04  pos=(0.118,-0.188,-0.059)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_C_01/HairRightBack_C_02/HairRightBack_C_03/HairRightBack_C_04/HairRightBack_C_05  pos=(-0.059,-0.160,-0.098)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_D_01  pos=(-0.003,-0.014,0.005)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_D_01/HairRightBack_D_02  pos=(0.025,-0.137,0.014)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_D_01/HairRightBack_D_02/HairRightBack_D_03  pos=(0.055,-0.156,-0.057)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_D_01/HairRightBack_D_02/HairRightBack_D_03/HairRightBack_D_04  pos=(0.039,-0.184,-0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_D_01/HairRightBack_D_02/HairRightBack_D_03/HairRightBack_D_04/HairRightBack_D_05  pos=(0.097,-0.058,0.069)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_E_01  pos=(-0.008,-0.018,0.002)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_E_01/HairRightBack_E_02  pos=(0.002,-0.109,0.006)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_E_01/HairRightBack_E_02/HairRightBack_E_03  pos=(0.034,-0.125,-0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_E_01/HairRightBack_E_02/HairRightBack_E_03/HairRightBack_E_04  pos=(0.095,-0.159,-0.064)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_E_01/HairRightBack_E_02/HairRightBack_E_03/HairRightBack_E_04/HairRightBack_E_05  pos=(0.018,-0.174,0.039)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_F_01  pos=(0.005,-0.005,0.002)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_F_01/HairRightBack_F_02  pos=(0.020,-0.141,0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_F_01/HairRightBack_F_02/HairRightBack_F_03  pos=(0.077,-0.139,-0.018)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_F_01/HairRightBack_F_02/HairRightBack_F_03/HairRightBack_F_04  pos=(0.115,-0.116,-0.078)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_F_01/HairRightBack_F_02/HairRightBack_F_03/HairRightBack_F_04/HairRightBack_F_05  pos=(0.009,-0.163,-0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightBack_01/HairRightBack_02/HairRightBack_03/HairRightBack_04/HairRightBack_F_01/HairRightBack_F_02/HairRightBack_F_03/HairRightBack_F_04/HairRightBack_F_05/HairRightBack_F_06  pos=(-0.142,-0.024,0.117)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightSide_A_01  pos=(0.080,0.071,0.017)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightSide_A_01/HairRightSide_A_02  pos=(-0.024,-0.075,0.021)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightSide_B  pos=(0.082,0.070,0.010)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightSide_B/HairRightSide_B_05  pos=(-0.001,-0.058,-0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightSide_B/HairRightSide_B_05/HairRightSide_B_06  pos=(-0.002,-0.080,0.038)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightSide_B/HairRightSide_B_05/HairRightSide_B_06/HairRightSide_B_07  pos=(-0.029,-0.090,0.090)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightSide_B/HairRightSideB_B_01  pos=(-0.013,-0.058,0.017)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightSide_B/HairRightSideB_B_01/HairRightSide_B_02  pos=(-0.007,-0.080,0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/HairRightSide_B/HairRightSideB_B_01/HairRightSide_B_02/HairRightSide_B_03  pos=(-0.037,-0.062,0.080)
+    Kohaku_dress_1.10_VRM/Kohaku_Hair_back  pos=(-0.200,0.022,-0.139)
+    Kohaku_dress_1.10_VRM/Kohaku_Hair_front  pos=(0.000,0.000,0.000)
+
+  ── [Hand]  (42 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand  pos=(-0.175,0.000,0.005)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1  pos=(-0.074,0.001,0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1/LeftHandIndex2  pos=(-0.027,0.000,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3  pos=(-0.017,0.000,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3/LeftHandIndex4  pos=(-0.017,0.000,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1  pos=(-0.072,0.002,0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1/LeftHandMiddle2  pos=(-0.033,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3  pos=(-0.021,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3/LeftHandMiddle4  pos=(-0.019,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1  pos=(-0.066,-0.004,-0.026)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1/LeftHandPinky2  pos=(-0.022,0.000,-0.002)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3  pos=(-0.013,0.000,-0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3/LeftHandPinky4  pos=(-0.015,0.000,-0.002)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1  pos=(-0.070,0.000,-0.012)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1/LeftHandRing2  pos=(-0.030,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3  pos=(-0.020,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3/LeftHandRing4  pos=(-0.018,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1  pos=(-0.020,-0.007,0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2  pos=(-0.026,-0.006,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3  pos=(-0.024,-0.005,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3/LeftHandThumb4  pos=(-0.013,-0.002,0.009)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand  pos=(0.175,0.000,0.005)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1  pos=(0.074,0.001,0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1/RightHandIndex2  pos=(0.027,0.000,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3  pos=(0.017,0.000,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3/RightHandIndex4  pos=(0.017,0.000,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1  pos=(0.072,0.002,0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2  pos=(0.033,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3  pos=(0.021,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3/RightHandMiddle4  pos=(0.019,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1  pos=(0.066,-0.004,-0.026)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1/RightHandPinky2  pos=(0.022,0.000,-0.002)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3  pos=(0.013,0.000,-0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3/RightHandPinky4  pos=(0.015,0.000,-0.002)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1  pos=(0.070,0.000,-0.012)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1/RightHandRing2  pos=(0.030,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1/RightHandRing2/RightHandRing3  pos=(0.020,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1/RightHandRing2/RightHandRing3/RightHandRing4  pos=(0.018,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1  pos=(0.020,-0.007,0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1/RightHandThumb2  pos=(0.026,-0.006,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3  pos=(0.024,-0.005,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3/RightHandThumb4  pos=(0.013,-0.002,0.009)
+
+  ── [Head]  (2 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head  pos=(0.000,0.037,0.003)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck/Head/Head_End  pos=(0.000,0.201,-0.003)
+
+  ── [Hip]  (1 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips  pos=(0.000,0.792,0.000)
+
+  ── [Hips]  (1 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips  pos=(0.000,0.792,0.000)
+
+  ── [IK]  (1 hasil) ──
+    Kohaku_dress_1.10_VRM/Kohaku_Kamikazari  pos=(0.000,0.000,0.000)
+
+  ── [Index]  (8 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1  pos=(-0.074,0.001,0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1/LeftHandIndex2  pos=(-0.027,0.000,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3  pos=(-0.017,0.000,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandIndex1/LeftHandIndex2/LeftHandIndex3/LeftHandIndex4  pos=(-0.017,0.000,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1  pos=(0.074,0.001,0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1/RightHandIndex2  pos=(0.027,0.000,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3  pos=(0.017,0.000,0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandIndex1/RightHandIndex2/RightHandIndex3/RightHandIndex4  pos=(0.017,0.000,0.001)
+
+  ── [Kami]  (1 hasil) ──
+    Kohaku_dress_1.10_VRM/Kohaku_Kamikazari  pos=(0.000,0.000,0.000)
+
+  ── [Kamikazari]  (1 hasil) ──
+    Kohaku_dress_1.10_VRM/Kohaku_Kamikazari  pos=(0.000,0.000,0.000)
+
+  ── [Leg]  (4 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/LeftUpLeg  pos=(-0.063,-0.081,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/LeftUpLeg/LeftLeg  pos=(0.000,-0.323,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/RightUpLeg  pos=(0.063,-0.081,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/RightUpLeg/RightLeg  pos=(0.000,-0.323,0.000)
+
+  ── [Middle]  (8 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1  pos=(-0.072,0.002,0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1/LeftHandMiddle2  pos=(-0.033,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3  pos=(-0.021,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandMiddle1/LeftHandMiddle2/LeftHandMiddle3/LeftHandMiddle4  pos=(-0.019,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1  pos=(0.072,0.002,0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2  pos=(0.033,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3  pos=(0.021,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandMiddle1/RightHandMiddle2/RightHandMiddle3/RightHandMiddle4  pos=(0.019,0.000,0.000)
+
+  ── [Nail]  (1 hasil) ──
+    Kohaku_dress_1.10_VRM/Kohaku_Nail  pos=(0.000,0.000,0.000)
+
+  ── [Neck]  (1 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/Neck  pos=(0.000,0.198,-0.024)
+
+  ── [Pinky]  (8 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1  pos=(-0.066,-0.004,-0.026)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1/LeftHandPinky2  pos=(-0.022,0.000,-0.002)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3  pos=(-0.013,0.000,-0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandPinky1/LeftHandPinky2/LeftHandPinky3/LeftHandPinky4  pos=(-0.015,0.000,-0.002)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1  pos=(0.066,-0.004,-0.026)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1/RightHandPinky2  pos=(0.022,0.000,-0.002)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3  pos=(0.013,0.000,-0.001)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandPinky1/RightHandPinky2/RightHandPinky3/RightHandPinky4  pos=(0.015,0.000,-0.002)
+
+  ── [Ring]  (8 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1  pos=(-0.070,0.000,-0.012)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1/LeftHandRing2  pos=(-0.030,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3  pos=(-0.020,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandRing1/LeftHandRing2/LeftHandRing3/LeftHandRing4  pos=(-0.018,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1  pos=(0.070,0.000,-0.012)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1/RightHandRing2  pos=(0.030,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1/RightHandRing2/RightHandRing3  pos=(0.020,0.000,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandRing1/RightHandRing2/RightHandRing3/RightHandRing4  pos=(0.018,0.000,0.000)
+
+  ── [Root]  (1 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot  pos=(-0.001,0.005,0.000)
+
+  ── [Secondary]  (1 hasil) ──
+    Kohaku_dress_1.10_VRM/secondary  pos=(0.000,0.000,0.000)
+
+  ── [Shoulder]  (2 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder  pos=(-0.036,0.164,-0.023)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder  pos=(0.036,0.164,-0.023)
+
+  ── [Skirt]  (63 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot  pos=(-0.001,0.005,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Back_01  pos=(0.001,-0.023,-0.088)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Back_01/Skirt_Back_02  pos=(0.000,-0.061,-0.052)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Back_01/Skirt_Back_02/Skirt_Back_03  pos=(0.000,-0.074,-0.060)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Back_01/Skirt_Back_02/Skirt_Back_03/Skirt_Back_04  pos=(0.000,-0.063,-0.056)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Back_01/Skirt_Back_02/Skirt_Back_03/Skirt_Back_04/Skirt_Back_05  pos=(0.000,-0.071,-0.062)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Front_01  pos=(0.001,-0.026,0.094)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Front_01/Skirt_Front_02  pos=(0.000,-0.064,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Front_01/Skirt_Front_02/Skirt_Front_03  pos=(0.000,-0.081,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Front_01/Skirt_Front_02/Skirt_Front_03/Skirt_Front_04  pos=(0.000,-0.084,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_A_01  pos=(-0.109,-0.022,0.034)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_A_01/Skirt_Left_A_02  pos=(-0.022,-0.069,-0.006)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_A_01/Skirt_Left_A_02/Skirt_Left_A_03  pos=(-0.023,-0.072,-0.006)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_A_01/Skirt_Left_A_02/Skirt_Left_A_03/Skirt_Left_A_04  pos=(-0.055,-0.144,-0.011)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_A_01/Skirt_Left_A_02/Skirt_Left_A_03/Skirt_Left_A_04/Skirt_Left_A_05  pos=(-0.053,-0.129,-0.013)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_A_01/Skirt_Left_A_02/Skirt_Left_A_03/Skirt_Left_A_04/Skirt_Left_A_05/Skirt_Left_A_06  pos=(-0.061,-0.148,-0.013)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_B_01  pos=(-0.119,-0.023,-0.008)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_B_01/Skirt_Left_B_02  pos=(-0.021,-0.049,-0.012)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_B_01/Skirt_Left_B_02/Skirt_Left_B_03  pos=(-0.028,-0.056,-0.013)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_B_01/Skirt_Left_B_02/Skirt_Left_B_03/Skirt_Left_B_04  pos=(-0.061,-0.111,-0.032)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_B_01/Skirt_Left_B_02/Skirt_Left_B_03/Skirt_Left_B_04/Skirt_Left_B_05  pos=(-0.055,-0.101,-0.034)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Left_B_01/Skirt_Left_B_02/Skirt_Left_B_03/Skirt_Left_B_04/Skirt_Left_B_05/Skirt_Left_B_06  pos=(-0.064,-0.115,-0.040)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftBack_A_01  pos=(-0.106,-0.026,-0.051)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftBack_A_01/Skirt_LeftBack_A_02  pos=(-0.019,-0.034,-0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftBack_A_01/Skirt_LeftBack_A_02/Skirt_LeftBack_A_03  pos=(-0.019,-0.039,-0.023)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftBack_A_01/Skirt_LeftBack_A_02/Skirt_LeftBack_A_03/Skirt_LeftBack_A_04  pos=(-0.041,-0.083,-0.050)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftBack_A_01/Skirt_LeftBack_A_02/Skirt_LeftBack_A_03/Skirt_LeftBack_A_04/Skirt_LeftBack_A_05  pos=(-0.041,-0.074,-0.049)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftBack_A_01/Skirt_LeftBack_A_02/Skirt_LeftBack_A_03/Skirt_LeftBack_A_04/Skirt_LeftBack_A_05/Skirt_LeftBack_A_06  pos=(-0.046,-0.083,-0.059)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftBack_B_01  pos=(-0.057,-0.025,-0.083)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftBack_B_01/Skirt_LeftBack_B_02  pos=(-0.014,-0.065,-0.046)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftBack_B_01/Skirt_LeftBack_B_02/Skirt_LeftBack_B_03  pos=(-0.015,-0.072,-0.060)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftBack_B_01/Skirt_LeftBack_B_02/Skirt_LeftBack_B_03/Skirt_LeftBack_B_04  pos=(-0.014,-0.064,-0.055)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftBack_B_01/Skirt_LeftBack_B_02/Skirt_LeftBack_B_03/Skirt_LeftBack_B_04/Skirt_LeftBack_B_05  pos=(-0.016,-0.072,-0.062)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftSide_01  pos=(-0.073,-0.012,0.074)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftSide_01/Skirt_LeftSide_02  pos=(-0.015,-0.036,0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_LeftSide_01/Skirt_LeftSide_02/Skirt_LeftSide_03  pos=(-0.020,-0.053,0.003)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_A_01  pos=(0.109,-0.022,0.034)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_A_01/Skirt_Right_A_02  pos=(0.022,-0.069,-0.006)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_A_01/Skirt_Right_A_02/Skirt_Right_A_03  pos=(0.023,-0.072,-0.006)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_A_01/Skirt_Right_A_02/Skirt_Right_A_03/Skirt_Right_A_04  pos=(0.055,-0.144,-0.011)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_A_01/Skirt_Right_A_02/Skirt_Right_A_03/Skirt_Right_A_04/Skirt_Right_A_05  pos=(0.053,-0.129,-0.013)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_A_01/Skirt_Right_A_02/Skirt_Right_A_03/Skirt_Right_A_04/Skirt_Right_A_05/Skirt_Right_A_06  pos=(0.061,-0.148,-0.013)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_B_01  pos=(0.119,-0.023,-0.008)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_B_01/Skirt_Right_B_02  pos=(0.021,-0.049,-0.012)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_B_01/Skirt_Right_B_02/Skirt_Right_B_03  pos=(0.028,-0.056,-0.013)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_B_01/Skirt_Right_B_02/Skirt_Right_B_03/Skirt_Right_B_04  pos=(0.061,-0.111,-0.032)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_B_01/Skirt_Right_B_02/Skirt_Right_B_03/Skirt_Right_B_04/Skirt_Right_B_05  pos=(0.055,-0.101,-0.034)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_Right_B_01/Skirt_Right_B_02/Skirt_Right_B_03/Skirt_Right_B_04/Skirt_Right_B_05/Skirt_Right_B_06  pos=(0.064,-0.115,-0.040)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightBack_A_01  pos=(0.106,-0.026,-0.051)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightBack_A_01/Skirt_RightBack_A_02  pos=(0.019,-0.034,-0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightBack_A_01/Skirt_RightBack_A_02/Skirt_RightBack_A_03  pos=(0.019,-0.039,-0.023)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightBack_A_01/Skirt_RightBack_A_02/Skirt_RightBack_A_03/Skirt_RightBack_A_04  pos=(0.041,-0.083,-0.050)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightBack_A_01/Skirt_RightBack_A_02/Skirt_RightBack_A_03/Skirt_RightBack_A_04/Skirt_RightBack_A_05  pos=(0.041,-0.074,-0.049)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightBack_A_01/Skirt_RightBack_A_02/Skirt_RightBack_A_03/Skirt_RightBack_A_04/Skirt_RightBack_A_05/Skirt_RightBack_A_06  pos=(0.046,-0.083,-0.059)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightBack_B_01  pos=(0.057,-0.025,-0.083)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightBack_B_01/Skirt_RightBack_B_02  pos=(0.014,-0.065,-0.046)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightBack_B_01/Skirt_RightBack_B_02/Skirt_RightBack_B_03  pos=(0.015,-0.072,-0.060)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightBack_B_01/Skirt_RightBack_B_02/Skirt_RightBack_B_03/Skirt_RightBack_B_04  pos=(0.014,-0.064,-0.055)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightBack_B_01/Skirt_RightBack_B_02/Skirt_RightBack_B_03/Skirt_RightBack_B_04/Skirt_RightBack_B_05  pos=(0.016,-0.072,-0.062)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightSide_01  pos=(0.073,-0.012,0.074)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightSide_01/Skirt_RightSide_02  pos=(0.015,-0.036,0.004)
+    Kohaku_dress_1.10_VRM/Armature/Hips/SkirtRoot/Skirt_RightSide_01/Skirt_RightSide_02/Skirt_RightSide_03  pos=(0.020,-0.053,0.003)
+    Kohaku_dress_1.10_VRM/Kohaku_Skirt  pos=(0.000,0.000,0.000)
+
+  ── [Sode]  (7 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/Left_Sode_01  pos=(-0.033,-0.034,0.009)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/Left_Sode_01/Left_Sode_02  pos=(-0.075,-0.032,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/Left_Sode_01/Left_Sode_02/Left_Sode_03  pos=(-0.082,-0.036,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/Right_Sode_01  pos=(0.033,-0.034,0.009)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/Right_Sode_01/Right_Sode_02  pos=(0.075,-0.032,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/Right_Sode_01/Right_Sode_02/Right_Sode_03  pos=(0.082,-0.036,0.000)
+    Kohaku_dress_1.10_VRM/Kohaku_Sode  pos=(0.000,0.000,0.000)
+
+  ── [Spine]  (1 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine  pos=(0.000,0.013,0.000)
+
+  ── [Tail]  (7 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Tail_01  pos=(0.000,-0.014,-0.028)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Tail_01/Tail_02  pos=(0.000,0.007,-0.029)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Tail_01/Tail_02/Tail_03  pos=(0.000,-0.030,-0.073)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Tail_01/Tail_02/Tail_03/Tail_04  pos=(0.000,-0.109,-0.079)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Tail_01/Tail_02/Tail_03/Tail_04/Tail_05  pos=(0.000,-0.076,-0.139)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Tail_01/Tail_02/Tail_03/Tail_04/Tail_05/Tail_06  pos=(0.000,0.061,-0.147)
+    Kohaku_dress_1.10_VRM/Kohaku_Tail  pos=(0.000,0.000,0.000)
+
+  ── [Thumb]  (8 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1  pos=(-0.020,-0.007,0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2  pos=(-0.026,-0.006,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3  pos=(-0.024,-0.005,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/LeftShoulder/LeftArm/LeftForeArm/LeftHand/LeftHandThumb1/LeftHandThumb2/LeftHandThumb3/LeftHandThumb4  pos=(-0.013,-0.002,0.009)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1  pos=(0.020,-0.007,0.020)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1/RightHandThumb2  pos=(0.026,-0.006,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3  pos=(0.024,-0.005,0.016)
+    Kohaku_dress_1.10_VRM/Armature/Hips/Spine/Chest/RightShoulder/RightArm/RightForeArm/RightHand/RightHandThumb1/RightHandThumb2/RightHandThumb3/RightHandThumb4  pos=(0.013,-0.002,0.009)
+
+  ── [Toe]  (4 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/LeftUpLeg/LeftLeg/LeftFoot/LeftToeBase  pos=(0.000,-0.073,0.040)
+    Kohaku_dress_1.10_VRM/Armature/Hips/LeftUpLeg/LeftLeg/LeftFoot/LeftToeBase/LeftToe_End  pos=(0.000,0.000,0.048)
+    Kohaku_dress_1.10_VRM/Armature/Hips/RightUpLeg/RightLeg/RightFoot/RightToeBase  pos=(0.000,-0.073,0.040)
+    Kohaku_dress_1.10_VRM/Armature/Hips/RightUpLeg/RightLeg/RightFoot/RightToeBase/RightToe_End  pos=(0.000,0.000,0.048)
+
+  ── [UpLeg]  (2 hasil) ──
+    Kohaku_dress_1.10_VRM/Armature/Hips/LeftUpLeg  pos=(-0.063,-0.081,0.000)
+    Kohaku_dress_1.10_VRM/Armature/Hips/RightUpLeg  pos=(0.063,-0.081,0.000)
+
+
+========================================================================
+SECTION 4 – BLENDSHAPE / SKINNEDMESHRENDERER INVENTORY
+========================================================================
+  Semua SkinnedMeshRenderer beserta blendshape-nya.
+
+  Jumlah SkinnedMeshRenderer: 16
+
+  ▶ Body  (150 blendshape)
+    [000] vrc.blink_left                       weight=0.0
+    [001] vrc.blink_right                      weight=0.0
+    [002] vrc.lowerlid_left                    weight=0.0
+    [003] vrc.lowerlid_right                   weight=0.0
+    [004] vrc.v_sil                            weight=0.0
+    [005] vrc.v_PP                             weight=0.0
+    [006] vrc.v_aa                             weight=0.0
+    [007] vrc.v_oh                             weight=0.0
+    [008] vrc.v_ou                             weight=0.0
+    [009] vrc.v_ih                             weight=0.0
+    [010] vrc.v_TH                             weight=0.0
+    [011] vrc.v_nn                             weight=0.0
+    [012] vrc.v_DD                             weight=0.0
+    [013] vrc.v_kk                             weight=0.0
+    [014] vrc.v_FF                             weight=0.0
+    [015] vrc.v_E                              weight=0.0
+    [016] vrc.v_CH                             weight=0.0
+    [017] vrc.v_RR                             weight=0.0
+    [018] vrc.v_SS                             weight=0.0
+    [019] mouth.a                              weight=0.0
+    [020] mouth.i                              weight=0.0
+    [021] mouth.u                              weight=0.0
+    [022] mouth.e                              weight=0.0
+    [023] mouth.o                              weight=0.0
+    [024] mouth.smile1                         weight=0.0
+    [025] mouth.smile2                         weight=0.0
+    [026] mouth.smile3                         weight=0.0
+    [027] mouth.smile4                         weight=0.0
+    [028] mouth.smile5                         weight=0.0
+    [029] mouth.smile6                         weight=0.0
+    [030] mouth.smile7                         weight=0.0
+    [031] mouth.smile8                         weight=0.0
+    [032] mouth.smile9                         weight=0.0
+    [033] mouth.smile10                        weight=0.0
+    [034] mouth.o_1                            weight=0.0
+    [035] mouth.o_2                            weight=0.0
+    [036] mouth.tajitaji                       weight=0.0
+    [037] mouth.nn                             weight=0.0
+    [038] mouth.small                          weight=0.0
+    [039] mouth.v                              weight=0.0
+    [040] mouth.neko                           weight=0.0
+    [041] mouth.nekoopen                       weight=0.0
+    [042] mouth.hen                            weight=0.0
+    [043] mouth.edgeup                         weight=0.0
+    [044] mouth.edgeup_left                    weight=0.0
+    [045] mouth.edgeup_right                   weight=0.0
+    [046] mouth.kiba_left                      weight=0.0
+    [047] mouth.kiba_right                     weight=0.0
+    [048] mouth.mu                             weight=0.0
+    [049] mouth.anger                          weight=0.0
+    [050] mouth.majime                         weight=0.0
+    [051] mouth.sankaku                        weight=0.0
+    [052] mouth.surprise                       weight=0.0
+    [053] mouth.hawawa                         weight=0.0
+    [054] mouth.uee                            weight=0.0
+    [055] mouth.narrow                         weight=0.0
+    [056] mouth.lip_up                         weight=0.0
+    [057] mouth.lip_down                       weight=0.0
+    [058] mouth.pero                           weight=0.0
+    [059] mouth.be                             weight=0.0
+    [060] mouth.tongue_up                      weight=0.0
+    [061] mouth.tongue_down                    weight=0.0
+    [062] mouth.tooth_up                       weight=0.0
+    [063] mouth.tooth_down                     weight=0.0
+    [064] mouth.tooth_uphide                   weight=0.0
+    [065] mouth.tooth_downhide                 weight=0.0
+    [066] eye1.smile_left                      weight=0.0
+    [067] eye1.smile_right                     weight=0.0
+    [068] eye1.smile                           weight=0.0
+    [069] eye1.blink_left1                     weight=0.0
+    [070] eye1.blink_right1                    weight=0.0
+    [071] eye1.blink1                          weight=0.0
+    [072] eye1.jito_left                       weight=0.0
+    [073] eye1.jito_right                      weight=0.0
+    [074] eye1.jito                            weight=0.0
+    [075] eye1.nagomi                          weight=0.0
+    [076] eye1.sirome                          weight=0.0
+    [077] eye1.niyari                          weight=0.0
+    [078] eye1.niyari_left                     weight=0.0
+    [079] eye1.niyari_right                    weight=0.0
+    [080] eye1.open                            weight=0.0
+    [081] eye1.open_left                       weight=0.0
+    [082] eye1.open_right                      weight=0.0
+    [083] eye1.lookUp                          weight=0.0
+    [084] eye1.lookDown                        weight=0.0
+    [085] eye1.lookLeft                        weight=0.0
+    [086] eye1.lookRight                       weight=0.0
+    [087] eye1.nekome                          weight=0.0
+    [088] eye1.highlight_type1                 weight=0.0
+    [089] eye1.highlight_type2                 weight=0.0
+    [090] eye1.highlight_big                   weight=0.0
+    [091] eye1.highlight_erase                 weight=0.0
+    [092] eye1.pupil_erase                     weight=0.0
+    [093] eye1.pupil_small                     weight=0.0
+    [094] eye1.pupil_big                       weight=0.0
+    [095] eye1.eyes_small                      weight=0.0
+    [096] eye1.heart                           weight=0.0
+    [097] eye1.heart_left                      weight=0.0
+    [098] eye1.heart_right                     weight=0.0
+    [099] eye1.heart_small                     weight=0.0
+    [100] eye1.kira                            weight=0.0
+    [101] eye1.kira_left                       weight=0.0
+    [102] eye1.kira_right                      weight=0.0
+    [103] eye1.siitake                         weight=0.0
+    [104] eye1.siitake_left                    weight=0.0
+    [105] eye1.siitake_right                   weight=0.0
+    [106] eye1.guruguru                        weight=0.0
+    [107] eye1.black                           weight=0.0
+    [108] eye1.maru                            weight=0.0
+    [109] eye1.matuge_type1                    weight=0.0
+    [110] eye1.matuge_type2                    weight=0.0
+    [111] eye1.matuge_type3                    weight=0.0
+    [112] eye1.matuge_type4                    weight=0.0
+    [113] eye1.hutae_erase                     weight=0.0
+    [114] eye1.usume                           weight=0.0
+    [115] eye1.usume_left                      weight=0.0
+    [116] eye1.usume_right                     weight=0.0
+    [117] eye1.tareme                          weight=0.0
+    [118] eye1.tareme_left                     weight=0.0
+    [119] eye1.tareme_right                    weight=0.0
+    [120] eye1.turime                          weight=0.0
+    [121] eye1.turime_left                     weight=0.0
+    [122] eye1.turime_right                    weight=0.0
+    [123] blow.down                            weight=0.0
+    [124] blow.downleft                        weight=0.0
+    [125] blow.downright                       weight=0.0
+    [126] blow.up                              weight=0.0
+    [127] blow.upleft                          weight=0.0
+    [128] blow.upright                         weight=0.0
+    [129] blow.komaru1                         weight=0.0
+    [130] blow.komaru1_left                    weight=0.0
+    [131] blow.komaru1_right                   weight=0.0
+    [132] blow.komaru2                         weight=0.0
+    [133] blow.komaru2_left                    weight=0.0
+    [134] blow.komaru2_right                   weight=0.0
+    [135] blow.anger1                          weight=0.0
+    [136] blow.anger1_left                     weight=0.0
+    [137] blow.anger1_right                    weight=0.0
+    [138] blow.anger2                          weight=0.0
+    [139] blow.anger2_left                     weight=0.0
+    [140] blow.anger2_right                    weight=0.0
+    [141] blow.majime1                         weight=0.0
+    [142] blow.majime1_left                    weight=0.0
+    [143] blow.majime1_right                   weight=0.0
+    [144] other.hoppe_right                    weight=0.0
+    [145] other.hoppe_left                     weight=0.0
+    [146] other.hoppe                          weight=0.0
+    [147] other.namida                         weight=0.0
+    [148] other.aozame                         weight=0.0
+    [149] other.tere                           weight=0.0
+
+  ▶ Kohaku_Bodybase  (20 blendshape)
+    [000] Reduce.Dress_Arm                     weight=0.0
+    [001] Reduce.Dress_Leg1                    weight=0.0
+    [002] Reduce.Dress_Leg2                    weight=0.0
+    [003] Reduce.Dress_Leg3                    weight=0.0
+    [004] Reduce.Dress_Foot                    weight=0.0
+    [005] Reduce.neck001                       weight=0.0
+    [006] Reduce.neck002                       weight=0.0
+    [007] Reduce.arm001                        weight=0.0
+    [008] Reduce.arm002                        weight=0.0
+    [009] Reduce.arm003                        weight=0.0
+    [010] Reduce.body001                       weight=0.0
+    [011] Reduce.body002                       weight=0.0
+    [012] Reduce.body003                       weight=0.0
+    [013] Reduce.body004                       weight=0.0
+    [014] Reduce.leg001                        weight=0.0
+    [015] Reduce.leg002                        weight=0.0
+    [016] Reduce.leg003                        weight=0.0
+    [017] Reduce.leg004                        weight=0.0
+    [018] Reduce.leg005                        weight=0.0
+    [019] Reduce.Bodybase_bust_small           weight=0.0
+
+  ▶ Kohaku_Foxear  (0 blendshape)
+    (tidak ada blendshape)
+
+  ▶ Kohaku_Hair_back  (0 blendshape)
+    (tidak ada blendshape)
+
+  ▶ Kohaku_Hair_front  (0 blendshape)
+    (tidak ada blendshape)
+
+  ▶ Kohaku_Kamikazari  (0 blendshape)
+    (tidak ada blendshape)
+
+  ▶ Kohaku_Leotard  (1 blendshape)
+    [000] Leotard_bust_small1.Leotard_bust_small  weight=0.0
+
+  ▶ Kohaku_Nail  (0 blendshape)
+    (tidak ada blendshape)
+
+  ▶ Kohaku_Pants  (0 blendshape)
+    (tidak ada blendshape)
+
+  ▶ Kohaku_Shoes  (0 blendshape)
+    (tidak ada blendshape)
+
+  ▶ Kohaku_Skirt  (0 blendshape)
+    (tidak ada blendshape)
+
+  ▶ Kohaku_Socks  (0 blendshape)
+    (tidak ada blendshape)
+
+  ▶ Kohaku_Sode  (0 blendshape)
+    (tidak ada blendshape)
+
+  ▶ Kohaku_Tail  (0 blendshape)
+    (tidak ada blendshape)
+
+  ▶ Kohaku_Tops1  (1 blendshape)
+    [000] Tops1_bust_small1.Tops1_bust_small   weight=0.0
+
+  ▶ Kohaku_Tops2  (0 blendshape)
+    (tidak ada blendshape)
+
+  TOTAL BLENDSHAPE: 172
+
+========================================================================
+SECTION 5 – PHYSICS COMPONENTS (VRM Spring / Collider / Secondary)
+========================================================================
+  Bone yang punya physics component (cloth, hair, tail, skirt).
+
+  [VRMMeta]  (1 object)
+    Kohaku_dress_1.10_VRM
+
+  [VRMHumanoidDescription]  (1 object)
+    Kohaku_dress_1.10_VRM
+
+  [VRMBlendShapeProxy]  (1 object)
+    Kohaku_dress_1.10_VRM
+
+  [VRMFirstPerson]  (1 object)
+    Kohaku_dress_1.10_VRM
+
+  [VRMLookAtHead]  (1 object)
+    Kohaku_dress_1.10_VRM
+
+  [VRMLookAtBoneApplyer]  (1 object)
+    Kohaku_dress_1.10_VRM
+
+  [VRMAnimationController]  (1 object)
+    Kohaku_dress_1.10_VRM
+
+  [BoneExplorer]  (1 object)
+    Kohaku_dress_1.10_VRM
+
+  [BoneMapper]  (1 object)
+    Kohaku_dress_1.10_VRM
+
+  [VRMSpringBoneColliderGroup]  (2 object)
+    LeftUpLeg
+    RightUpLeg
+
+  [VRMSpringBone]  (3 object)
+    secondary
+    secondary
+    secondary
+
+
+========================================================================
+SECTION 6 – SUMMARY STATISTIK
+========================================================================
+  Total Transform/Bone di hierarchy : 267
+  Humanoid bone ditemukan           : 53
+  Humanoid bone NULL (tidak ada)    : 2
+  Total BlendShape                  : 172
+  SkinnedMeshRenderer               : 16
+  Physics component type ditemukan  : 11
+
+========================================================================
+SECTION 7 – BONE LIST UNTUK ANIMASI SCRIPT
+========================================================================
+  Daftar bone yang PASTI ada di model ini (dari Humanoid map).
+  Copy nama-nama ini untuk di-FindDeep() di script animasimu.
+
+
+------------------------------------------------------------------------
+  7A – HUMANOID BONES (aman dipakai di semua VRM)
+------------------------------------------------------------------------
+  FindDeep(transform, "Hips")  // Hips
+  FindDeep(transform, "LeftUpLeg")  // LeftUpperLeg
+  FindDeep(transform, "RightUpLeg")  // RightUpperLeg
+  FindDeep(transform, "LeftLeg")  // LeftLowerLeg
+  FindDeep(transform, "RightLeg")  // RightLowerLeg
+  FindDeep(transform, "LeftFoot")  // LeftFoot
+  FindDeep(transform, "RightFoot")  // RightFoot
+  FindDeep(transform, "Spine")  // Spine
+  FindDeep(transform, "Chest")  // Chest
+  FindDeep(transform, "Neck")  // Neck
+  FindDeep(transform, "Head")  // Head
+  FindDeep(transform, "LeftShoulder")  // LeftShoulder
+  FindDeep(transform, "RightShoulder")  // RightShoulder
+  FindDeep(transform, "LeftArm")  // LeftUpperArm
+  FindDeep(transform, "RightArm")  // RightUpperArm
+  FindDeep(transform, "LeftForeArm")  // LeftLowerArm
+  FindDeep(transform, "RightForeArm")  // RightLowerArm
+  FindDeep(transform, "LeftHand")  // LeftHand
+  FindDeep(transform, "RightHand")  // RightHand
+  FindDeep(transform, "LeftToeBase")  // LeftToes
+  FindDeep(transform, "RightToeBase")  // RightToes
+  FindDeep(transform, "LeftEye")  // LeftEye
+  FindDeep(transform, "RightEye")  // RightEye
+  FindDeep(transform, "LeftHandThumb1")  // LeftThumbProximal
+  FindDeep(transform, "LeftHandThumb2")  // LeftThumbIntermediate
+  FindDeep(transform, "LeftHandThumb3")  // LeftThumbDistal
+  FindDeep(transform, "LeftHandIndex1")  // LeftIndexProximal
+  FindDeep(transform, "LeftHandIndex2")  // LeftIndexIntermediate
+  FindDeep(transform, "LeftHandIndex3")  // LeftIndexDistal
+  FindDeep(transform, "LeftHandMiddle1")  // LeftMiddleProximal
+  FindDeep(transform, "LeftHandMiddle2")  // LeftMiddleIntermediate
+  FindDeep(transform, "LeftHandMiddle3")  // LeftMiddleDistal
+  FindDeep(transform, "LeftHandRing1")  // LeftRingProximal
+  FindDeep(transform, "LeftHandRing2")  // LeftRingIntermediate
+  FindDeep(transform, "LeftHandRing3")  // LeftRingDistal
+  FindDeep(transform, "LeftHandPinky1")  // LeftLittleProximal
+  FindDeep(transform, "LeftHandPinky2")  // LeftLittleIntermediate
+  FindDeep(transform, "LeftHandPinky3")  // LeftLittleDistal
+  FindDeep(transform, "RightHandThumb1")  // RightThumbProximal
+  FindDeep(transform, "RightHandThumb2")  // RightThumbIntermediate
+  FindDeep(transform, "RightHandThumb3")  // RightThumbDistal
+  FindDeep(transform, "RightHandIndex1")  // RightIndexProximal
+  FindDeep(transform, "RightHandIndex2")  // RightIndexIntermediate
+  FindDeep(transform, "RightHandIndex3")  // RightIndexDistal
+  FindDeep(transform, "RightHandMiddle1")  // RightMiddleProximal
+  FindDeep(transform, "RightHandMiddle2")  // RightMiddleIntermediate
+  FindDeep(transform, "RightHandMiddle3")  // RightMiddleDistal
+  FindDeep(transform, "RightHandRing1")  // RightRingProximal
+  FindDeep(transform, "RightHandRing2")  // RightRingIntermediate
+  FindDeep(transform, "RightHandRing3")  // RightRingDistal
+  FindDeep(transform, "RightHandPinky1")  // RightLittleProximal
+  FindDeep(transform, "RightHandPinky2")  // RightLittleIntermediate
+  FindDeep(transform, "RightHandPinky3")  // RightLittleDistal
+
+------------------------------------------------------------------------
+  7B – NON-HUMANOID BONES (unik per model, cek nama dari Section 2 & 3)
+------------------------------------------------------------------------
+  FindDeep(transform, "Tail_01")
+  FindDeep(transform, "Tail_02")
+  FindDeep(transform, "Tail_03")
+  FindDeep(transform, "Tail_04")
+  FindDeep(transform, "Tail_05")
+  FindDeep(transform, "Tail_06")
+  FindDeep(transform, "Kohaku_Tail")
+  FindDeep(transform, "Left_Foxear_01")
+  FindDeep(transform, "Left_Foxear_02")
+  FindDeep(transform, "Left_Foxear_03")
+  FindDeep(transform, "Right_Foxear_01")
+  FindDeep(transform, "Right_Foxear_02")
+  FindDeep(transform, "Right_Foxear_03")
+  FindDeep(transform, "Kohaku_Foxear")
+  FindDeep(transform, "LeftBreast")
+  FindDeep(transform, "LeftBreast_End")
+  FindDeep(transform, "RightBreast")
+  FindDeep(transform, "RightBreast_End")
+  FindDeep(transform, "SkirtRoot")
+  FindDeep(transform, "Skirt_Back_01")
+  FindDeep(transform, "Skirt_Back_02")
+  FindDeep(transform, "Skirt_Back_03")
+  FindDeep(transform, "Skirt_Back_04")
+  FindDeep(transform, "Skirt_Back_05")
+  FindDeep(transform, "Skirt_Front_01")
+  FindDeep(transform, "Skirt_Front_02")
+  FindDeep(transform, "Skirt_Front_03")
+  FindDeep(transform, "Skirt_Front_04")
+  FindDeep(transform, "Skirt_Left_A_01")
+  FindDeep(transform, "Skirt_Left_A_02")
+  FindDeep(transform, "Skirt_Left_A_03")
+  FindDeep(transform, "Skirt_Left_A_04")
+  FindDeep(transform, "Skirt_Left_A_05")
+  FindDeep(transform, "Skirt_Left_A_06")
+  FindDeep(transform, "Skirt_Left_B_01")
+  FindDeep(transform, "Skirt_Left_B_02")
+  FindDeep(transform, "Skirt_Left_B_03")
+  FindDeep(transform, "Skirt_Left_B_04")
+  FindDeep(transform, "Skirt_Left_B_05")
+  FindDeep(transform, "Skirt_Left_B_06")
+  FindDeep(transform, "Skirt_LeftBack_A_01")
+  FindDeep(transform, "Skirt_LeftBack_A_02")
+  FindDeep(transform, "Skirt_LeftBack_A_03")
+  FindDeep(transform, "Skirt_LeftBack_A_04")
+  FindDeep(transform, "Skirt_LeftBack_A_05")
+  FindDeep(transform, "Skirt_LeftBack_A_06")
+  FindDeep(transform, "Skirt_LeftBack_B_01")
+  FindDeep(transform, "Skirt_LeftBack_B_02")
+  FindDeep(transform, "Skirt_LeftBack_B_03")
+  FindDeep(transform, "Skirt_LeftBack_B_04")
+  FindDeep(transform, "Skirt_LeftBack_B_05")
+  FindDeep(transform, "Skirt_LeftSide_01")
+  FindDeep(transform, "Skirt_LeftSide_02")
+  FindDeep(transform, "Skirt_LeftSide_03")
+  FindDeep(transform, "Skirt_Right_A_01")
+  FindDeep(transform, "Skirt_Right_A_02")
+  FindDeep(transform, "Skirt_Right_A_03")
+  FindDeep(transform, "Skirt_Right_A_04")
+  FindDeep(transform, "Skirt_Right_A_05")
+  FindDeep(transform, "Skirt_Right_A_06")
+  FindDeep(transform, "Skirt_Right_B_01")
+  FindDeep(transform, "Skirt_Right_B_02")
+  FindDeep(transform, "Skirt_Right_B_03")
+  FindDeep(transform, "Skirt_Right_B_04")
+  FindDeep(transform, "Skirt_Right_B_05")
+  FindDeep(transform, "Skirt_Right_B_06")
+  FindDeep(transform, "Skirt_RightBack_A_01")
+  FindDeep(transform, "Skirt_RightBack_A_02")
+  FindDeep(transform, "Skirt_RightBack_A_03")
+  FindDeep(transform, "Skirt_RightBack_A_04")
+  FindDeep(transform, "Skirt_RightBack_A_05")
+  FindDeep(transform, "Skirt_RightBack_A_06")
+  FindDeep(transform, "Skirt_RightBack_B_01")
+  FindDeep(transform, "Skirt_RightBack_B_02")
+  FindDeep(transform, "Skirt_RightBack_B_03")
+  FindDeep(transform, "Skirt_RightBack_B_04")
+  FindDeep(transform, "Skirt_RightBack_B_05")
+  FindDeep(transform, "Skirt_RightSide_01")
+  FindDeep(transform, "Skirt_RightSide_02")
+  FindDeep(transform, "Skirt_RightSide_03")
+  FindDeep(transform, "Kohaku_Skirt")
+  FindDeep(transform, "HairFront_A_01")
+  FindDeep(transform, "HairFront_A_02")
+  FindDeep(transform, "HairFront_B_01")
+  FindDeep(transform, "HairFront_B_02")
+  FindDeep(transform, "HairFront_C_01")
+  FindDeep(transform, "HairFront_C_02")
+  FindDeep(transform, "HairLeftBack_01")
+  FindDeep(transform, "HairLeftBack_02")
+  FindDeep(transform, "HairLeftBack_03")
+  FindDeep(transform, "HairLeftBack_04")
+  FindDeep(transform, "HairLeftBack_A_01")
+  FindDeep(transform, "HairLeftBack_A_02")
+  FindDeep(transform, "HairLeftBack_A_03")
+  FindDeep(transform, "HairLeftBack_A_04")
+  FindDeep(transform, "HairLeftBack_A_05")
+  FindDeep(transform, "HairLeftBack_B_01")
+  FindDeep(transform, "HairLeftBack_B_02")
+  FindDeep(transform, "HairLeftBack_B_03")
+  FindDeep(transform, "HairLeftBack_B_04")
+  FindDeep(transform, "HairLeftBack_B_05")
+  FindDeep(transform, "HairLeftBack_B_06")
+  FindDeep(transform, "HairLeftBack_B_07")
+  FindDeep(transform, "HairLeftBack_C_01")
+  FindDeep(transform, "HairLeftBack_C_02")
+  FindDeep(transform, "HairLeftBack_C_03")
+  FindDeep(transform, "HairLeftBack_C_04")
+  FindDeep(transform, "HairLeftBack_C_05")
+  FindDeep(transform, "HairLeftBack_D_01")
+  FindDeep(transform, "HairLeftBack_D_02")
+  FindDeep(transform, "HairLeftBack_D_03")
+  FindDeep(transform, "HairLeftBack_D_04")
+  FindDeep(transform, "HairLeftBack_D_05")
+  FindDeep(transform, "HairLeftBack_E_01")
+  FindDeep(transform, "HairLeftBack_E_02")
+  FindDeep(transform, "HairLeftBack_E_03")
+  FindDeep(transform, "HairLeftBack_E_04")
+  FindDeep(transform, "HairLeftBack_E_05")
+  FindDeep(transform, "HairLeftBack_F_01")
+  FindDeep(transform, "HairLeftBack_F_02")
+  FindDeep(transform, "HairLeftBack_F_03")
+  FindDeep(transform, "HairLeftBack_F_04")
+  FindDeep(transform, "HairLeftBack_F_05")
+  FindDeep(transform, "HairLeftBack_F_06")
+  FindDeep(transform, "HairLeftSide_A_01")
+  FindDeep(transform, "HairLeftSide_A_02")
+  FindDeep(transform, "HairLeftSide_B")
+  FindDeep(transform, "HairLeftSide_B_05")
+  FindDeep(transform, "HairLeftSide_B_06")
+  FindDeep(transform, "HairLeftSide_B_07")
+  FindDeep(transform, "HairLeftSideB_B_01")
+  FindDeep(transform, "HairLeftSide_B_02")
+  FindDeep(transform, "HairLeftSide_B_03")
+  FindDeep(transform, "HairRightBack_01")
+  FindDeep(transform, "HairRightBack_02")
+  FindDeep(transform, "HairRightBack_03")
+  FindDeep(transform, "HairRightBack_04")
+  FindDeep(transform, "HairRightBack_A_01")
+  FindDeep(transform, "HairRightBack_A_02")
+  FindDeep(transform, "HairRightBack_A_03")
+  FindDeep(transform, "HairRightBack_A_04")
+  FindDeep(transform, "HairRightBack_A_05")
+  FindDeep(transform, "HairRightBack_B_01")
+  FindDeep(transform, "HairRightBack_B_02")
+  FindDeep(transform, "HairRightBack_B_03")
+  FindDeep(transform, "HairRightBack_B_04")
+  FindDeep(transform, "HairRightBack_B_05")
+  FindDeep(transform, "HairRightBack_B_06")
+  FindDeep(transform, "HairRightBack_B_07")
+  FindDeep(transform, "HairRightBack_C_01")
+  FindDeep(transform, "HairRightBack_C_02")
+  FindDeep(transform, "HairRightBack_C_03")
+  FindDeep(transform, "HairRightBack_C_04")
+  FindDeep(transform, "HairRightBack_C_05")
+  FindDeep(transform, "HairRightBack_D_01")
+  FindDeep(transform, "HairRightBack_D_02")
+  FindDeep(transform, "HairRightBack_D_03")
+  FindDeep(transform, "HairRightBack_D_04")
+  FindDeep(transform, "HairRightBack_D_05")
+  FindDeep(transform, "HairRightBack_E_01")
+  FindDeep(transform, "HairRightBack_E_02")
+  FindDeep(transform, "HairRightBack_E_03")
+  FindDeep(transform, "HairRightBack_E_04")
+  FindDeep(transform, "HairRightBack_E_05")
+  FindDeep(transform, "HairRightBack_F_01")
+  FindDeep(transform, "HairRightBack_F_02")
+  FindDeep(transform, "HairRightBack_F_03")
+  FindDeep(transform, "HairRightBack_F_04")
+  FindDeep(transform, "HairRightBack_F_05")
+  FindDeep(transform, "HairRightBack_F_06")
+  FindDeep(transform, "HairRightSide_A_01")
+  FindDeep(transform, "HairRightSide_A_02")
+  FindDeep(transform, "HairRightSide_B")
+  FindDeep(transform, "HairRightSide_B_05")
+  FindDeep(transform, "HairRightSide_B_06")
+  FindDeep(transform, "HairRightSide_B_07")
+  FindDeep(transform, "HairRightSideB_B_01")
+  FindDeep(transform, "HairRightSide_B_02")
+  FindDeep(transform, "HairRightSide_B_03")
+  FindDeep(transform, "Kohaku_Hair_back")
+  FindDeep(transform, "Kohaku_Hair_front")
+  FindDeep(transform, "Kohaku_Kamikazari")
+  FindDeep(transform, "Left_Sode_01")
+  FindDeep(transform, "Left_Sode_02")
+  FindDeep(transform, "Left_Sode_03")
+  FindDeep(transform, "Right_Sode_01")
+  FindDeep(transform, "Right_Sode_02")
+  FindDeep(transform, "Right_Sode_03")
+  FindDeep(transform, "Kohaku_Sode")
+  FindDeep(transform, "secondary")
+
+------------------------------------------------------------------------
+  7C – UPDATE YANG DIBUTUHKAN DI BoneExplorer & BonePose
+------------------------------------------------------------------------
+  Setelah membaca file ini, update nama bone berikut
+  di BoneExplorer.cs dan BonePose.cs jika berbeda:
+
+    "Tail_01"
+    "Tail_02"
+    "Tail_03"
+    "Tail_04"
+    "Tail_05"
+    "Tail_06"
+    "Kohaku_Tail"
+    "Left_Foxear_01"
+    "Left_Foxear_02"
+    "Left_Foxear_03"
+    "Right_Foxear_01"
+    "Right_Foxear_02"
+    "Right_Foxear_03"
+    "Kohaku_Foxear"
+    "LeftBreast"
+    "LeftBreast_End"
+    "RightBreast"
+    "RightBreast_End"
+    "SkirtRoot"
+    "Skirt_Back_01"
+    "Skirt_Back_02"
+    "Skirt_Back_03"
+    "Skirt_Back_04"
+    "Skirt_Back_05"
+    "Skirt_Front_01"
+    "Skirt_Front_02"
+    "Skirt_Front_03"
+    "Skirt_Front_04"
+    "Skirt_Left_A_01"
+    "Skirt_Left_A_02"
+    "Skirt_Left_A_03"
+    "Skirt_Left_A_04"
+    "Skirt_Left_A_05"
+    "Skirt_Left_A_06"
+    "Skirt_Left_B_01"
+    "Skirt_Left_B_02"
+    "Skirt_Left_B_03"
+    "Skirt_Left_B_04"
+    "Skirt_Left_B_05"
+    "Skirt_Left_B_06"
+    "Skirt_LeftBack_A_01"
+    "Skirt_LeftBack_A_02"
+    "Skirt_LeftBack_A_03"
+    "Skirt_LeftBack_A_04"
+    "Skirt_LeftBack_A_05"
+    "Skirt_LeftBack_A_06"
+    "Skirt_LeftBack_B_01"
+    "Skirt_LeftBack_B_02"
+    "Skirt_LeftBack_B_03"
+    "Skirt_LeftBack_B_04"
+    "Skirt_LeftBack_B_05"
+    "Skirt_LeftSide_01"
+    "Skirt_LeftSide_02"
+    "Skirt_LeftSide_03"
+    "Skirt_Right_A_01"
+    "Skirt_Right_A_02"
+    "Skirt_Right_A_03"
+    "Skirt_Right_A_04"
+    "Skirt_Right_A_05"
+    "Skirt_Right_A_06"
+    "Skirt_Right_B_01"
+    "Skirt_Right_B_02"
+    "Skirt_Right_B_03"
+    "Skirt_Right_B_04"
+    "Skirt_Right_B_05"
+    "Skirt_Right_B_06"
+    "Skirt_RightBack_A_01"
+    "Skirt_RightBack_A_02"
+    "Skirt_RightBack_A_03"
+    "Skirt_RightBack_A_04"
+    "Skirt_RightBack_A_05"
+    "Skirt_RightBack_A_06"
+    "Skirt_RightBack_B_01"
+    "Skirt_RightBack_B_02"
+    "Skirt_RightBack_B_03"
+    "Skirt_RightBack_B_04"
+    "Skirt_RightBack_B_05"
+    "Skirt_RightSide_01"
+    "Skirt_RightSide_02"
+    "Skirt_RightSide_03"
+    "Kohaku_Skirt"
+    "HairFront_A_01"
+    "HairFront_A_02"
+    "HairFront_B_01"
+    "HairFront_B_02"
+    "HairFront_C_01"
+    "HairFront_C_02"
+    "HairLeftBack_01"
+    "HairLeftBack_02"
+    "HairLeftBack_03"
+    "HairLeftBack_04"
+    "HairLeftBack_A_01"
+    "HairLeftBack_A_02"
+    "HairLeftBack_A_03"
+    "HairLeftBack_A_04"
+    "HairLeftBack_A_05"
+    "HairLeftBack_B_01"
+    "HairLeftBack_B_02"
+    "HairLeftBack_B_03"
+    "HairLeftBack_B_04"
+    "HairLeftBack_B_05"
+    "HairLeftBack_B_06"
+    "HairLeftBack_B_07"
+    "HairLeftBack_C_01"
+    "HairLeftBack_C_02"
+    "HairLeftBack_C_03"
+    "HairLeftBack_C_04"
+    "HairLeftBack_C_05"
+    "HairLeftBack_D_01"
+    "HairLeftBack_D_02"
+    "HairLeftBack_D_03"
+    "HairLeftBack_D_04"
+    "HairLeftBack_D_05"
+    "HairLeftBack_E_01"
+    "HairLeftBack_E_02"
+    "HairLeftBack_E_03"
+    "HairLeftBack_E_04"
+    "HairLeftBack_E_05"
+    "HairLeftBack_F_01"
+    "HairLeftBack_F_02"
+    "HairLeftBack_F_03"
+    "HairLeftBack_F_04"
+    "HairLeftBack_F_05"
+    "HairLeftBack_F_06"
+    "HairLeftSide_A_01"
+    "HairLeftSide_A_02"
+    "HairLeftSide_B"
+    "HairLeftSide_B_05"
+    "HairLeftSide_B_06"
+    "HairLeftSide_B_07"
+    "HairLeftSideB_B_01"
+    "HairLeftSide_B_02"
+    "HairLeftSide_B_03"
+    "HairRightBack_01"
+    "HairRightBack_02"
+    "HairRightBack_03"
+    "HairRightBack_04"
+    "HairRightBack_A_01"
+    "HairRightBack_A_02"
+    "HairRightBack_A_03"
+    "HairRightBack_A_04"
+    "HairRightBack_A_05"
+    "HairRightBack_B_01"
+    "HairRightBack_B_02"
+    "HairRightBack_B_03"
+    "HairRightBack_B_04"
+    "HairRightBack_B_05"
+    "HairRightBack_B_06"
+    "HairRightBack_B_07"
+    "HairRightBack_C_01"
+    "HairRightBack_C_02"
+    "HairRightBack_C_03"
+    "HairRightBack_C_04"
+    "HairRightBack_C_05"
+    "HairRightBack_D_01"
+    "HairRightBack_D_02"
+    "HairRightBack_D_03"
+    "HairRightBack_D_04"
+    "HairRightBack_D_05"
+    "HairRightBack_E_01"
+    "HairRightBack_E_02"
+    "HairRightBack_E_03"
+    "HairRightBack_E_04"
+    "HairRightBack_E_05"
+    "HairRightBack_F_01"
+    "HairRightBack_F_02"
+    "HairRightBack_F_03"
+    "HairRightBack_F_04"
+    "HairRightBack_F_05"
+    "HairRightBack_F_06"
+    "HairRightSide_A_01"
+    "HairRightSide_A_02"
+    "HairRightSide_B"
+    "HairRightSide_B_05"
+    "HairRightSide_B_06"
+    "HairRightSide_B_07"
+    "HairRightSideB_B_01"
+    "HairRightSide_B_02"
+    "HairRightSide_B_03"
+    "Kohaku_Hair_back"
+    "Kohaku_Hair_front"
+    "Kohaku_Kamikazari"
+    "Left_Sode_01"
+    "Left_Sode_02"
+    "Left_Sode_03"
+    "Right_Sode_01"
+    "Right_Sode_02"
+    "Right_Sode_03"
+    "Kohaku_Sode"
+    "secondary"

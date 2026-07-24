@@ -1,307 +1,127 @@
-# Lia VA
+# LiaVA — Floating VRM AI Companion
 
-Floating VRM anime assistant overlay untuk Android — character Kohaku yang hidup di bottom strip layar HP, bisa idle/aktif/jalan-jalan, dan responsif ke command via AI dispatcher.
+**Lia** (Kohaku) is a floating anime **VRM** character that lives on your screen — on **macOS** as a transparent always-on-top desktop companion, and on **Android** as an overlay that walks along the bottom of your phone. She listens, talks, reacts, and animates with real mocap — an AI companion you can actually see and talk to.
 
-> **Bundle**: `com.l3n.liaVA` · **Version**: 0.1 · **Target**: Android 8+ (minSdk 26, targetSdk 34) · **Arch**: arm64-v8a
-
----
-
-## 🎯 Visi
-
-Anime VTuber-style assistant yang **hidup di bawah HP** seperti pet/companion app. Character (Kohaku, VRM 0.x) di overlay transparent strip — user tetap bisa pakai HP normal sambil Lia idle, walking, atau reaksi ke perintah.
-
-```
-┌─────────────────────────────────────┐
-│                                     │
-│        (app user normal)            │
-│         home/chrome/dll             │
-│                                     │
-│                                     │
-├─────────────────────────────────────┤  ← strip 250dp landscape
-│                                     │
-│   ✨    🚶 Lia (Kohaku VRM)         │  ← walking left-right
-│                                     │
-└─────────────────────────────────────┘
-```
+> **Engine:** Unity `6000.4.6f1` + URP 17.4 · **Character:** UniVRM (VRM 0.x) · **Platforms:** macOS (Apple Silicon) + Android 8+ · **Bundle:** `com.l3n.liaVA`
 
 ---
 
-## 🏗 Arsitektur Stack
+## ✨ Features
 
-| Layer | Tech | Purpose |
-|-------|------|---------|
-| **3D render** | Unity 6.4 (`6000.4.6f1`) + URP 17.4 | VRM rendering, animation, transparent overlay |
-| **Character model** | UniVRM 0.131 (`com.vrmc.univrm`) | VRM 0.x runtime loading, BlendShape, LookAt |
-| **Embed** | Unity-as-a-Library (UaaL) | Unity diekspor sebagai Android library module |
-| **Native shell** | Android Kotlin Compose | Dashboard UI, foreground service, WindowManager overlay |
-| **Overlay** | `TYPE_APPLICATION_OVERLAY` + `FLAG_NOT_TOUCHABLE` | Full-width 250dp strip flush bottom, touch passthrough |
-| **AI dispatcher** | `UnityBridge.sendMessage` (UnitySendMessage) | Kotlin → Unity command bus untuk animation, gestures, expressions |
-| **MCP** | CoplayDev `com.coplaydev.unity-mcp` | Editor automation, build trigger from Claude Code |
+- **Floating VRM character** — Kohaku rendered live; on macOS a borderless, transparent, click-through always-on-top window (native Objective-C++ overlay plugin); on Android a bottom overlay strip you can use the phone through.
+- **Talk to her by voice** — wake word *"Lia"*, continuous listening with VAD, natural spoken replies.
+- **Multi-backend AI brain** — pluggable, no rebuild needed:
+  - **macOS:** Google **Gemini** *or* **self-hosted Ollama** (`gpt-oss:120b` on private VMs) — toggle via `lia_ai.env`.
+  - **Android:** **on-device Gemma 4** (fully local, offline-capable).
+- **Voice pipeline** — STT (self-hosted **faster-whisper**, multilingual) → LLM → **ElevenLabs** TTS, with lip-sync.
+- **Real mocap animation** — Bandai Namco Research + Mixamo clips and **VRMA** poses, retargeted onto the VRM at runtime via `HumanPoseHandler` (muscle-space) — the AI itself decides which gesture fits its reply.
+- **Aliveness** — cursor awareness, look-at, blush-on-pet, roaming to empty screen areas, footstep/magic-circle VFX.
+- **In-app animation picker** — browse and choose which gestures Lia uses, with click-to-preview.
 
 ---
 
-## 📂 Struktur Repository
+## 🏗 Architecture
+
+One Unity project targets **both** macOS and Android; platform specifics live behind thin adapters.
 
 ```
 LiaVA/
-├── .git/                          # Git history
-├── .gitignore                     # Unity + Android + macOS ignores
-├── LICENSE
-├── README.md                      # (this file)
-│
-├── unity/                         # 🎮 Unity project (Lia VA scene + scripts)
-│   ├── Assets/
-│   │   ├── Scenes/Main.unity      # Active scene (camera + character + lighting)
-│   │   ├── Scripts/VRMAssistant/  # Animation, AI, Behavior, Locomotion, Rendering
-│   │   ├── Animations/            # 6 core anim + Locomotion + Custom (.anim, .controller, .mask)
-│   │   ├── Resources/             # LiaVAController.controller (loaded di runtime)
-│   │   ├── Settings/              # URP asset, RendererData
-│   │   └── Editor/                # LiaVABuildScript.cs (one-click Android export)
-│   ├── Packages/manifest.json     # UniVRM + URP + MCP + AI Assistant
-│   └── ProjectSettings/
-│
-├── android/                       # 📱 Android Studio Gradle project (UaaL wrapper)
-│   ├── launcher/                  # APK module — MainActivity + OverlayService + Compose dashboard
-│   │   └── src/main/java/com/l3n/liaVA/
-│   │       ├── MainActivity.kt           # Compose dashboard
-│   │       ├── OverlayService.kt         # Foreground service + WindowManager
-│   │       ├── UnityBridge.kt            # Kotlin → Unity command bus
-│   │       └── PermissionHelper.kt       # Overlay + battery + MIUI autostart
-│   ├── unityLibrary/              # Unity-exported Android module (regenerable)
-│   ├── shared/                    # Common Gradle config (Unity symbol keep, etc.)
-│   ├── build.gradle               # Root build config
-│   └── .gradle-customizations-backup/   # Restore script utk Unity-overwritten gradle files
-│       ├── restore.sh
-│       ├── build.gradle.root
-│       ├── build.gradle.launcher
-│       ├── gradle.properties
-│       ├── AndroidManifest.xml
-│       └── strings.xml
-│
-├── assets/                        # 📦 Raw materials (VRM source, sounds, NFD packs)
-│   ├── NFD_KohakuFullSet_V1.21/
-│   ├── NFD_Kohaku_Head_ForMARUBODY_V1.00/
-│   └── Sound/
-│
-└── docs/                          # 📖 Documentation & diagrams
-    ├── Blueprint_App_Flow.md
-    ├── Flowchart_Arsitektur.md
-    ├── Roadmap_Developer.md
-    ├── Roadmap_TEAM.txt
-    ├── BoneMap_Kohaku.txt
-    ├── kohaku_Map.md
-    ├── animation_roadmap.txt
-    ├── formula_animation.md
-    └── appArch.png / appFlow.png
+├── unity/                              # Unity project (shared Mac + Android)
+│   └── Assets/
+│       ├── Scripts/VRMAssistant/
+│       │   ├── AI/          # LiaBrain (Gemini/Ollama), LiaPersona, VoiceListener, CommandReceiver
+│       │   ├── Animation/   # ClipGestureController, VrmaPlaybackController, LipSync, LookAt, blink…
+│       │   ├── Behavior/    # BehaviorScheduler, GestureLibrary, CharacterMovement, Aliveness
+│       │   ├── Platform/    # MacDesktopController (overlay)
+│       │   ├── Core/        # VRMModelLoader (runtime VRM load + URP material convert)
+│       │   └── UI/          # Chat / animation-settings / voice-status panels (IMGUI)
+│       ├── Scripts/BvhBrowser/          # Companion tool: browse 3k+ Bandai BVH, preview on VRM
+│       ├── Shaders/                     # LiaVA/UnlitSolid (opaque-over-transparent)
+│       ├── Editor/                      # Mac build scripts
+│       └── Resources/ · Settings/ · Scenes/
+├── android/                            # Android Studio (Unity-as-a-Library wrapper, Kotlin/Compose)
+│   └── launcher/…                      # Dashboard, OverlayService, UnityBridge, on-device Gemma 4
+├── mac-plugin-src/                     # Native macOS overlay plugin (LiaWindow.mm, Objective-C++)
+└── docs/                               # Design & engineering notes
 ```
+
+**Runtime animation retargeting** is the core trick: Unity's Mecanim does not retarget onto a *runtime-loaded* VRM, so mocap clips (`.anim`) and `.vrma` are played on a hidden source rig and transferred to Kohaku in muscle space via `HumanPoseHandler` every `LateUpdate`.
 
 ---
 
-## 🧬 Pipeline Animasi (procedural-first, sejak 2026-07-22)
+## 🧩 Tech Stack
 
-> Animator Controller + clip muscle hand-authored DIHAPUS — nama muscle-nya invalid
-> (tidak pernah nge-bind) dan Animator humanoid menimpa seluruh pose tiap frame.
-> Arsitektur sekarang: **3 lapisan runtime tanpa Animator Controller**.
-
-```
-┌─ Layer 1: Procedural states (AnimationOrchestrator) ────────────┐
-│  Idle/Active/Thinking/Listening/Speaking                        │
-│  breathing + sway + head motion + hand pose + blink + look-at   │
-│  (AdditiveLayerHelper di atas rest pose A-pose 88°)             │
-└─────────────────────────────────────────────────────────────────┘
-┌─ Layer 2: Playback (mutual-exclusive dengan Layer 1) ───────────┐
-│  VMD  — VmdPlaybackController (StreamingAssets/Anim/*.json)     │
-│  VRMA — VrmaPlaybackController (StreamingAssets/VRMA/*.vrma)    │
-│         retarget HumanPoseHandler, body di-pin ke baseline      │
-└─────────────────────────────────────────────────────────────────┘
-┌─ Layer 3: Facial (VRMBlendShapeProxy, selalu aktif) ────────────┐
-│  LipSyncController — FFT audio ATAU pola sintetis Perlin        │
-│  AutoBlink + ExpressionController + LookAt                      │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-### Command flow
-
-```
-Compose chip tap          UnityBridge                CommandReceiver
-─────────────────────    ───────────────             ──────────────────
-"Thinking" chip      →   sendMessage(           →   PlayVmd("Thinking")
-                          "VRMAssistant",                  │
-                          "PlayVmd",                       ▼
-                          "Thinking")               TryRouteToState():
-                                                    stateManager.SetState(Thinking)
-                                                          │
-                                                          ▼
-                                                    Orchestrator → procedural state
-                                                    + HandPose NearFace + LookAt
-```
+| Layer | Tech |
+|-------|------|
+| 3D / render | Unity 6000.4.6f1, URP 17.4 |
+| Character | UniVRM 0.131 (VRM 0.x) + UniVRM10 (`.vrma`) |
+| macOS overlay | Objective-C++ plugin (Cocoa / QuartzCore / CoreGraphics), Metal |
+| Android shell | Kotlin + Jetpack Compose, Unity-as-a-Library, on-device Gemma 4 |
+| AI (desktop) | Gemini API · Ollama (self-hosted `gpt-oss:120b`) |
+| Voice | faster-whisper (STT) · ElevenLabs (TTS) |
+| Tooling | Python (BVH/VMD converters), Blender |
 
 ---
 
-## 🚀 Build & Run
+## 🚀 Build (macOS)
 
-### Prerequisites
-
-- **Unity 6.4** (`6000.4.6f1`) dengan Android Build Support + IL2CPP
-- **Android SDK** dengan build-tools 36.0.0, NDK 27.2.12479018 (bundled di Unity Hub)
-- **ADB** terhubung ke device (USB / wireless)
-- **Permission** di HP: Overlay (tampil di atas app lain), Battery whitelist, MIUI autostart (kalau MIUI/HyperOS)
-
-### Build flow
+Requires Unity `6000.4.6f1`.
 
 ```bash
-# 1. Unity Editor → File > Build And Run
-#    atau menu: Lia VA > Build Android (Export to LiaVA-Android)
-#    Output: android/unityLibrary/
+# 1) Native overlay plugin (once)
+cd mac-plugin-src && ./build.sh      # → LiaWindow.bundle (universal arm64+x86_64)
 
-# 2. Restore Gradle customizations (Unity overwrite gradle file tiap export)
-cd android
-bash .gradle-customizations-backup/restore.sh
+# 2) Build the app (batchmode)
+/Applications/Unity/Hub/Editor/6000.4.6f1/Unity.app/Contents/MacOS/Unity \
+  -batchmode -quit \
+  -projectPath unity \
+  -executeMethod LiaVA.Editor.LiaVAMacBuildScript.BuildMac \
+  -logFile build.log
+# → build-mac/LiaVA.app
+```
 
-# 3. Gradle assembleDebug (pakai Unity-bundled Java + Gradle launcher)
-export JAVA_HOME=/Applications/Unity/Hub/Editor/6000.4.6f1/PlaybackEngines/AndroidPlayer/OpenJDK
-java -classpath /Applications/Unity/Hub/Editor/6000.4.6f1/PlaybackEngines/AndroidPlayer/Tools/gradle/lib/gradle-launcher-9.1.0.jar \
-     org.gradle.launcher.GradleMain :launcher:assembleDebug --no-daemon
+### AI configuration (`build-mac/lia_ai.env`)
 
-# 4. Install + launch
-adb install -r launcher/build/outputs/apk/debug/launcher-debug.apk
-adb shell am start -n com.l3n.liaVA/.MainActivity
+The app reads keys/config from `lia_ai.env` next to `LiaVA.app`. **This file is git-ignored — never commit it.**
+
+```ini
+# Backend: "gemini" (cloud) or "ollama" (self-hosted)
+LLM_BACKEND=ollama
+OLLAMA_URL=http://<vm-ip>:11434
+OLLAMA_MODEL=gpt-oss:120b
+STT_URL=http://<vm-ip>:9000          # faster-whisper server (for voice)
+
+GEMINI_API_KEY=…                     # if LLM_BACKEND=gemini
+ELEVENLABS_API_KEY=…                 # optional, for TTS
 ```
 
 ---
 
-## 🧪 Test Animation
+## 📦 Assets not included (licensing)
 
-Dashboard di app punya 7 chip test + pemilih karakter (Dress/Kimono, persist):
+To keep the repo lean and avoid redistributing third-party content, these are **git-ignored** — add them locally:
 
-| Chip | Route | Effect |
-|------|-------|--------|
-| **Idle** | state Idle (procedural) | Breathing + sway + head turn |
-| **Active** | state Active (procedural) | Napas cepat + spine lean + arm micro |
-| **Thinking** | state Thinking (procedural) | Head tilt + hand pose NearFace |
-| **Listening** | state Listening (procedural) | Lean forward + head nod |
-| **Speaking** | state Speaking (procedural) | Body emphasis + lipsync ON |
-| **LipSync** | LipSyncController.active=true | Mulut A/I/U/O — audio FFT atau sintetis |
-| **⏹ Stop** | StopVmd | VMD+VRMA stop, lipsync off, state Idle |
-
-Semua animasi lain (VMD by-name, gesture VRMA, wander, expression, switch karakter)
-dipicu via command — jalur yang sama yang nanti dipakai AI (`AICommandDispatcher`).
-
-Gesture VRMA (via `TriggerGesture` / BehaviorScheduler acak): Wave→Goodbye, Peace→Clapping,
-HairTouch→Blush, Tilt→LookAround, Peek→Surprised, plus Thinking/Relax/Sad/Sleepy/Angry/Jump
-— 11 file di `StreamingAssets/VRMA/`, retarget HumanPoseHandler dengan body pinned.
+- **Kohaku VRM** (`unity/Assets/StreamingAssets/*.vrm`) — NFD "Kohaku" model; download from the official source and drop it in.
+- **Bandai Namco Research Motion Dataset** (BVH) — used by the BvhBrowser tool; fetch from its official repository.
+- Large imported model folders, uLipSync samples, and Blender sources are regenerable / third-party.
 
 ---
 
-## 🔑 Permission Required
+## 🗺 Roadmap
 
-```xml
-<!-- launcher/src/main/AndroidManifest.xml -->
-<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
-<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
-<uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"/>
-<uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
-```
-
-Plus user-facing flow di MainActivity dashboard untuk minta runtime permission.
+- Procedural **aliveness layer** on top of mocap: idle breathing, subtle hip sway, auto-blink, gaze control (paused on bone-level during big motions; blink + gaze always on).
+- Export chosen Bandai BVH → LiaVA animation clips.
+- Deeper multi-model routing and richer voice interaction.
 
 ---
 
-## 🎨 Character
+## 🙏 Credits & Licenses
 
-**Kohaku** (なっふな堂) — VRM 0.x anime girl model.
-
-- Humanoid Avatar dengan VRM bones (HumanBodyBones mapping)
-- BlendShapeProxy untuk facial expressions (Joy, Sorrow, Angry, A/I/U/E/O lipsync)
-- VRMLookAtHead untuk eye tracking
-- Source: `assets/NFD_KohakuFullSet_V1.21/` (VRM 0.x)
+- **Kohaku** VRM model — © its respective creator (NFD); not redistributed here.
+- **Bandai Namco Research Motion Dataset** — © Bandai Namco Research; used under its license.
+- **UniVRM** (MIT), **ElevenLabs**, **Google Gemini / Gemma**, **Ollama / gpt-oss**.
+- Application code in this repository: see [LICENSE](LICENSE).
 
 ---
 
-## 🧰 MCP Integration (Editor automation)
-
-Project pakai CoplayDev `com.coplaydev.unity-mcp` untuk:
-- Read Unity console + project state dari Claude Code
-- Execute C# code in-Editor (refactor, scene mutation, build trigger)
-- Menu item execution (`Lia VA > Build Android`)
-
-Setup di `~/Library/Application Support/Claude/claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "unity-editor": {
-      "command": "python3",
-      "args": ["/Users/lendra/Documents/codeV/mcp-stdio-bridge.py"],
-      "env": { "MCP_HTTP_URL": "http://127.0.0.1:8080/mcp" }
-    }
-  }
-}
-```
-
-> Note: Plugin WebSocket keep-alive bug di CoplayDev 3.2.4 kadang putus — restart bridge dari Unity menu `Window > MCP for Unity > Start Bridge`.
-
----
-
-## 📋 Status & Roadmap
-
-### ✅ Phase A — Foundation (DONE)
-- Transparent overlay (alpha=0 backdrop) ✓
-- Camera framing (full body visible) ✓
-- 6 core Animator clips + AnimatorController (LiaVAController) ✓
-- Animation routing: dashboard chip → Animator params ✓
-
-### ✅ Phase B — Stability (DONE)
-- Anti-crash: Restore procedural-skip when Animator present ✓
-- Character Y=-1.0 anti-"terbang" (feet di strip bottom) ✓
-- A-pose arm angle 88° (lebih natural) ✓
-- Landscape strip overlay (MATCH_PARENT × 250dp flush bottom) ✓
-
-### ✅ Phase C — Animation Rework (DONE 2026-07-22)
-- Root cause animasi mati ditemukan & dibereskan: clip muscle invalid dihapus,
-  Animator Controller dilepas, procedural-first restored
-- Scene dibersihkan: VRMRoot statis (dobel karakter) + AnimationTestBench dihapus
-- A-pose arm rest fix (sign terbalik → lengan ke atas), verified via screenshot loop
-- VRMA gesture playback ENABLED: 11 gesture, retarget HumanPoseHandler,
-  fix drift/sink (baseline body pin + hips pin), auto-stop fallback
-- LipSync sintetis (Perlin) saat tanpa audio — Speaking hidup sebelum TTS ada
-- Walk ditunda sampai ada walk clip humanoid asli (Mixamo — Lapisan 2)
-
-### 🔄 Phase C.5 — Animation Assets (NEXT)
-- Mixamo FBX humanoid (walk cycle, talk gestures, idle variations)
-- VMD tambahan dari MMD library (BowlRoll/NicoNico)
-- Video-to-motion custom (DeepMotion/Rokoko Vision)
-
-### ✅ Phase D — AI Integration (DONE 2026-07-22, verifikasi runtime saat build)
-- **Otak**: Google Gemini free tier (`gemini-2.0-flash`) — `ai/GeminiClient.kt`.
-  Balasan JSON `{say, emotion, gesture}`, riwayat percakapan 16 turn.
-- **Suara**: ElevenLabs TTS (`ai/ElevenLabsClient.kt`) → MP3 ke cacheDir →
-  Unity `PlayAudio(path)` load + play + lipsync FFT dari audio asli + auto-Idle.
-- **Orkestrasi**: `ai/LiaBrain.kt` — user text → Gemini → ekspresi + gesture + suara.
-- **UI**: `ui/ChatScreen.kt` (ngobrol ketik) + kartu Setelan AI (API key in-app,
-  tersimpan `AiPrefs` app-private). Persona Lia teman ngobrol = `ai/LiaPersona.kt`.
-- API key diisi user langsung di app (Gemini wajib, ElevenLabs opsional untuk suara).
-
-### 🔮 Selanjutnya (FUTURE)
-- Voice input (STT) — sekarang input via ketik
-- WanderController auto-walk (butuh walk clip Mixamo dulu)
-- Chat langsung dari overlay (sekarang via dashboard)
-
-Lihat detail di `docs/Roadmap_Developer.md` + `docs/Roadmap_TEAM.txt`.
-
----
-
-## 🔗 References
-
-- **VRM Spec**: https://vrm.dev/en/
-- **UniVRM**: https://github.com/vrm-c/UniVRM
-- **Unity UaaL**: https://docs.unity3d.com/Manual/UnityasaLibrary-Android.html
-- **CoplayDev MCP for Unity**: https://github.com/CoplayDev/unity-mcp
-
----
-
-## 📝 License
-
-Lihat [LICENSE](LICENSE).
-
-Kohaku VRM model © なっふな堂 — used under VRM model creator license. Lihat metadata VRM file untuk full terms.
+*Built by [@lendral3n](https://github.com/lendral3n). Backend & AI integration; collaborating on animation & character expression.*

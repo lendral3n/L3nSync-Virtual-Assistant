@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b589176a34b344b9ccbee2b7e7114a, type: 3}
+  m_Name: Meta
+  m_EditorClassIdentifier: VRM::VRM.VRMMetaObject
+  ExporterVersion: UniVRM-0.88.0
+  Title: "\u300C\u72D0\u8584 -\u3053\u306F\u304F-(\u30C9\u30EC\u30B9)\u300D\u30AA\u30EA\u30B8\u30CA\u30EB3D\u30E2\u30C7\u30EB"
+  Version: 1.10
+  Author: "\u9999\u5742\u3082\u3061"
+  ContactInformation: https://nyahuuu.booth.pm/
+  Reference: https://nyahuuu.booth.pm/items/2616595
+  Thumbnail: {fileID: 2800000, guid: 060270d4247564421bdaa09528b1e197, type: 3}
+  AllowedUser: 0
+  ViolentUssage: 0
+  SexualUssage: 0
+  CommercialUssage: 0
+  OtherPermissionUrl: 
+  LicenseType: 8
+  OtherLicenseUrl: https://nyahuuu.booth.pm/items/2616595
