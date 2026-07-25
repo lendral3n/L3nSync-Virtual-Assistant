@@ -88,10 +88,17 @@ namespace BvhBrowser
             }
         }
 
+        /// <summary>Mirror sumbu-X (konversi koordinat BVH right-handed → Unity left-handed).</summary>
+        public static Vector3 MirrorX(Vector3 v) => new Vector3(-v.x, v.y, v.z);
+
         private static Matrix4x4 RotationMatrix(BvhJoint j, float[] frame)
             => Matrix4x4.Rotate(RotationQuat(j, frame));
 
-        // Rotasi digabung SESUAI urutan channel (post-multiply, sama seperti versi Kotlin).
+        // Rotasi digabung SESUAI urutan channel (post-multiply, apa adanya dari data).
+        // CATATAN handedness: BVH (RH) dipakai langsung di Unity (LH) TANPA mirror —
+        // konsekuensinya animasi ter-mirror kiri↔kanan (lambaian tangan kanan tampil kiri),
+        // dapat diterima untuk preview. Mirror-X + swap L/R pernah dicoba dan justru
+        // menukar bahu kiri-kanan render (pengukuran heading terbalik 180°).
         private static Quaternion RotationQuat(BvhJoint j, float[] frame)
         {
             Quaternion q = Quaternion.identity;

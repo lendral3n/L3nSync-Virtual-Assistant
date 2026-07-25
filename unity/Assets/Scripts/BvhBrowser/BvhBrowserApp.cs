@@ -36,7 +36,8 @@ namespace BvhBrowser
         private Vector2 _scroll;
         private int _selected = -1;      // index di _files
         private List<int> _shown = new List<int>();
-        private GUIStyle _title, _row, _small;
+        private GUIStyle _title, _sub, _row, _btn, _ctrl, _search, _starOn, _starOff;
+        private Texture2D _texPanel, _texSel, _texBtn, _texBtnH, _texField, _texAccent;
         private bool _styles;
 
         // ---- playback ----
@@ -83,24 +84,41 @@ namespace BvhBrowser
             if (string.IsNullOrEmpty(req) || !File.Exists(req)) return;
             var parts = File.ReadAllText(req).Trim().Split('|');
             string sub = parts[0].Trim();
+            string firstSub = null;   // "a;b" = buka a dulu (reproduksi browsing), lalu b
+            int semi = sub.IndexOf(';');
+            if (semi > 0) { firstSub = sub.Substring(0, semi).Trim(); sub = sub.Substring(semi + 1).Trim(); }
             int fr;
             if (parts.Length > 1 && parts[1].Trim().Equals("play", System.StringComparison.OrdinalIgnoreCase)) fr = -1;
+            else if (parts.Length > 1 && parts[1].Trim().Equals("seri", System.StringComparison.OrdinalIgnoreCase)) fr = -2;
             else fr = parts.Length > 1 && int.TryParse(parts[1].Trim(), out var f) ? f : 30;
             bool stick = parts.Length > 2 && parts[2].Trim().Equals("stick", System.StringComparison.OrdinalIgnoreCase);
-            StartCoroutine(CaptureRoutine(sub, fr, stick, Path.Combine(ad, "bvh_shot.png")));
+            StartCoroutine(CaptureRoutine(firstSub, sub, fr, stick, Path.Combine(ad, "bvh_shot.png")));
         }
 
-        private System.Collections.IEnumerator CaptureRoutine(string sub, int frame, bool stick, string outPng)
+        private System.Collections.IEnumerator CaptureRoutine(string firstSub, string sub, int frame, bool stick, string outPng)
         {
             float t0 = Time.realtimeSinceStartup;
             while (!stick && _kohaku == null && Time.realtimeSinceStartup - t0 < 90f) yield return null;
             if (stick) _vrmMode = false;
 
+            // Reproduksi alur browsing: buka clip pertama, mainkan sebentar, baru clip target.
+            if (!string.IsNullOrEmpty(firstSub))
+            {
+                int idx0 = _files.FindIndex(p => Path.GetFileName(p).IndexOf(firstSub, System.StringComparison.OrdinalIgnoreCase) >= 0);
+                if (idx0 >= 0)
+                {
+                    OpenClip(idx0);
+                    _playing = true;
+                    for (int k = 0; k < 45; k++) yield return new WaitForEndOfFrame();
+                    Debug.Log("[BvhCapture] pre-clip dimainkan: " + firstSub);
+                }
+            }
+
             int idx = _files.FindIndex(p => Path.GetFileName(p).IndexOf(sub, System.StringComparison.OrdinalIgnoreCase) >= 0);
             if (idx < 0) { Debug.Log("[BvhCapture] tak ketemu: " + sub); Application.Quit(); yield break; }
             OpenClip(idx);
-            // mode "play" (frame ke-3 = play) → biarkan berjalan utk reproduksi crash saat play
-            if (frame < 0)
+            // mode "play" (-1) → biarkan berjalan utk reproduksi crash saat play
+            if (frame == -1)
             {
                 _playing = true;
                 for (int k = 0; k < 400; k++)
@@ -115,14 +133,25 @@ namespace BvhBrowser
                 yield break;
             }
             _playing = false;
-            _frame = _clip != null ? Mathf.Clamp(frame, 0, _clip.FrameCount - 1) : 0;
+            for (int k = 0; k < 40; k++) yield return new WaitForEndOfFrame();   // settle yaw-lock
 
+            // frame bisa >=0 (single) ATAU -2 = SERI: sampel 8 frame merata → bvh_f{N}.png.
+            string mdir = System.IO.Path.GetDirectoryName(outPng);
+            int fc = _clip != null ? _clip.FrameCount : 1;
+            int[] frames = frame >= 0
+                ? new[] { Mathf.Clamp(frame, 0, fc - 1) }
+                : new[] { 0, fc / 7, 2 * fc / 7, 3 * fc / 7, 4 * fc / 7, 5 * fc / 7, 6 * fc / 7, fc - 1 };
+            foreach (int f in frames)
+            {
+                _frame = f;
+                if (_vrmMode && _retarget != null && _retarget.Ready) _retarget.Apply(_frame);
+                for (int k = 0; k < 3; k++) yield return new WaitForEndOfFrame();
+                string p = frames.Length == 1 ? outPng : System.IO.Path.Combine(mdir, "bvh_f" + f + ".png");
+                ScreenCapture.CaptureScreenshot(p);
+                Debug.Log("[BvhCapture] shot f=" + f);
+                for (int k = 0; k < 8; k++) yield return new WaitForEndOfFrame();
+            }
             for (int k = 0; k < 10; k++) yield return new WaitForEndOfFrame();
-            if (_vrmMode && _retarget != null && _retarget.Ready) _retarget.Apply(_frame);
-            yield return new WaitForEndOfFrame();
-            ScreenCapture.CaptureScreenshot(outPng);
-            Debug.Log("[BvhCapture] shot(frame=" + _frame + ", vrm=" + _vrmMode + ") → " + outPng);
-            for (int k = 0; k < 30; k++) yield return new WaitForEndOfFrame();
             Application.Quit();
         }
 
@@ -140,12 +169,21 @@ namespace BvhBrowser
             if (_kohaku != null) return;   // idempoten (guard event dobel)
             _kohaku = _loader.ModelAnimator;
             if (_kohaku == null) return;
+
+            // Matikan LookAt bawaan VRM — kepala/mata "menoleh sendiri" ke kamera menutupi
+            // orientasi badan yang sebenarnya (preview harus jujur 100% dari data mocap).
+            foreach (var b in model.GetComponentsInChildren<MonoBehaviour>(true))
+            {
+                string tn = b.GetType().Name;
+                if (tn.Contains("LookAt") || tn == "Blinker" || tn == "VRMBlink")
+                    b.enabled = false;
+            }
             _vrmMode = true;
             _retarget = new BvhRetargeter();
             // framing kamera untuk karakter setinggi ~1.5m di origin
             _center = new Vector3(0f, 0.9f, 0f);
             _fitScale = 1.8f;
-            _dist = 2.6f; _pitch = 6f; _yaw = 0f;   // karakter di-auto-hadap -Z → kamera ini lihat depan
+            _dist = 2.6f; _pitch = 6f; _yaw = 180f;   // swing-twist yaw-lock + kamera yaw 180 → lihat WAJAH
             if (_bones != null) foreach (var b in _bones) if (b) b.enabled = false;  // sembunyikan stick-figure
             if (_selected >= 0 && _clip != null) _retarget.Setup(_clip, _kohaku);
             Debug.Log("[BvhBrowser] Kohaku siap → mode VRM");
@@ -378,92 +416,114 @@ namespace BvhBrowser
             else DrawPlayer();
         }
 
+        private static Texture2D Solid(Color c)
+        {
+            var t = new Texture2D(1, 1); t.SetPixel(0, 0, c); t.Apply();
+            t.hideFlags = HideFlags.HideAndDontSave; return t;
+        }
+
         private void EnsureStyles()
         {
             if (_styles) return;
-            _title = new GUIStyle(GUI.skin.label) { fontSize = 18, fontStyle = FontStyle.Bold, normal = { textColor = Color.white } };
-            _row = new GUIStyle(GUI.skin.label) { fontSize = 13, normal = { textColor = new Color(0.9f, 0.9f, 0.9f) } };
-            _small = new GUIStyle(GUI.skin.label) { fontSize = 11, normal = { textColor = Color.gray } };
+            _texPanel  = Solid(new Color(0.06f, 0.07f, 0.10f, 0.96f));
+            _texSel    = Solid(new Color(0.35f, 0.62f, 0.95f, 0.35f));
+            _texBtn    = Solid(new Color(0.16f, 0.18f, 0.24f, 1f));
+            _texBtnH   = Solid(new Color(0.24f, 0.42f, 0.66f, 1f));
+            _texField  = Solid(new Color(0.10f, 0.12f, 0.16f, 1f));
+            _texAccent = Solid(new Color(0.35f, 0.62f, 0.95f, 1f));
+            Color white = Color.white, gray = new Color(0.60f, 0.64f, 0.71f);
+
+            _title = new GUIStyle(GUI.skin.label) { fontSize = 19, fontStyle = FontStyle.Bold, normal = { textColor = white } };
+            _sub   = new GUIStyle(GUI.skin.label) { fontSize = 11, normal = { textColor = gray } };
+            _row   = new GUIStyle(GUI.skin.label) {
+                fontSize = 13, alignment = TextAnchor.MiddleLeft, padding = new RectOffset(8, 6, 0, 0),
+                normal = { textColor = new Color(0.85f, 0.88f, 0.92f) },
+                hover  = { textColor = white, background = _texBtn } };
+            _btn = new GUIStyle(GUI.skin.button) {
+                fontSize = 12, border = new RectOffset(2, 2, 2, 2), padding = new RectOffset(8, 8, 6, 6),
+                normal = { textColor = white, background = _texBtn },
+                hover  = { textColor = white, background = _texBtnH },
+                active = { textColor = white, background = _texBtnH } };
+            _ctrl = new GUIStyle(_btn) { fontSize = 17 };
+            _search = new GUIStyle(GUI.skin.textField) {
+                fontSize = 13, padding = new RectOffset(8, 8, 6, 6),
+                normal = { textColor = white, background = _texField },
+                focused = { textColor = white, background = _texField } };
+            _starOn  = new GUIStyle(GUI.skin.label) { fontSize = 16, alignment = TextAnchor.MiddleCenter, normal = { textColor = new Color(1f, 0.82f, 0.28f) } };
+            _starOff = new GUIStyle(GUI.skin.label) { fontSize = 16, alignment = TextAnchor.MiddleCenter, normal = { textColor = new Color(0.42f, 0.45f, 0.52f) } };
             _styles = true;
         }
 
         private void DrawList()
         {
             float W = Screen.width, H = Screen.height;
-            GUI.Box(new Rect(0, 0, W, H), GUIContent.none);
-            GUILayout.BeginArea(new Rect(16, 14, W - 32, H - 28));
+            float sw = Mathf.Min(400f, W * 0.44f);
+            GUI.DrawTexture(new Rect(0, 0, sw, H), _texPanel);
+            GUI.DrawTexture(new Rect(sw - 2, 0, 2, H), _texAccent);   // garis aksen
 
-            GUILayout.BeginHorizontal();
-            GUILayout.Label("BVH Browser — Bandai mocap", _title);
-            GUILayout.FlexibleSpace();
-            bool fo = GUILayout.Toggle(_favOnly, $"  ⭐ {_fav.Count}", GUILayout.Height(24));
-            if (fo != _favOnly) { _favOnly = fo; RebuildShown(); }
-            if (GUILayout.Button("Export favorites.txt", GUILayout.Height(24), GUILayout.Width(160)))
-            {
-                SaveFavorites();
-                Debug.Log("[BvhBrowser] favorites → " + _favPath);
-            }
-            GUILayout.EndHorizontal();
+            float pad = 16f, x = pad, y = 14f, iw = sw - pad * 2;
+            GUI.Label(new Rect(x, y, iw, 26), "BVH Browser", _title); y += 28;
+            GUI.Label(new Rect(x, y, iw, 16), $"Bandai mocap · {_files.Count} animasi", _sub); y += 22;
 
-            GUILayout.BeginHorizontal();
-            GUILayout.Label("Cari:", GUILayout.Width(38));
-            string q = GUILayout.TextField(_query, GUILayout.Width(360));
+            string q = GUI.TextField(new Rect(x, y, iw, 30), _query, _search);
             if (q != _query) { _query = q; RebuildShown(); }
-            GUILayout.Label($"{_shown.Count}/{_files.Count} file  ·  favorit tersimpan di: {_favPath}", _small);
-            GUILayout.EndHorizontal();
-            GUILayout.Space(6);
+            y += 38;
+
+            float bw = (iw - 8) / 2f;
+            if (GUI.Button(new Rect(x, y, bw, 28), (_favOnly ? "★ " : "☆ ") + $"Favorit ({_fav.Count})", _btn)) { _favOnly = !_favOnly; RebuildShown(); }
+            if (GUI.Button(new Rect(x + bw + 8, y, bw, 28), "Export .txt", _btn)) { SaveFavorites(); Debug.Log("[BvhBrowser] favorites → " + _favPath); }
+            y += 34;
+            GUI.Label(new Rect(x, y, iw, 16), $"{_shown.Count} / {_files.Count} file", _sub); y += 22;
 
             if (_files.Count == 0)
-                GUILayout.Label($"Dataset kosong di:\n{_dir}\n(taruh .bvh di sini atau isi bvh_dir.txt di folder app)", _small);
+                GUI.Label(new Rect(x, y, iw, 60), $"Dataset kosong:\n{_dir}", _sub);
 
-            _scroll = GUILayout.BeginScrollView(_scroll);
-            foreach (int idx in _shown)
+            var listRect = new Rect(x, y, iw, H - y - pad);
+            float rowH = 30f;
+            var view = new Rect(0, 0, iw - 18, _shown.Count * rowH);
+            _scroll = GUI.BeginScrollView(listRect, _scroll, view);
+            for (int k = 0; k < _shown.Count; k++)
             {
-                GUILayout.BeginHorizontal(GUILayout.Height(22));
+                int idx = _shown[k];
+                var r = new Rect(0, k * rowH, iw - 18, rowH - 2);
+                if (idx == _selected) GUI.DrawTexture(r, _texSel);
                 bool isFav = _fav.Contains(FileNameOf(idx));
-                bool nf = GUILayout.Toggle(isFav, "", GUILayout.Width(20));
-                if (nf != isFav) { if (nf) _fav.Add(FileNameOf(idx)); else _fav.Remove(FileNameOf(idx)); SaveFavorites(); }
-                GUILayout.Label(isFav ? "★" : "☆", GUILayout.Width(16));
-                if (GUILayout.Button(NameOf(idx), _row, GUILayout.ExpandWidth(true))) OpenClip(idx);
-                GUILayout.EndHorizontal();
+                if (GUI.Button(new Rect(r.x + 2, r.y, 26, r.height), isFav ? "★" : "☆", isFav ? _starOn : _starOff))
+                { if (isFav) _fav.Remove(FileNameOf(idx)); else _fav.Add(FileNameOf(idx)); SaveFavorites(); }
+                if (GUI.Button(new Rect(r.x + 30, r.y, r.width - 30, r.height), NameOf(idx), _row)) OpenClip(idx);
             }
-            GUILayout.EndScrollView();
-            GUILayout.EndArea();
+            GUI.EndScrollView();
+
+            GUI.Label(new Rect(sw + 16, H - 26, 320, 20), "drag: putar  ·  scroll: zoom", _sub);
         }
 
         private void DrawPlayer()
         {
             float W = Screen.width, H = Screen.height;
-            // top bar
-            GUILayout.BeginArea(new Rect(12, 10, W - 24, 34));
-            GUILayout.BeginHorizontal();
-            if (GUILayout.Button("← Kembali", GUILayout.Width(100), GUILayout.Height(26))) { _selected = -1; _clip = null; }
-            GUILayout.Label("  " + NameOf(_selected), _title, GUILayout.Height(26));
-            GUILayout.FlexibleSpace();
+            // ── top bar ──
+            GUI.DrawTexture(new Rect(0, 0, W, 52), _texPanel);
+            if (GUI.Button(new Rect(12, 11, 92, 30), "←  Kembali", _btn))
+            { _selected = -1; _clip = null; if (_vrmMode && _retarget != null) _retarget.RestoreRest(); }
+            GUI.Label(new Rect(116, 13, W - 400, 26), NameOf(_selected), _title);
             bool isFav = _fav.Contains(FileNameOf(_selected));
-            bool nf = GUILayout.Toggle(isFav, isFav ? " ★ Favorit" : " ☆ Favorit", GUILayout.Height(26), GUILayout.Width(110));
-            if (nf != isFav) { if (nf) _fav.Add(FileNameOf(_selected)); else _fav.Remove(FileNameOf(_selected)); SaveFavorites(); }
-            GUILayout.EndHorizontal();
-            GUILayout.EndArea();
+            if (GUI.Button(new Rect(W - 152, 11, 140, 30), isFav ? "★  Favorit" : "☆  Favorit", _btn))
+            { if (isFav) _fav.Remove(FileNameOf(_selected)); else _fav.Add(FileNameOf(_selected)); SaveFavorites(); }
 
-            // orbit drag area (tengah layar) — pakai event mouse
-            HandleOrbit(new Rect(0, 44, W, H - 100));
+            // ── orbit area (antara bar) ──
+            HandleOrbit(new Rect(0, 52, W, H - 52 - 60));
+            if (_error != null) GUI.Label(new Rect(20, 70, W - 40, 40), "Parse error: " + _error, _sub);
 
-            if (_error != null)
-                GUI.Label(new Rect(20, 60, W - 40, 40), "Parse error: " + _error, _row);
-
-            // bottom controls
-            GUILayout.BeginArea(new Rect(12, H - 44, W - 24, 36));
-            GUILayout.BeginHorizontal();
-            if (GUILayout.Button("⏮", GUILayout.Width(44), GUILayout.Height(28))) Step(-1);
-            if (GUILayout.Button(_playing ? "⏸" : "▶", GUILayout.Width(44), GUILayout.Height(28))) _playing = !_playing;
-            if (GUILayout.Button("⏭", GUILayout.Width(44), GUILayout.Height(28))) Step(1);
-            GUILayout.Label("Speed", GUILayout.Width(46));
-            _speed = GUILayout.HorizontalSlider(_speed, 0.25f, 3f, GUILayout.Width(200));
+            // ── bottom control bar ──
+            float by = H - 56;
+            GUI.DrawTexture(new Rect(0, by, W, 56), _texPanel);
+            float cx = W / 2f;
+            if (GUI.Button(new Rect(cx - 132, by + 13, 42, 30), "«", _ctrl)) Step(-1);
+            if (GUI.Button(new Rect(cx - 86, by + 13, 52, 30), _playing ? "II" : "▶", _ctrl)) _playing = !_playing;
+            if (GUI.Button(new Rect(cx - 30, by + 13, 42, 30), "»", _ctrl)) Step(1);
+            GUI.Label(new Rect(cx + 24, by + 18, 44, 20), "Speed", _sub);
+            _speed = GUI.HorizontalSlider(new Rect(cx + 68, by + 23, 150, 20), _speed, 0.25f, 3f);
             int fc = _clip != null ? _clip.FrameCount : 0;
-            GUILayout.Label($"{_speed:0.00}x   f:{_frame}/{fc}", _small);
-            GUILayout.EndHorizontal();
-            GUILayout.EndArea();
+            GUI.Label(new Rect(cx + 228, by + 18, 140, 20), $"{_speed:0.00}x  ·  f:{_frame}/{fc}", _sub);
         }
 
         private void Step(int dir)
